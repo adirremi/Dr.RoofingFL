@@ -173,16 +173,18 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {services.map((s) => (
               <article key={s.slug} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
-                <div className="h-56 overflow-hidden">
+                <Link to={s.path} className="block h-56 overflow-hidden">
                   <img
                     src={s.image}
                     alt={`${s.shortTitle} installation by Dr. Roofing FL in South Florida`}
                     loading="lazy"
                     className="w-full h-full object-cover hover:scale-105 transition duration-500"
                   />
-                </div>
+                </Link>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{s.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <Link to={s.path} className="hover:text-orange-600">{s.title}</Link>
+                  </h3>
                   <p className="text-sm text-gray-600 mb-4 leading-relaxed">{s.description}</p>
                   <ul className="text-xs text-gray-700 space-y-1 mb-5">
                     {s.bullets.slice(0, 3).map((b) => (
@@ -192,9 +194,14 @@ export default function HomePage() {
                       </li>
                     ))}
                   </ul>
-                  <a href="tel:+17543105557" className="text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1">
-                    <Phone size={14} /> Free quote →
-                  </a>
+                  <div className="flex items-center gap-4">
+                    <Link to={s.path} className="text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1">
+                      Learn More →
+                    </Link>
+                    <a href="tel:+17543105557" className="text-sm font-bold text-gray-600 hover:text-orange-600 inline-flex items-center gap-1">
+                      <Phone size={14} /> Free quote
+                    </a>
+                  </div>
                 </div>
               </article>
             ))}

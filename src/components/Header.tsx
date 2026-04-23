@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Phone, MapPin, Menu, X, ChevronDown } from 'lucide-react';
 import { locationList } from '../data/locations';
+import { services } from '../data/services';
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [areasOpen, setAreasOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   const linkCls = ({ isActive }: { isActive: boolean }) =>
     `px-3 py-2 rounded-md text-sm font-medium transition ${
@@ -30,7 +32,7 @@ export default function Header() {
         </div>
       </div>
 
-      <header className="bg-white sticky top-0 z-50 shadow-md border-b-4 border-orange-500">
+      <header className="bg-white sticky top-0 z-40 shadow-md border-b-4 border-orange-500">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-3 gap-4">
             <Link to="/" className="flex items-center" aria-label="Dr. Roofing FL Home">
@@ -44,15 +46,33 @@ export default function Header() {
             {/* Desktop nav */}
             <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
               <NavLink to="/" className={linkCls} end>Home</NavLink>
-              <a href="/#services" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-orange-600 transition">
-                Services
-              </a>
 
-              <div
-                className="relative"
-                onMouseEnter={() => setAreasOpen(true)}
-                onMouseLeave={() => setAreasOpen(false)}
-              >
+              {/* Services dropdown */}
+              <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
+                <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-orange-600 transition inline-flex items-center gap-1">
+                  Services <ChevronDown size={14} />
+                </button>
+                {servicesOpen && (
+                  <div className="absolute top-full left-0 mt-0 pt-1 w-72 z-50">
+                    <div className="bg-white rounded-lg shadow-xl border border-slate-200 py-2">
+                      {services.map((s) => (
+                        <Link
+                          key={s.slug}
+                          to={s.path}
+                          onClick={() => setServicesOpen(false)}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                        >
+                          <div className="font-semibold">{s.shortTitle}</div>
+                          <div className="text-xs text-gray-500">{s.tagline}</div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Service Areas */}
+              <div className="relative" onMouseEnter={() => setAreasOpen(true)} onMouseLeave={() => setAreasOpen(false)}>
                 <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-orange-600 transition inline-flex items-center gap-1">
                   Service Areas <ChevronDown size={14} />
                 </button>
@@ -75,15 +95,10 @@ export default function Header() {
                 )}
               </div>
 
-              <a href="/#reviews" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-orange-600 transition">
-                Reviews
-              </a>
-              <a href="/#faq" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-orange-600 transition">
-                FAQ
-              </a>
-              <a href="/#quote" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-orange-600 transition">
-                Free Estimate
-              </a>
+              <NavLink to="/financing" className={linkCls}>Financing</NavLink>
+              <NavLink to="/blog" className={linkCls}>Blog</NavLink>
+              <NavLink to="/about" className={linkCls}>About</NavLink>
+              <NavLink to="/faq" className={linkCls}>FAQ</NavLink>
 
               <a
                 href="tel:+17543105557"
@@ -113,9 +128,23 @@ export default function Header() {
 
           {/* Mobile menu */}
           {mobileOpen && (
-            <nav className="lg:hidden pb-4 border-t border-slate-200 pt-2" aria-label="Mobile navigation">
+            <nav className="lg:hidden pb-4 border-t border-slate-200 pt-2 max-h-[80vh] overflow-y-auto" aria-label="Mobile navigation">
               <Link onClick={() => setMobileOpen(false)} to="/" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">Home</Link>
-              <a onClick={() => setMobileOpen(false)} href="/#services" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">Services</a>
+
+              <div className="py-1">
+                <div className="px-2 text-xs uppercase tracking-widest text-gray-500 font-bold mt-2 mb-1">Services</div>
+                {services.map((s) => (
+                  <Link
+                    key={s.slug}
+                    onClick={() => setMobileOpen(false)}
+                    to={s.path}
+                    className="block py-2 pl-4 text-gray-700 hover:text-orange-600 text-sm"
+                  >
+                    {s.shortTitle}
+                  </Link>
+                ))}
+              </div>
+
               <div className="py-1">
                 <div className="px-2 text-xs uppercase tracking-widest text-gray-500 font-bold mt-2 mb-1">Service Areas</div>
                 {locationList.map((l) => (
@@ -129,8 +158,11 @@ export default function Header() {
                   </Link>
                 ))}
               </div>
-              <a onClick={() => setMobileOpen(false)} href="/#reviews" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">Reviews</a>
-              <a onClick={() => setMobileOpen(false)} href="/#faq" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">FAQ</a>
+
+              <Link onClick={() => setMobileOpen(false)} to="/financing" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">Financing</Link>
+              <Link onClick={() => setMobileOpen(false)} to="/blog" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">Blog</Link>
+              <Link onClick={() => setMobileOpen(false)} to="/about" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">About</Link>
+              <Link onClick={() => setMobileOpen(false)} to="/faq" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">FAQ</Link>
               <a onClick={() => setMobileOpen(false)} href="/#quote" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">Free Estimate</a>
             </nav>
           )}

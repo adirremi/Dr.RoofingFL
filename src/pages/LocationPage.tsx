@@ -18,6 +18,7 @@ import SEO from '../components/SEO';
 import type { LocationData } from '../data/locations';
 import { locationList } from '../data/locations';
 import { services } from '../data/services';
+import { geoArticlesByCity } from '../data/geoArticles';
 
 interface Props {
   location: LocationData;
@@ -238,6 +239,17 @@ export default function LocationPage({ location }: Props) {
                 Serving ZIP codes:{' '}
                 <strong>{location.zipCodes.join(', ')}</strong>
               </p>
+              {geoArticlesByCity[location.citySlug] && (
+                <p className="leading-relaxed mt-3">
+                  Learn more in our{' '}
+                  <Link
+                    to={geoArticlesByCity[location.citySlug].path}
+                    className="text-orange-600 font-semibold hover:underline"
+                  >
+                    complete {location.city} guide →
+                  </Link>
+                </p>
+              )}
             </div>
 
             <aside className="bg-white rounded-xl shadow-lg p-6 border-t-4 border-orange-500">
@@ -322,7 +334,9 @@ export default function LocationPage({ location }: Props) {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{s.title}</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    <Link to={s.path} className="hover:text-orange-600">{s.title}</Link>
+                  </h3>
                   <p className="text-sm text-gray-600 mb-4 leading-relaxed">{s.description}</p>
                   <ul className="text-xs text-gray-700 space-y-1 mb-4">
                     {s.bullets.slice(0, 3).map((b) => (
@@ -332,9 +346,14 @@ export default function LocationPage({ location }: Props) {
                       </li>
                     ))}
                   </ul>
-                  <a href="tel:+17543105557" className="text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1">
-                    <Phone size={14} /> Get free quote →
-                  </a>
+                  <div className="flex items-center gap-4">
+                    <Link to={s.path} className="text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1">
+                      Learn More →
+                    </Link>
+                    <a href="tel:+17543105557" className="text-sm font-bold text-gray-600 hover:text-orange-600 inline-flex items-center gap-1">
+                      <Phone size={14} /> Quote
+                    </a>
+                  </div>
                 </div>
               </article>
             ))}
