@@ -65,11 +65,27 @@
     <link rel="dns-prefetch" href="https://maps.google.com" />
     <link rel="dns-prefetch" href="https://www.google.com" />
 
-    <!-- FONTS -->
+    <!-- Preload LCP hero image (webp + jpeg fallback) -->
+    <link rel="preload" as="image" href="/tile_roofing.webp" type="image/webp" fetchpriority="high" />
+
+    <!-- FONTS (font-display: swap via Google Fonts; non-blocking) -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <!-- ===== JSON-LD: Organization ===== -->
     <script type="application/ld+json">

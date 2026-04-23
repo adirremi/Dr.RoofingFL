@@ -10,6 +10,9 @@ import FinancingPage from './pages/FinancingPage';
 import FAQPage from './pages/FAQPage';
 import BlogIndexPage from './pages/BlogIndexPage';
 import NotFoundPage from './pages/NotFoundPage';
+import ServiceCityPage from './pages/ServiceCityPage';
+import ProjectsIndexPage from './pages/ProjectsIndexPage';
+import ProjectPage from './pages/ProjectPage';
 
 // City (location) pages
 import HollywoodRoofing from './pages/HollywoodRoofing';
@@ -71,6 +74,8 @@ function App() {
             <Route path="/financing" element={<FinancingPage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/blog" element={<BlogIndexPage />} />
+            <Route path="/projects" element={<ProjectsIndexPage />} />
+            <Route path="/projects/:slug" element={<ProjectPage />} />
 
             {/* Services */}
             <Route path="/tile-roof-replacement-florida" element={<TileRoofPage />} />
@@ -90,6 +95,9 @@ function App() {
             <Route path="/hallandale-beach-roofing" element={<HallandaleBeachRoofing />} />
             <Route path="/dania-beach-roofing" element={<DaniaBeachRoofing />} />
             <Route path="/aventura-roofing" element={<AventuraRoofing />} />
+
+            {/* Service × City hyper-local pages (54 combos) */}
+            <Route path="/:slug" element={<ServiceCityPage />} />
 
             {/* Geo Network / Blog Articles */}
             <Route path="/blog/hollywood-florida-guide" element={<HollywoodGuidePage />} />

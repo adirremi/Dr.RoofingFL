@@ -294,7 +294,7 @@ export default function ServicePage({ service }: Props) {
             {locationList.map((l) => (
               <Link
                 key={l.citySlug}
-                to={l.slug}
+                to={`/${service.slug}-${l.citySlug}`}
                 className="flex items-start gap-3 bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-orange-300 rounded-lg p-5 transition group"
               >
                 <div className="bg-orange-600 text-white p-2 rounded-lg flex-shrink-0">
@@ -305,7 +305,7 @@ export default function ServicePage({ service }: Props) {
                     {service.shortTitle} in {l.city}
                   </div>
                   <div className="text-xs text-gray-500 mt-1">{l.zipCodes.slice(0, 3).join(', ')}</div>
-                  <div className="text-xs font-semibold text-orange-600 mt-1">View {l.city} →</div>
+                  <div className="text-xs font-semibold text-orange-600 mt-1">{service.shortTitle} {l.city} →</div>
                 </div>
               </Link>
             ))}

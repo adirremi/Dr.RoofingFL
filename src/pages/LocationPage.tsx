@@ -335,7 +335,9 @@ export default function LocationPage({ location }: Props) {
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
-                    <Link to={s.path} className="hover:text-orange-600">{s.title}</Link>
+                    <Link to={`/${s.slug}-${location.citySlug}`} className="hover:text-orange-600">
+                      {s.shortTitle} in {location.city}
+                    </Link>
                   </h3>
                   <p className="text-sm text-gray-600 mb-4 leading-relaxed">{s.description}</p>
                   <ul className="text-xs text-gray-700 space-y-1 mb-4">
@@ -347,8 +349,8 @@ export default function LocationPage({ location }: Props) {
                     ))}
                   </ul>
                   <div className="flex items-center gap-4">
-                    <Link to={s.path} className="text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1">
-                      Learn More →
+                    <Link to={`/${s.slug}-${location.citySlug}`} className="text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1">
+                      {s.shortTitle} {location.city} →
                     </Link>
                     <a href="tel:+17543105557" className="text-sm font-bold text-gray-600 hover:text-orange-600 inline-flex items-center gap-1">
                       <Phone size={14} /> Quote
