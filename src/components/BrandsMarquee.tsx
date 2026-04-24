@@ -10,7 +10,7 @@ type Brand = {
   height?: string;
 };
 
-/* ─── Manufacturer grid (18 cards · all real logos) ─── */
+/* ─── Manufacturer grid (24 cards · all real logos) ─── */
 const MANUFACTURERS: Brand[] = [
   // Shingle systems
   { name: 'GAF',             category: 'Shingles · TPO',       src: '/brands/gaf.svg',           height: 'h-10 md:h-12' },
@@ -23,6 +23,7 @@ const MANUFACTURERS: Brand[] = [
   // Tile systems (Florida specialty)
   { name: 'Eagle Roofing',   category: 'Concrete Tile',        src: '/brands/eagle.webp',        height: 'h-10 md:h-12' },
   { name: 'Boral',           category: 'Clay · Concrete Tile', src: '/brands/boral.webp',        height: 'h-9 md:h-11'  },
+  { name: 'Westlake Royal',  category: 'Concrete Tile',        src: '/brands/westlake-royal.webp', height: 'h-9 md:h-11' },
   // Standing-seam & metal
   { name: 'Englert',         category: 'Standing-Seam Metal',  src: '/brands/englert.webp',      height: 'h-8 md:h-10'  },
   { name: 'Drexel Metals',   category: 'Standing-Seam Metal',  src: '/brands/drexel-metals.webp',height: 'h-7 md:h-9'   },
@@ -30,20 +31,26 @@ const MANUFACTURERS: Brand[] = [
   { name: 'Metal Sales',     category: 'Metal Panels',         src: '/brands/metal-sales.webp',  height: 'h-7 md:h-9'   },
   // Flat / Commercial / Waterproofing
   { name: 'Carlisle SynTec', category: 'TPO · PVC · EPDM',     src: '/brands/carlisle.svg',      height: 'h-9 md:h-10'  },
+  { name: 'Versico',         category: 'TPO · PVC',            src: '/brands/versico.webp',      height: 'h-10 md:h-12' },
   { name: 'Polyglass',       category: 'Modified Bitumen',     src: '/brands/polyglass.webp',    height: 'h-8 md:h-10'  },
+  { name: 'Soprema',         category: 'Modified · SBS',       src: '/brands/soprema.webp',      height: 'h-9 md:h-11'  },
   { name: 'Johns Manville',  category: 'Commercial · BUR',     src: '/brands/johns-manville.webp',height: 'h-10 md:h-12'},
   { name: 'Firestone',       category: 'TPO · EPDM',           src: '/brands/firestone.webp',    height: 'h-9 md:h-11'  },
+  { name: 'Mule-Hide',       category: 'TPO · Coatings',       src: '/brands/mule-hide.webp',    height: 'h-12 md:h-14' },
+  { name: 'Gaco',            category: 'Silicone Coatings',    src: '/brands/gaco.webp',         height: 'h-9 md:h-11'  },
   { name: 'Henry',           category: 'Waterproofing',        src: '/brands/henry.webp',        height: 'h-12 md:h-14' },
 ];
 
 /* ─── Financing badges (real logos + wordmarks for PACE) ─── */
 const FINANCING: Brand[] = [
-  { name: 'GreenSky',        category: 'Home Improvement',     src: '/brands/greensky.webp',     height: 'h-6 md:h-7'  },
-  { name: 'Renew Financial', category: 'PACE Financing',       src: '/brands/renew-financial.webp', height: 'h-10 md:h-12' },
-  { name: 'Home Run',        category: 'Home Improvement',     src: '/brands/home-run.webp',     height: 'h-8 md:h-10' },
+  { name: 'GreenSky',        category: 'Home Improvement',     src: '/brands/greensky.webp',         height: 'h-6 md:h-7'  },
+  { name: 'Renew Financial', category: 'PACE Financing',       src: '/brands/renew-financial.webp',  height: 'h-10 md:h-12' },
+  { name: 'Home Run',        category: 'Home Improvement',     src: '/brands/home-run.webp',         height: 'h-8 md:h-10' },
+  { name: 'Synchrony',       category: 'Home Improvement',     src: '/brands/synchrony.webp',        height: 'h-6 md:h-7'  },
   { name: 'Ygrene',          category: 'PACE Financing' },
   { name: 'PACE Program',    category: 'Property Assessed' },
   { name: 'HERO Program',    category: 'PACE Financing' },
+  { name: 'Acorn Finance',   category: 'Home Improvement' },
 ];
 
 /* ─── Scroll-in reveal hook ─── */
@@ -192,7 +199,7 @@ export default function BrandsMarquee() {
               <span className="w-6 h-px bg-slate-300" />
             </span>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto">
             {FINANCING.map((b, i) => (
               <BrandCard key={b.name} b={b} delay={i * 50} inView={finRow.inView} compact />
             ))}

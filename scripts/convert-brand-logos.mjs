@@ -25,6 +25,10 @@ const MAP = [
   ['renew-financial', 'Renew_Financial_logo-4082fa11-77b8-4373-aa40-b57801502b9c.png'],
   ['henry',           'henry-aea-logo-1f6fb20e-96c5-46bf-a42b-e99a1f8644df.png'],
   ['englert',         'englert-logo-425c506b-64eb-4045-8a68-8c063a96b6da.png'],
+  ['soprema',         'soprema-full-logo-1a68545e-745b-4953-9e3c-fa0931f0e31f.png'],
+  ['westlake-royal',  'Westlake_Royal_Roofing_logo-629bc8b0-df1f-4c5f-a05c-812c90821404.png'],
+  ['versico',         'Versico_Logo-93923d8e-75b7-4261-9642-48aa918d9d90.png'],
+  ['synchrony',       'Synchrony_Logo_RGB_Pos-72b28a53-41a9-4121-889a-87234afe58d4.png'],
 ];
 
 for (const [slug, filename] of MAP) {

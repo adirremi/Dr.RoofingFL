@@ -198,9 +198,12 @@ const sitewideSchemas = [orgSchema, websiteSchema, localBusinessSchema];
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    {/* Favicon — small optimized icon (replaces 1 MB PNG that was referenced before) */}
-    <link rel="icon" type="image/webp" href="/logo_sm.webp" />
-    <link rel="apple-touch-icon" href="/logo_sm.webp" />
+    {/* Favicon — ICO + PNG (WebP is unreliable in SERP/crawlers; /favicon.ico is the standard discovery path) */}
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     {/* LCP preload — only on pages that actually use the hero image as LCP */}
     {Astro.url.pathname === '/' && (
