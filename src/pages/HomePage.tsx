@@ -15,6 +15,7 @@ import {
   Users,
 } from 'lucide-react';
 import SEO from '../components/SEO';
+import RealWorkGallery from '../components/RealWorkGallery';
 import QuoteForm from '../components/QuoteForm';
 import { locationList } from '../data/locations';
 import { services } from '../data/services';
@@ -208,6 +209,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <RealWorkGallery />
 
       {/* ───────── WHY CHOOSE US ───────── */}
       <section className="py-20 bg-slate-900 text-white relative overflow-hidden">

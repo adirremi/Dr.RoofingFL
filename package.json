@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
     "optimize:images": "node scripts/optimize-images.mjs",
-    "sitemap": "node scripts/generate-sitemap.mjs"
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "gallery:process": "node scripts/process-gallery.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

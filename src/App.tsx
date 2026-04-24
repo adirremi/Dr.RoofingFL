@@ -13,6 +13,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import ServiceCityPage from './pages/ServiceCityPage';
 import ProjectsIndexPage from './pages/ProjectsIndexPage';
 import ProjectPage from './pages/ProjectPage';
+import GalleryPage from './pages/GalleryPage';
 
 // City (location) pages
 import HollywoodRoofing from './pages/HollywoodRoofing';
@@ -76,6 +77,7 @@ function App() {
             <Route path="/blog" element={<BlogIndexPage />} />
             <Route path="/projects" element={<ProjectsIndexPage />} />
             <Route path="/projects/:slug" element={<ProjectPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
 
             {/* Services */}
             <Route path="/tile-roof-replacement-florida" element={<TileRoofPage />} />

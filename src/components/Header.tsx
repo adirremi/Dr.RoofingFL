@@ -97,6 +97,7 @@ export default function Header() {
 
               <NavLink to="/financing" className={linkCls}>Financing</NavLink>
               <NavLink to="/projects" className={linkCls}>Projects</NavLink>
+              <NavLink to="/gallery" className={linkCls}>Gallery</NavLink>
               <NavLink to="/blog" className={linkCls}>Blog</NavLink>
               <NavLink to="/about" className={linkCls}>About</NavLink>
               <NavLink to="/faq" className={linkCls}>FAQ</NavLink>
@@ -162,6 +163,7 @@ export default function Header() {
 
               <Link onClick={() => setMobileOpen(false)} to="/financing" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">Financing</Link>
               <Link onClick={() => setMobileOpen(false)} to="/projects" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">Projects</Link>
+              <Link onClick={() => setMobileOpen(false)} to="/gallery" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">Gallery</Link>
               <Link onClick={() => setMobileOpen(false)} to="/blog" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">Blog</Link>
               <Link onClick={() => setMobileOpen(false)} to="/about" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">About</Link>
               <Link onClick={() => setMobileOpen(false)} to="/faq" className="block py-2 px-2 text-gray-800 font-medium hover:text-orange-600">FAQ</Link>

@@ -21,3 +21,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Raw gallery imports (only optimized webp/avif are kept in git)
+public/gallery/_import/

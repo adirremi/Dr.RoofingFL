@@ -89,6 +89,7 @@ urls.push(urlEntry(`${SITE}/financing`, { priority: 0.8 }));
 urls.push(urlEntry(`${SITE}/faq`, { priority: 0.7 }));
 urls.push(urlEntry(`${SITE}/blog`, { changefreq: 'weekly', priority: 0.8 }));
 urls.push(urlEntry(`${SITE}/projects`, { changefreq: 'weekly', priority: 0.9 }));
+urls.push(urlEntry(`${SITE}/gallery`, { changefreq: 'weekly', priority: 0.88 }));
 
 // Services
 for (const s of serviceSlugs) {

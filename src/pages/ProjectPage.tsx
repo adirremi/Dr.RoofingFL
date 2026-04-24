@@ -1,20 +1,38 @@
+import { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Phone, MapPin, Calendar, Ruler, Clock, DollarSign, Shield, Award, CheckCircle, ExternalLink } from 'lucide-react';
+import { Phone, MapPin, Calendar, Ruler, Clock, DollarSign, Shield, Award, CheckCircle, ExternalLink, Camera } from 'lucide-react';
 import SEO from '../components/SEO';
 import NotFoundPage from './NotFoundPage';
 import { projectsBySlug } from '../data/projects';
 import { locations } from '../data/locations';
 import { servicesBySlug } from '../data/services';
+import { galleryItems } from '../data/galleryManifest';
+import GalleryPicture from '../components/GalleryPicture';
+import GalleryLightbox from '../components/GalleryLightbox';
 
 const SITE = 'https://drroofingflorida.com';
 
 export default function ProjectPage() {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? projectsBySlug[slug] : undefined;
+
+  const [lbOpen, setLbOpen] = useState(false);
+  const [lbIndex, setLbIndex] = useState(0);
+
+  const sitePhotos = useMemo(() => {
+    if (!project) return [];
+    const paths = project.images && project.images.length > 0 ? project.images : [project.image];
+    return paths
+      .map((p) => galleryItems.find((g) => g.webp === p))
+      .filter((g): g is (typeof galleryItems)[number] => g != null);
+  }, [project]);
+
   if (!project) return <NotFoundPage />;
 
   const location = locations[project.citySlug];
   const service = servicesBySlug[project.serviceSlug];
+
+  const schemaImages = [...new Set([project.image, ...(project.images || [])])].map((src) => `${SITE}${src}`);
 
   const projectSchema = {
     '@context': 'https://schema.org',
@@ -23,7 +41,7 @@ export default function ProjectPage() {
     name: project.title,
     description: project.metaDescription,
     url: `${SITE}${project.path}`,
-    image: `${SITE}${project.image}`,
+    image: schemaImages,
     datePublished: project.completedDate,
     dateCreated: project.completedDate,
     author: { '@type': 'Organization', name: 'Dr. Roofing FL', url: SITE },
@@ -144,6 +162,58 @@ export default function ProjectPage() {
           </div>
         </div>
       </section>
+
+      {sitePhotos.length > 0 && (
+        <section className="py-12 bg-white border-b border-slate-200">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="flex items-center gap-2 text-orange-600 text-xs font-bold tracking-widest uppercase mb-3">
+              <Camera size={14} /> On-site photos
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900 font-serif mb-4">Real job-site photography</h2>
+            <p className="text-slate-600 text-sm mb-6 max-w-2xl">
+              Full-resolution images (AVIF + WebP) from this project area — tap to enlarge.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {sitePhotos.map((g, i) => (
+                <button
+                  key={g.id}
+                  type="button"
+                  onClick={() => {
+                    setLbIndex(i);
+                    setLbOpen(true);
+                  }}
+                  className="rounded-xl overflow-hidden ring-1 ring-slate-200 hover:ring-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+                >
+                  <GalleryPicture
+                    webp={g.webp}
+                    avif={g.avif}
+                    alt={g.alt}
+                    width={g.width}
+                    height={g.height}
+                    className="w-full"
+                    imgClassName="w-full h-56 object-cover"
+                    sizes="(min-width: 640px) 33vw, 100vw"
+                    priority={i === 0}
+                  />
+                </button>
+              ))}
+            </div>
+            <p className="text-center mt-6">
+              <Link to="/gallery" className="text-orange-600 font-semibold text-sm hover:underline">
+                View full company gallery →
+              </Link>
+            </p>
+            <GalleryLightbox
+              items={sitePhotos}
+              index={lbIndex}
+              isOpen={lbOpen}
+              onClose={() => setLbOpen(false)}
+              onPrev={() => setLbIndex((n) => (n <= 0 ? sitePhotos.length - 1 : n - 1))}
+              onNext={() => setLbIndex((n) => (n >= sitePhotos.length - 1 ? 0 : n + 1))}
+            />
+          </div>
+        </section>
+      )}
 
       {/* Full Story */}
       <section className="py-16 bg-white">
