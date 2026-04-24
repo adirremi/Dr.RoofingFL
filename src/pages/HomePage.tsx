@@ -26,6 +26,8 @@ import {
 import SEO from '../components/SEO';
 import RealWorkGallery from '../components/RealWorkGallery';
 import QuoteForm from '../components/QuoteForm';
+import BrandsMarquee from '../components/BrandsMarquee';
+import ShingleColors from '../components/ShingleColors';
 import { locationList } from '../data/locations';
 import { services } from '../data/services';
 import { reviews } from '../data/reviews';
@@ -212,6 +214,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═══════════════════ BRANDS / CERTIFICATIONS MARQUEE ═══════════════════ */}
+      <BrandsMarquee />
+
       {/* ═══════════════════ INTRO + 4 PILLARS ═══════════════════ */}
       <section className="py-24 md:py-32 bg-white">
         <div className="container mx-auto px-4">
@@ -313,6 +318,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ═══════════════════ SHINGLE COLOR OPTIONS ═══════════════════ */}
+      <ShingleColors />
 
       {/* ═══════════════════ YOUR JOURNEY (4 STEPS) ═══════════════════ */}
       <section className="relative py-24 md:py-32 bg-slate-900 text-white overflow-hidden">
