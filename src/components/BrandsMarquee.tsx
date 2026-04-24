@@ -1,39 +1,43 @@
-const BRANDS: { name: string; tagline: string }[] = [
-  { name: 'GAF', tagline: 'Master Elite Contractor' },
-  { name: 'Owens Corning', tagline: 'Preferred Contractor' },
-  { name: 'CertainTeed', tagline: 'SELECT ShingleMaster' },
-  { name: 'TAMKO', tagline: 'Pro Certified' },
-  { name: 'Englert', tagline: 'Metal Roofing' },
-  { name: 'Drexel Metals', tagline: 'Standing-Seam Specialist' },
-  { name: 'Westlake', tagline: 'Royal Building Products' },
-  { name: 'Carlisle SynTec', tagline: 'TPO / PVC Certified' },
-  { name: 'Ygrene Financing', tagline: 'PACE Approved' },
-  { name: 'Renovate America', tagline: 'Hero Financing Partner' },
-  { name: 'BBB A+', tagline: 'Accredited Business' },
-  { name: 'HVHZ', tagline: 'Florida Code Certified' },
+type Brand = {
+  name: string;
+  tagline: string;
+  src: string;
+  /** tailwind h-class for logo height inside the tile */
+  height?: string;
+};
+
+const BRANDS: Brand[] = [
+  { name: 'GAF',            tagline: 'Master Elite Contractor',     src: '/brands/gaf.svg',            height: 'h-10 md:h-12' },
+  { name: 'Owens Corning',  tagline: 'Preferred Contractor',        src: '/brands/owens-corning.svg',  height: 'h-10 md:h-12' },
+  { name: 'CertainTeed',    tagline: 'SELECT ShingleMaster',        src: '/brands/certainteed.svg',    height: 'h-8 md:h-10' },
+  { name: 'TAMKO',          tagline: 'Pro Certified Installer',     src: '/brands/tamko.svg',          height: 'h-10 md:h-12' },
+  { name: 'IKO',            tagline: 'Shield Pro Plus',             src: '/brands/iko.svg',            height: 'h-8 md:h-10' },
+  { name: 'Carlisle SynTec',tagline: 'TPO · PVC · EPDM Certified',  src: '/brands/carlisle.svg',       height: 'h-8 md:h-10' },
+  { name: 'BBB Accredited', tagline: 'A+ Rating',                   src: '/brands/bbb.svg',            height: 'h-10 md:h-12' },
+  { name: 'Google Reviews', tagline: '4.9 · 312+ Reviews',          src: '/brands/google-rating.svg',  height: 'h-14 md:h-16' },
+  { name: 'Florida Licensed', tagline: 'CCC#1331964 · Insured',     src: '/brands/florida-licensed.svg', height: 'h-14 md:h-16' },
+  { name: 'HVHZ Certified', tagline: 'Miami-Dade NOA · FBC 2023',   src: '/brands/hvhz-approved.svg',  height: 'h-14 md:h-16' },
 ];
 
-const Row = ({ items }: { items: typeof BRANDS }) => (
+const Tile = ({ b }: { b: Brand }) => (
+  <div
+    className="group flex items-center justify-center bg-white border border-slate-200 rounded-sm px-8 py-5 min-w-[220px] md:min-w-[240px] h-[110px] md:h-[120px] shrink-0 shadow-sm hover:shadow-md hover:border-orange-400 transition-all"
+    title={`${b.name} — ${b.tagline}`}
+  >
+    <img
+      src={b.src}
+      alt={`${b.name} — ${b.tagline}`}
+      loading="lazy"
+      decoding="async"
+      className={`${b.height ?? 'h-10'} w-auto max-w-[180px] object-contain group-hover:scale-105 transition-transform duration-300`}
+    />
+  </div>
+);
+
+const Row = ({ items }: { items: Brand[] }) => (
   <div className="flex items-center gap-4 md:gap-6 pr-4 md:pr-6 shrink-0">
-    {items.map((b) => (
-      <div
-        key={b.name}
-        className="flex items-center gap-3 bg-white border border-slate-200 rounded-sm px-5 py-4 min-w-[220px] shadow-sm hover:shadow-md hover:border-orange-400 transition-shadow"
-      >
-        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-600/10 text-orange-600 flex-shrink-0">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M12 2l2.39 4.84 5.35.78-3.87 3.77.91 5.31L12 14.25l-4.78 2.45.91-5.31L4.26 7.62l5.35-.78L12 2z" />
-          </svg>
-        </div>
-        <div className="min-w-0">
-          <div className="font-serif text-base md:text-lg text-slate-900 leading-tight truncate">
-            {b.name}
-          </div>
-          <div className="text-[10px] md:text-[11px] uppercase tracking-[0.15em] text-gray-500 truncate">
-            {b.tagline}
-          </div>
-        </div>
-      </div>
+    {items.map((b, i) => (
+      <Tile key={`${b.name}-${i}`} b={b} />
     ))}
   </div>
 );
@@ -41,7 +45,7 @@ const Row = ({ items }: { items: typeof BRANDS }) => (
 export default function BrandsMarquee() {
   return (
     <section
-      className="relative py-12 md:py-14 bg-gradient-to-b from-slate-50 to-white border-y border-slate-200 overflow-hidden"
+      className="relative py-14 md:py-16 bg-gradient-to-b from-slate-50 to-white border-y border-slate-200 overflow-hidden"
       aria-label="Authorized manufacturers, financing partners and certifications"
     >
       <div className="container mx-auto px-4 mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-3 text-center md:text-left">
@@ -50,29 +54,23 @@ export default function BrandsMarquee() {
             Trusted Partners · Certified Installer
           </span>
           <h2 className="font-serif text-2xl md:text-3xl text-slate-900 leading-tight">
-            Factory-Authorized &amp; Financing Ready
+            Factory-Authorized &amp; Florida Certified
           </h2>
         </div>
         <p className="text-sm text-gray-500 max-w-md md:text-right">
-          We're certified installers for every major roofing manufacturer &mdash;
-          and partnered with Florida's top financing programs.
+          Certified installer for every major manufacturer &mdash; licensed,
+          insured and HVHZ approved to install in South Florida.
         </p>
       </div>
 
-      {/* Fade masks on both sides */}
-      <div className="relative">
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-slate-50 to-transparent z-10" aria-hidden="true" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-white to-transparent z-10" aria-hidden="true" />
+      <div className="relative group">
+        {/* Fade masks on both sides */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-20 md:w-32 bg-gradient-to-r from-white to-transparent z-10" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 md:w-32 bg-gradient-to-l from-white to-transparent z-10" aria-hidden="true" />
 
         <div
-          className="flex w-max animate-marquee"
+          className="flex w-max animate-marquee group-hover:[animation-play-state:paused]"
           style={{ willChange: 'transform' }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.animationPlayState = 'paused';
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.animationPlayState = 'running';
-          }}
         >
           <Row items={BRANDS} />
           <Row items={BRANDS} />
