@@ -43,11 +43,13 @@ export default function Header() {
       <header className="bg-white sticky top-0 z-40 shadow-md border-b-4 border-orange-500">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-3 gap-4">
-            <Link to="/" className="flex items-center" aria-label="Dr. Roofing FL Home">
+            <Link to="/" className="flex items-center -my-2" aria-label="Dr. Roofing FL Home">
               <img
                 src="/logo_without_backround.png"
                 alt="Dr. Roofing FL — Hollywood, Florida roofing contractor"
-                className="h-16 md:h-20 w-auto"
+                className="h-20 md:h-28 lg:h-32 w-auto"
+                width="320"
+                height="320"
               />
             </Link>
 
