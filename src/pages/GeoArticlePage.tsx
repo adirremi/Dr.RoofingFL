@@ -33,7 +33,7 @@ export default function GeoArticlePage({ article }: Props) {
       name: 'Dr. Roofing FL',
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE}/logo_without_backround.png`,
+        url: `${SITE}/logo_512.png`,
       },
     },
     datePublished: article.publishedDate,
@@ -141,7 +141,7 @@ export default function GeoArticlePage({ article }: Props) {
           {/* Author/Company CTA box */}
           <div className="mt-10 bg-gradient-to-br from-orange-50 to-yellow-50 border-l-4 border-orange-500 rounded-xl p-8">
             <div className="flex items-start gap-4">
-              <img src="/logo_without_backround.png" alt="Dr. Roofing FL" className="w-16 h-16 bg-white rounded-lg p-2 flex-shrink-0" />
+              <img src="/logo_sm.webp" alt="Dr. Roofing FL" className="w-16 h-16 bg-white rounded-lg p-2 flex-shrink-0" width="64" height="64" loading="lazy" decoding="async" />
               <div>
                 <div className="text-xs uppercase tracking-widest text-orange-600 font-bold mb-1">Published by</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. Roofing FL — Local {article.city} Roofing Experts</h3>

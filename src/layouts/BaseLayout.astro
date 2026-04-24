@@ -1,5 +1,7 @@
 ---
 import '../index.css';
+import '@fontsource-variable/inter/wght.css';
+import '@fontsource/dm-serif-display/latin-400.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import StickyMobileCTA from '../components/StickyMobileCTA';
@@ -62,11 +64,11 @@ const orgSchema = {
   url: `${SITE}/`,
   logo: {
     '@type': 'ImageObject',
-    url: `${SITE}/logo_without_backround.png`,
+    url: `${SITE}/logo_512.png`,
     width: 600,
     height: 600,
   },
-  image: `${SITE}/logo_without_backround.png`,
+  image: `${SITE}/logo_512.png`,
   telephone: '+1-754-310-5557',
   email: 'info@drroofingflorida.com',
   address: {
@@ -106,13 +108,13 @@ const localBusinessSchema = {
   alternateName: 'Dr Roofing FL',
   url: `${SITE}/`,
   image: [
-    `${SITE}/logo_without_backround.png`,
-    `${SITE}/tile_roofing.jpeg`,
-    `${SITE}/metal_roofing.jpg`,
-    `${SITE}/shingle_roofing.jpeg`,
-    `${SITE}/flat_roofing.jpeg`,
+    `${SITE}/logo_512.png`,
+    `${SITE}/tile_roofing.webp`,
+    `${SITE}/metal_roofing.webp`,
+    `${SITE}/shingle_roofing.webp`,
+    `${SITE}/flat_roofing.webp`,
   ],
-  logo: `${SITE}/logo_without_backround.png`,
+  logo: `${SITE}/logo_512.png`,
   telephone: '+1-754-310-5557',
   email: 'info@drroofingflorida.com',
   priceRange: '$$',
@@ -203,35 +205,17 @@ const sitewideSchemas = [orgSchema, websiteSchema, localBusinessSchema];
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    {/* Favicon */}
-    <link rel="icon" type="image/png" href="/logo_without_backround.png" />
-    <link rel="apple-touch-icon" href="/logo_without_backround.png" />
+    {/* Favicon — small optimized icon (replaces 1 MB PNG that was referenced before) */}
+    <link rel="icon" type="image/webp" href="/logo_sm.webp" />
+    <link rel="apple-touch-icon" href="/logo_sm.webp" />
 
-    {/* Preconnects + LCP preload */}
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {/* LCP preload — only on pages that actually use the hero image as LCP */}
+    {Astro.url.pathname === '/' && (
+      <link rel="preload" as="image" href="/hero_lcp.webp" type="image/webp" fetchpriority="high" />
+    )}
     <link rel="dns-prefetch" href="https://maps.google.com" />
-    <link rel="dns-prefetch" href="https://www.google.com" />
-    <link rel="preload" as="image" href="/tile_roofing.webp" type="image/webp" fetchpriority="high" />
 
-    {/* Fonts (non-blocking, font-display: swap) */}
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
+    {/* Fonts are self-hosted via @fontsource — no external CDN, no preconnect needed */}
 
     {/* Sitewide JSON-LD */}
     {sitewideSchemas.map((s) => (
@@ -245,15 +229,16 @@ const sitewideSchemas = [orgSchema, websiteSchema, localBusinessSchema];
 
     <style is:inline>
       html { scroll-behavior: smooth; }
-      body { font-family: 'Inter', system-ui, -apple-system, sans-serif; margin: 0; background: #ffffff; color: #0f172a; }
+      body { font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif; margin: 0; background: #ffffff; color: #0f172a; }
+      img { max-width: 100%; height: auto; }
     </style>
   </head>
   <body class="min-h-screen bg-white flex flex-col">
-    <Header client:load />
+    <Header client:idle />
     <main class="flex-grow pb-14 md:pb-0">
       <slot />
     </main>
     <Footer />
-    <StickyMobileCTA />
+    <StickyMobileCTA client:idle />
   </body>
 </html>

@@ -40,7 +40,7 @@ export default function LocationPage({ location }: Props) {
     url: `${SITE}${location.slug}`,
     telephone: '+1-754-310-5557',
     image: `${SITE}${location.heroImage}`,
-    logo: `${SITE}/logo_without_backround.png`,
+    logo: `${SITE}/logo_512.png`,
     priceRange: '$$',
     description: location.metaDescription,
     address: {

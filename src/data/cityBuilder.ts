@@ -90,12 +90,12 @@ const baseBrands = [
 ];
 
 const SERVICES_FOR_PROJECTS = [
-  { name: 'Tile Roof', image: '/tile_roofing.jpeg' },
-  { name: 'Shingle Roof', image: '/shingle_roofing.jpeg' },
-  { name: 'Metal Roof', image: '/metal_roofing.jpg' },
-  { name: 'Flat / TPO', image: '/flat_roofing.jpeg' },
-  { name: 'Roof Repair', image: '/tile_roofing.jpeg' },
-  { name: 'Storm Damage', image: '/shingle_roofing.jpeg' },
+  { name: 'Tile Roof', image: '/tile_roofing.webp' },
+  { name: 'Shingle Roof', image: '/shingle_roofing.webp' },
+  { name: 'Metal Roof', image: '/metal_roofing.webp' },
+  { name: 'Flat / TPO', image: '/flat_roofing.webp' },
+  { name: 'Roof Repair', image: '/tile_roofing.webp' },
+  { name: 'Storm Damage', image: '/shingle_roofing.webp' },
 ];
 
 const SAMPLE_NAMES = [
@@ -114,11 +114,11 @@ const SAMPLE_NAMES = [
 function defaultHeroForCounty(county: CountyName): string {
   switch (county) {
     case 'Miami-Dade County':
-      return '/tile_roofing.jpeg';
+      return '/tile_roofing.webp';
     case 'Broward County':
-      return '/shingle_roofing.jpeg';
+      return '/shingle_roofing.webp';
     case 'Palm Beach County':
-      return '/metal_roofing.jpg';
+      return '/metal_roofing.webp';
   }
 }
 

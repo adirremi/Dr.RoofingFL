@@ -15,7 +15,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <img src="/logo_without_backround.png" alt="Dr. Roofing FL" className="h-28 w-auto mb-4 bg-white p-3 rounded-lg" />
+            <img
+              src="/logo_without_backround.webp"
+              alt="Dr. Roofing FL"
+              className="h-28 w-auto mb-4 bg-white p-3 rounded-lg"
+              width="320"
+              height="320"
+              loading="lazy"
+              decoding="async"
+            />
             <p className="text-sm leading-relaxed mb-4">
               South Florida's trusted roofing contractor — serving <strong className="text-white">{totalCities}+ cities</strong> across Broward, Miami-Dade &amp; Palm Beach Counties. HVHZ-certified, factory-authorized, licensed and insured since 2011.
             </p>

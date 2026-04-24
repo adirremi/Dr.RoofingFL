@@ -68,7 +68,7 @@ export default function HomePage() {
         description="South Florida's top-rated roofing contractor. Free inspections, $0-down financing, licensed & insured. Hollywood, Miami, Fort Lauderdale, Pembroke Pines, Miramar, Davie, Hallandale Beach, Dania Beach & Aventura. Call (754) 310-5557."
         keywords="roofing contractor Hollywood FL, roofer Miami FL, roof repair Broward, roof replacement Miami-Dade, tile roof Florida, metal roof Hollywood, free roof inspection South Florida, hurricane roof Florida"
         canonical="/"
-        image={`${SITE}/tile_roofing.jpeg`}
+        image={`${SITE}/tile_roofing.webp`}
         schema={[homeFaqSchema, breadcrumbSchema]}
       />
 
@@ -76,7 +76,7 @@ export default function HomePage() {
       <section
         className="relative text-white py-24 md:py-36"
         style={{
-          backgroundImage: `linear-gradient(135deg, rgba(17,24,39,0.88) 0%, rgba(234,88,12,0.55) 100%), url(/tile_roofing.jpeg)`,
+          backgroundImage: `linear-gradient(135deg, rgba(17,24,39,0.88) 0%, rgba(234,88,12,0.55) 100%), url(/hero_lcp.webp)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -387,7 +387,7 @@ export default function HomePage() {
       <section
         className="py-20 text-white text-center"
         style={{
-          backgroundImage: `linear-gradient(135deg, rgba(15,23,42,0.92) 0%, rgba(234,88,12,0.82) 100%), url(/metal_roofing.jpg)`,
+          backgroundImage: `linear-gradient(135deg, rgba(15,23,42,0.92) 0%, rgba(234,88,12,0.82) 100%), url(/metal_roofing.webp)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

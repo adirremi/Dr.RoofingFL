@@ -44,7 +44,7 @@ export default function AboutPage() {
       />
 
       <section className="relative py-20 md:py-28 bg-slate-900 text-white">
-        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'url(/tile_roofing.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'url(/tile_roofing.webp)', backgroundSize: 'cover', backgroundPosition: 'center' }} />
         <div className="container mx-auto px-4 relative max-w-5xl">
           <div className="inline-block bg-orange-600 text-white px-4 py-2 rounded-full text-xs font-bold mb-6 uppercase tracking-widest">About Us</div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">South Florida's Most Trusted Roofing Contractor</h1>

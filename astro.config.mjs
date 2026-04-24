@@ -13,8 +13,10 @@ export default defineConfig({
   trailingSlash: 'never',
   build: {
     format: 'file',
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'always',
+    assets: '_astro',
   },
+  compressHTML: true,
   integrations: [
     react(),
     tailwind({ applyBaseStyles: false }),
@@ -38,6 +40,20 @@ export default defineConfig({
     },
     ssr: {
       noExternal: ['lucide-react'],
+    },
+    build: {
+      cssCodeSplit: true,
+      // Bundle all lucide icons into a single chunk to avoid dozens of
+      // 1 KB HTTP requests (the Lighthouse waterfall was dominated by these).
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules/lucide-react')) return 'lucide';
+            if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/'))
+              return 'react-vendor';
+          },
+        },
+      },
     },
   },
 });

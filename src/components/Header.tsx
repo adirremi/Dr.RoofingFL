@@ -45,11 +45,15 @@ export default function Header() {
           <div className="flex items-center justify-between py-3 gap-4">
             <Link to="/" className="flex items-center -my-2" aria-label="Dr. Roofing FL Home">
               <img
-                src="/logo_without_backround.png"
+                src="/logo_sm.webp"
+                srcSet="/logo_sm.webp 256w, /logo_without_backround.webp 512w"
+                sizes="(max-width: 768px) 80px, (max-width: 1024px) 112px, 128px"
                 alt="Dr. Roofing FL — Hollywood, Florida roofing contractor"
                 className="h-20 md:h-28 lg:h-32 w-auto"
                 width="320"
                 height="320"
+                fetchPriority="high"
+                decoding="async"
               />
             </Link>
 
