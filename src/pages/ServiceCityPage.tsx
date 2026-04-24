@@ -441,7 +441,7 @@ export default function ServiceCityPage({ combo: comboProp }: Props = {}) {
             Ready for Your New {service.shortTitle} Roof in {location.city}?
           </h2>
           <p className="text-lg text-gray-100 mb-8">
-            Free inspection · written quote · $0-down financing · HVHZ-certified installation.
+            Free inspection · written quote · financing (if approved) · code-driven installation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+17543105557" className="inline-flex items-center justify-center gap-2 bg-white text-orange-700 hover:bg-orange-50 px-8 py-4 rounded-lg font-bold text-lg shadow-xl transition">

@@ -102,7 +102,7 @@ export default function BlogIndexPage() {
       <section className="py-16 bg-orange-600 text-white text-center">
         <div className="container mx-auto px-4 max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">Need a Roofer in South Florida?</h2>
-          <p className="mb-6 text-orange-50">Free inspection. Written quote. HVHZ-certified install. $0-down financing.</p>
+          <p className="mb-6 text-orange-50">Free inspection. Written quote. Installs to applicable code. Ask about third-party financing.</p>
           <a href="tel:+17543105557" className="inline-flex items-center gap-2 bg-white text-orange-700 hover:bg-orange-50 px-8 py-4 rounded-lg font-bold text-lg shadow-xl transition">
             <Phone size={20} /> (754) 310-5557
           </a>

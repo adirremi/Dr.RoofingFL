@@ -61,7 +61,7 @@ export const services: Service[] = [
     heroH2:
       'Concrete & Clay Tile Roofing Contractor Near You — 50+ Year Life, HVHZ Certified',
     intro:
-      "Tile is the gold standard for Florida roofing — elegant, hurricane-rated, and engineered to last 50+ years in South Florida's brutal climate. Dr. Roofing FL is a factory-certified installer for Eagle, Boral, and US Tile concrete and clay systems. Every tile roof we install meets or exceeds the 2023 Florida Building Code HVHZ requirements with peel-and-stick secondary water barrier, stainless hurricane fasteners, and Miami-Dade NOA-approved components.",
+      "Tile is a long-lasting choice for many Florida homes — with proper system design and install. We install concrete and clay tile from Eagle, Boral, and US Tile where specified. Work is done to applicable Florida Building Code and HVHZ requirements, including underlayment, fasteners, and product approvals required for the job.",
     longContent: [
       {
         h3: 'Why Choose a Tile Roof in South Florida?',
@@ -71,7 +71,7 @@ export const services: Service[] = [
       {
         h3: 'Concrete Tile vs. Clay Tile — Which Is Right for You?',
         body:
-          'Concrete tile (Eagle, Boral, Entegra) is the workhorse of Florida roofing — more affordable, extremely durable, and available in every color and profile from flat to Spanish S-tile. Clay tile (US Tile, Ludowici) is the premium choice — natural terra-cotta color that never fades, slightly longer life, and the classic Mediterranean look. Both are HVHZ-certified and both carry lifetime warranties.',
+          'Concrete tile (Eagle, Boral, Entegra) is the workhorse of Florida roofing — more affordable, extremely durable, and available in every color and profile from flat to Spanish S-tile. Clay tile (US Tile, Ludowici) is the premium choice — natural terra-cotta color that never fades, slightly longer life, and the classic Mediterranean look. Both are HVHZ-certified; manufacturer terms vary by product, and we provide up to a 10-year workmanship warranty in qualifying full-replacement contracts.',
       },
       {
         h3: 'HVHZ-Compliant Installation Process',
@@ -81,14 +81,14 @@ export const services: Service[] = [
       {
         h3: 'Tile Roof Maintenance and Longevity',
         body:
-          "A tile roof isn't maintenance-free, but it's the closest thing. Every 3–5 years we recommend a professional inspection for cracked tiles, ridge cap deterioration, and flashing check. Minor tile replacements cost $200–$500 and keep your roof performing for its full 50+ year life. We offer free inspection for every tile roof we install for the first 5 years.",
+          "A tile roof still needs care. Every few years we recommend a professional inspection for cracked tiles, ridge cap deterioration, and flashing. We handle minor tile work as needed and offer follow-up support on installs per our job agreement.",
       },
     ],
     benefits: [
       { icon: 'shield', title: 'Hurricane-Rated', text: '150+ mph wind rating, Miami-Dade NOA approved, HVHZ compliant.' },
       { icon: 'clock', title: '50+ Year Lifespan', text: 'The last roof you\'ll ever buy. Transferable 50-year warranty.' },
       { icon: 'dollar', title: 'Energy Savings', text: 'Reflects solar heat; typical homeowners save 15–25% on cooling.' },
-      { icon: 'hammer', title: 'Factory-Certified', text: 'Eagle, Boral, US Tile, and Entegra certified installer.' },
+      { icon: 'hammer', title: 'Brand experience', text: 'We work with common tile systems from Eagle, Boral, US Tile, and Entegra, per your scope.' },
       { icon: 'wind', title: 'Fire Resistant', text: 'Class A fire rating — the highest available.' },
       { icon: 'star', title: 'Boosts Home Value', text: '8–12% resale value increase vs. shingle roofs.' },
     ],
@@ -101,7 +101,7 @@ export const services: Service[] = [
       { title: '6. Tile Install', text: 'Stainless fasteners, NOA-approved attachment, all flashings replaced.' },
       { title: '7. Inspection + Warranty', text: 'City inspection passed, manufacturer warranty registered, workmanship warranty issued.' },
     ],
-    priceRange: '$18,000 – $38,000',
+    priceRange: 'Written estimate only',
     lifespan: '50+ years',
     bestFor: ['Long-term homeowners', 'Coastal properties', 'Historic homes', 'High-value homes'],
     brandsOffered: ['Eagle Roofing Tile', 'Boral Roofing', 'US Tile', 'Entegra Roofing Tile', 'Ludowici Clay'],
@@ -114,7 +114,7 @@ export const services: Service[] = [
       {
         question: 'How much does a tile roof cost in South Florida?',
         answer:
-          'Concrete tile runs $18,000–$30,000 for a typical 20-square home. Clay tile runs $24,000–$38,000. Complex pitches, decorative features, and tear-off of 2+ existing layers add 10–20%. We provide a free itemized written quote.',
+          'Project cost depends on size, product, deck condition, and code work. We do not quote roofing projects without an inspection. After the roof is measured and specified, you receive a line-item written estimate.',
       },
       {
         question: 'Is a tile roof hurricane-proof?',
@@ -145,25 +145,25 @@ export const services: Service[] = [
     shortTitle: 'Shingle Roof',
     tagline: 'Cost-effective Class-4 impact-rated shingles for Florida homes.',
     description:
-      "We install premium architectural shingles (GAF Timberline HDZ, Owens Corning Duration, CertainTeed Landmark) rated for 130+ mph winds. Algae-resistant granules fight Florida's humidity, and lifetime transferable warranties protect your investment.",
+      "We install premium architectural shingles (GAF Timberline HDZ, Owens Corning Duration, CertainTeed Landmark) rated for 130+ mph winds. Algae-resistant granules fight Florida's humidity; manufacturer system coverage follows each product, and we offer up to a 10-year workmanship warranty on qualifying work per your written contract.",
     image: '/shingle_roofing.webp',
     bullets: [
-      'Authorized installer for GAF, Owens Corning & CertainTeed',
-      '130 mph wind warranty available',
+      'GAF, Owens Corning, CertainTeed, and more — per estimate',
+      'Engineered to meet applicable wind and code',
       'StainGuard algae-resistant granules',
       'Ice & water shield, starter strip, ridge vent',
-      'Lifetime transferable warranty',
+      '10-year workmanship where stated in your contract; manufacturer per product',
     ],
     metaTitle: 'Shingle Roof Installation in South Florida | Dr. Roofing FL',
     metaDescription:
-      'Architectural shingle roofing in Hollywood, Miami, Broward & Miami-Dade. GAF & Owens Corning certified, 130 mph wind rating, lifetime warranty. (754) 310-5557.',
+      'Architectural shingle roofing in Hollywood, Miami, Broward & Miami-Dade. GAF, Owens Corning, CertainTeed, and more — per project. (754) 310-5557.',
     metaKeywords:
       'shingle roof installation Florida, architectural shingles Miami, GAF Timberline Hollywood, Owens Corning Duration Broward, shingle roofer South Florida',
     heroH1: 'Architectural Shingle Roof Installation in South Florida',
     heroH2:
-      'GAF & Owens Corning Certified Shingle Roofing Contractor Near You',
+      'Architectural shingle roofer serving South Florida',
     intro:
-      "Architectural shingles are the most popular roofing choice in Florida — and for good reason. Modern Class-4 impact-rated shingles are engineered for 130+ mph winds, shed Florida's heavy rain effortlessly, and carry lifetime transferable warranties. Dr. Roofing FL is an authorized installer for GAF, Owens Corning, and CertainTeed shingle systems.",
+      "Architectural shingles are a common choice in Florida. Modern systems can be specified for high wind, algae resistance, and long manufacturer coverage when the full system is installed to spec. We install GAF, Owens Corning, CertainTeed, and other shingle systems according to the manufacturer’s details and your code set.",
     longContent: [
       {
         h3: 'Why Architectural Shingles Work So Well in Florida',
@@ -178,7 +178,7 @@ export const services: Service[] = [
       {
         h3: 'Class-4 Impact Rating = Insurance Discount',
         body:
-          'Class-4 impact-rated shingles (GAF UHDZ, Owens Corning Duration StormGuard) qualify most Florida homeowners for a 5–20% discount on the wind-and-hail portion of their insurance policy. The upgrade costs $300–$800 but typically pays for itself in 3–4 years through insurance savings alone.',
+          'Class-4 impact-rated shingles (where specified) are sometimes used where homeowners want added hail resistance. Insurance credits and policy rules vary; ask your agent. We can quote impact-rated options as part of your project.',
       },
       {
         h3: 'Algae Resistance is Critical in South Florida',
@@ -187,12 +187,12 @@ export const services: Service[] = [
       },
     ],
     benefits: [
-      { icon: 'dollar', title: 'Best Value', text: 'Lowest cost per year of service — starting under $10k for typical homes.' },
+      { icon: 'dollar', title: 'Value-focused', text: 'A practical balance of cost and long-term performance for many homes. Pricing is quoted per project.' },
       { icon: 'shield', title: 'Class-4 Impact', text: 'Impact-rated shingles available; qualify for insurance discounts.' },
       { icon: 'wind', title: '130 mph Wind', text: 'Rated for 130 mph base-wind; upgradeable to 150 mph.' },
       { icon: 'star', title: 'Algae Resistant', text: 'StainGuard granules keep your roof clean for decades.' },
-      { icon: 'clock', title: '25–30 Year Life', text: 'Lifetime transferable manufacturer warranty.' },
-      { icon: 'hammer', title: 'Authorized Installer', text: 'Factory-authorized for GAF, Owens Corning, and CertainTeed shingle systems.' },
+      { icon: 'clock', title: '25–30 Year Life', text: 'Manufacturer terms per product; up to 10-year workmanship (per your written contract).' },
+      { icon: 'hammer', title: 'Major brands', text: 'We install GAF, Owens Corning, CertainTeed, and other systems per manufacturer instructions and your permit set.' },
     ],
     process: [
       { title: '1. Free Inspection', text: 'Complete roof inspection with photo documentation.' },
@@ -203,7 +203,7 @@ export const services: Service[] = [
       { title: '6. Shingle Install', text: '6-nail pattern, starter strip, ridge vent, all flashings replaced.' },
       { title: '7. Final Inspection', text: 'City inspection + manufacturer + workmanship warranty issued.' },
     ],
-    priceRange: '$9,500 – $17,000',
+    priceRange: 'Written estimate only',
     lifespan: '25–30 years',
     bestFor: ['Budget-conscious homeowners', 'HOA-restricted neighborhoods', 'Quick-turnaround projects'],
     brandsOffered: ['GAF Timberline HDZ', 'GAF UHDZ', 'Owens Corning Duration', 'CertainTeed Landmark', 'Atlas Pinnacle Pristine'],
@@ -216,7 +216,7 @@ export const services: Service[] = [
       {
         question: 'How much does a shingle roof cost in South Florida?',
         answer:
-          'A typical 20-square shingle re-roof in South Florida runs $9,500–$14,000. Impact-rated shingles add $300–$800. Larger or more complex roofs $14,000–$17,000. Free itemized quotes always.',
+          'We do not publish shingle project pricing online. After inspection you receive a line-item estimate. Options like impact resistance may change scope and cost.',
       },
       {
         question: 'How fast can you install a shingle roof?',
@@ -231,12 +231,12 @@ export const services: Service[] = [
       {
         question: 'Do you offer financing on shingle roofs?',
         answer:
-          'Yes. $0 down, no minimum credit, up to 16 months no payments. Monthly payments from $99.',
+          'We can discuss lender options on approved credit. Available programs change; details are provided when you have a project scope and estimate in hand.',
       },
       {
         question: 'Do I need to upgrade to impact-rated shingles?',
         answer:
-          'Not required, but strongly recommended in Florida. The 5–20% wind-and-hail insurance discount usually pays back the upgrade in 3–4 years.',
+          'Not always required, but it may be worth comparing if hail resistance matters for your home. Your agent can explain how impact-rated options interact with your policy.',
       },
     ],
   },
@@ -275,7 +275,7 @@ export const services: Service[] = [
       {
         h3: 'Standing Seam vs. Exposed Fastener',
         body:
-          'Standing-seam metal is the premium system — concealed fasteners, watertight interlocking seams, clean architectural look. Typical cost $13–$18/sq ft installed. Exposed-fastener panels (5V crimp, R-panel) are the budget metal option — screws penetrate the panel face, visible fastener heads, $8–$12/sq ft installed. Both work in Florida; standing seam is strongly preferred for residential.',
+          'Standing-seam metal is often chosen for a clean, concealed-fastener look. Exposed-fastener systems are another option with different cost and detail. Pricing depends on material, profile, and site conditions; we quote after an inspection — we do not publish per-square-foot pricing on the site.',
       },
       {
         h3: 'Aluminum vs. Galvalume — Material Selection',
@@ -285,7 +285,7 @@ export const services: Service[] = [
       {
         h3: 'Cool Roof Energy Savings',
         body:
-          "A Kynar 500-finished metal roof reflects 40–70% of solar heat versus asphalt shingles which absorb 85%+. ENERGY STAR certified metal roofs can cut cooling costs $500–$1,200/year in a typical Florida home — meaning the roof can pay for itself over 15–20 years in energy savings alone.",
+          'Light-colored metal with reflective finishes can help reduce summer heat load versus darker absorptive surfaces, especially when paired with ventilation and insulation. Actual savings vary by home; we can discuss product choices during your estimate.',
       },
     ],
     benefits: [
@@ -305,7 +305,7 @@ export const services: Service[] = [
       { title: '6. Custom-Cut Panels', text: 'Panels cut on-site to exact length, no lap seams.' },
       { title: '7. Final Inspection', text: 'Seam pressure-test, all flashings sealed, warranty issued.' },
     ],
-    priceRange: '$22,000 – $48,000',
+    priceRange: 'Written estimate only',
     lifespan: '50–70 years',
     bestFor: ['Coastal homes', 'Premium/custom homes', 'Energy-conscious homeowners', 'Hurricane-country'],
     brandsOffered: ['Drexel Metals', 'McElroy Metal', 'Englert', 'Petersen Aluminum', 'ATAS International'],
@@ -318,7 +318,7 @@ export const services: Service[] = [
       {
         question: 'How much does a metal roof cost in South Florida?',
         answer:
-          'Standing-seam aluminum: $24,000–$42,000 for a typical home. Galvalume: $22,000–$38,000. Exposed-fastener 5V crimp: $18,000–$28,000. We provide free itemized quotes.',
+          'We do not list metal project pricing on the site. Your quote depends on material, access, and scope. We provide a written, itemized estimate after inspection.',
       },
       {
         question: 'Is a metal roof noisy in the rain?',
@@ -394,7 +394,7 @@ export const services: Service[] = [
       { icon: 'shield', title: '15-25 Yr Warranty', text: 'No-Dollar-Limit manufacturer warranties.' },
       { icon: 'dollar', title: 'Cool Roof', text: 'White TPO reflects heat; R-20+ insulation cuts A/C cost.' },
       { icon: 'clock', title: 'Tapered Drainage', text: 'Engineered slope ends ponding water forever.' },
-      { icon: 'hammer', title: 'GAF & Carlisle Certified', text: 'Authorized installer for top commercial brands.' },
+      { icon: 'hammer', title: 'TPO & commercial brands', text: 'We work with GAF, Carlisle, Johns Manville, Firestone, and other systems as specified for your job.' },
       { icon: 'wind', title: 'Wind-Rated', text: 'Mechanically-fastened or fully-adhered for HVHZ.' },
       { icon: 'star', title: 'Commercial Expertise', text: 'Condos, warehouses, retail — up to 500,000 sq ft.' },
     ],
@@ -407,7 +407,7 @@ export const services: Service[] = [
       { title: '6. Membrane Install', text: 'TPO/PVC heat-welded or mod-bit self-adhered.' },
       { title: '7. Final Inspection', text: 'Seam probe test, drain flow test, NDL warranty issued.' },
     ],
-    priceRange: '$6 – $14 / sq ft',
+    priceRange: 'Quoted per project',
     lifespan: '20–25 years',
     bestFor: ['Commercial buildings', 'Condos & HOAs', 'Residential flat sections', 'Warehouses'],
     brandsOffered: ['GAF EverGuard TPO', 'Carlisle Sure-Weld', 'Johns Manville', 'Firestone UltraPly', 'CertainTeed Flintlastic'],
@@ -430,12 +430,12 @@ export const services: Service[] = [
       {
         question: 'How much does a commercial TPO roof cost?',
         answer:
-          '$6–$10/sq ft for standard 60-mil TPO with basic insulation. $10–$14/sq ft for premium 80-mil TPO with full tapered insulation package.',
+          'Flat and low-slope pricing depends on system type, thickness, insulation, and tear-off. We do not publish commercial or residential flat-roof price lists online. Ask for a site-specific quote after inspection.',
       },
       {
         question: 'Do you provide maintenance contracts?',
         answer:
-          'Yes. Annual inspection, photo report, minor repairs, and full documentation. Pricing based on sq ft — typically $0.05–$0.15/sq ft/year.',
+          'Maintenance agreements can be quoted per property after we understand size, access, and scope. We do not publish per-square-foot maintenance rates online.',
       },
       {
         question: 'What brand TPO do you install?',
@@ -508,7 +508,7 @@ export const services: Service[] = [
       { title: '6. Leak Test', text: 'Water test verifies repair performed; photo documentation.' },
       { title: '7. Warranty', text: '2-year workmanship warranty on every repair.' },
     ],
-    priceRange: '$250 – $1,800 typical',
+    priceRange: 'Quoted per repair',
     lifespan: 'Varies by repair',
     bestFor: ['Active leaks', 'Post-storm damage', 'Pre-sale home inspections', 'Insurance claims'],
     brandsOffered: ['All major brands repaired', 'GAF', 'Owens Corning', 'CertainTeed', 'Eagle Tile', 'Boral Tile'],
@@ -516,7 +516,7 @@ export const services: Service[] = [
       {
         question: 'How much does a roof repair cost?',
         answer:
-          'Small repairs (pipe boot, a few shingles, minor flashing): $250–$500. Medium repairs (valley rebuild, chimney flashing, skylight re-seal): $500–$1,200. Complex chronic-leak hunting: $1,200–$1,800. Flat-rate, no surprises.',
+          'Repair cost depends on the scope after we diagnose the leak. We do not list repair price ranges on the site. You get a clear scope and price before work begins, except for agreed emergency make-safe work as discussed.',
       },
       {
         question: 'Do you do emergency repairs at night or on weekends?',
@@ -531,7 +531,7 @@ export const services: Service[] = [
       {
         question: 'Do you warranty your repairs?',
         answer:
-          '2-year workmanship warranty on every repair, whether it\'s a $250 pipe boot or a $1,800 chimney rebuild.',
+          'We provide workmanship terms in writing for repairs as applicable to the job. Ask your project manager for details for your specific repair scope.',
       },
       {
         question: 'Should I repair or replace my roof?',
@@ -590,13 +590,13 @@ export const services: Service[] = [
       {
         h3: 'Emergency Tarp and Dry-In',
         body:
-          "The first 24 hours after a storm are critical. Rainwater entering through damaged roofing causes interior drywall, flooring, and possession damage worth $20,000–$100,000+. Emergency tarping seals your roof for 30–90 days while the claim is processed. We dispatch 24/7 across all of South Florida. Call (754) 310-5557.",
+          "The first hours after a storm matter — water can damage interiors quickly. Emergency tarping can protect the home while you work with your insurance carrier. Response times vary by call volume. For urgent help, call (754) 310-5557.",
       },
     ],
     benefits: [
       { icon: 'shield', title: 'Full Claim Handling', text: 'Adjuster meetings, photos, Xactimate, direct billing.' },
       { icon: 'clock', title: '24/7 Emergency Tarp', text: 'On-site within hours of dispatch.' },
-      { icon: 'dollar', title: 'You Only Pay Deductible', text: 'Insurance pays us direct — no out-of-pocket surprises.' },
+      { icon: 'dollar', title: 'Insurance coordination', text: 'We can help you document a claim; payment and coverage follow your policy language.' },
       { icon: 'hammer', title: 'Xactimate Expertise', text: 'We speak the same language as your adjuster.' },
       { icon: 'star', title: 'Licensed & Insured', text: 'Florida Certified Roofing Contractor with full general liability and workers\' comp.' },
       { icon: 'wind', title: 'Hurricane Specialists', text: 'Storm-season tarping, insurance-grade documentation, and full re-roof restoration.' },
@@ -610,7 +610,7 @@ export const services: Service[] = [
       { title: '6. Full Re-Roof', text: 'New roof installed once claim approved.' },
       { title: '7. Final Payment', text: 'Insurance pays us direct; you pay only deductible.' },
     ],
-    priceRange: 'Insurance covered (deductible only)',
+    priceRange: 'Depends on claim / scope',
     lifespan: 'New roof — 25-70+ years depending on material',
     bestFor: ['Post-hurricane damage', 'Wind damage', 'Impact/hail damage', 'Sudden water events'],
     brandsOffered: ['All major brands', 'Working with all Florida insurers'],
@@ -638,7 +638,7 @@ export const services: Service[] = [
       {
         question: 'How much is my deductible going to be?',
         answer:
-          'Most Florida policies have a 2% hurricane deductible for named storms (e.g. $6,000 on a $300k home) and a flat $500–$2,500 deductible for unnamed wind/hail. Check your declarations page.',
+          'Deductibles are set in your own policy. Review your declarations page or ask your insurance agent. We are not a substitute for your carrier’s documentation.',
       },
       {
         question: 'Do you work directly with my insurance company?',

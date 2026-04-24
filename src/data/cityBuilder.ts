@@ -170,11 +170,11 @@ export function buildCity(seed: CitySeed): LocationData {
     },
     {
       title: `Hurricane-Ready Roofing for ${city}`,
-      content: `${city} sits in the direct Atlantic hurricane corridor and has been impacted by named storms including Wilma (2005), Irma (2017), and Ian (2022). Our hurricane-ready installation package includes engineered hurricane straps, sealed roof deck, peel-and-stick underlayment, ring-shank fasteners at the perimeter and corners, ridge-vent secondary baffle, and full attachment per FBC Chapter 15. Many homeowners qualify for wind-mitigation insurance discounts of 20–45% after the install.`,
+      content: `${city} sits in the direct Atlantic hurricane corridor and has been impacted by named storms including Wilma (2005), Irma (2017), and Ian (2022). We install to applicable code, including strapping, deck preparation, and underlayment as required for your product and scope. Some homeowners may be eligible for wind-mitigation credits; ask your insurance agent and review your own policy language.`,
     },
     {
       title: `Insurance Claims & Financing in ${city}`,
-      content: `If your ${city} roof was damaged by a wind, hail or hurricane event, we can manage the claim from inspection through replacement — no out-of-pocket beyond your deductible. For non-claim projects, ${city} homeowners qualify for $0-down financing with no minimum credit, up to 16 months no-payments, plus same-as-cash 12-month options. Written estimates are always free and never high-pressure.`,
+      content: `If your ${city} roof was damaged by a wind, hail, or hurricane event, we can help with documentation and the repair/replacement process; coverage and payment are between you and your insurance carrier. For out-of-pocket projects, we can discuss third-party financing options and timing after you have a written scope. Estimates are no-obligation.`,
     },
   ];
 
@@ -185,7 +185,7 @@ export function buildCity(seed: CitySeed): LocationData {
     },
     {
       question: `How much does a new roof cost in ${city}?`,
-      answer: `${city} pricing is broadly: shingle $9,000–$17,000, tile $19,000–$36,000, standing-seam metal $24,000–$48,000, flat/TPO quoted per sq ft. Final pricing depends on roof size, deck condition, and product. We provide written, line-itemed quotes — free.`,
+      answer: `We do not publish public price ranges. Every ${city} roof is different. After a site visit you receive a line-item estimate. Ask us if you have a budget target — we can often align product choices with it.`,
     },
     {
       question: `How fast can you install a roof in ${city}?`,
@@ -201,7 +201,7 @@ export function buildCity(seed: CitySeed): LocationData {
     },
     {
       question: `Do you offer financing in ${city}?`,
-      answer: `Yes — $0-down, no minimum credit, up to 16 months no payments. Same-as-cash 12-month options also available.`,
+      answer: `We can introduce partner lenders; approval and terms are set by the lender. Details are provided when you have a project scope, not in place of a proper estimate.`,
     },
   ];
 

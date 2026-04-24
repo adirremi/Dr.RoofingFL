@@ -5,38 +5,38 @@ const SITE = 'https://drroofingflorida.com';
 
 const plans = [
   {
-    title: '$0 Down · 0% APR for 18 Months',
-    subtitle: 'Most Popular',
-    text: 'Zero down payment, no interest for 18 months, no prepayment penalty. Perfect for homeowners with strong credit (700+).',
+    title: 'Promotional terms (if offered)',
+    subtitle: 'Lender dependent',
+    text: 'Some lenders may run short-term low- or no-interest offers for well-qualified buyers. The bank sets the terms — we help you get apples-to-apples options once you have a project estimate.',
     highlight: true,
   },
   {
-    title: '12–15 Year Fixed Rate',
-    subtitle: 'Low Monthly Payments',
-    text: 'Extend your new roof payment over up to 15 years with fixed rates starting at 6.99% APR. Monthly payments as low as $89/month.',
+    title: 'Extended payment plans',
+    subtitle: 'From partner lenders',
+    text: 'Many homeowners spread roof cost over several years. Rates, term length, and monthly amount depend on the lender and your approval — not on anything published here.',
     highlight: false,
   },
   {
-    title: 'No Minimum Credit Score',
-    subtitle: 'We Work With All Credit',
-    text: 'Credit scores from 550+ approved. Bankruptcy OK 2+ years removed. Self-employed OK with bank statements.',
+    title: 'Wide credit experience',
+    subtitle: 'We work with multiple programs',
+    text: 'Lenders have different credit guidelines. We can point you to the application process after a written scope, so you are not guessing numbers before you have a real price.',
     highlight: false,
   },
   {
-    title: 'PACE / HERO Financing',
-    subtitle: 'Tax-Assessed Financing',
-    text: 'Pay your roof on your property tax bill. No traditional credit check — based on home equity. Ideal for energy-efficient tile & metal roofs.',
+    title: 'PACE / HERO (where available)',
+    subtitle: 'Tax-assessed',
+    text: 'Some Florida properties may qualify for programs repaid on the property tax bill. Eligibility and rules are set by the program administrator — we can discuss whether it fits your project.',
     highlight: false,
   },
 ];
 
 const benefits = [
-  { icon: Clock, title: 'Same-Day Approval', text: 'Most applications approved within 2 hours.' },
-  { icon: DollarSign, title: '$0 Down Options', text: 'Start your roof today with no money out of pocket.' },
-  { icon: Shield, title: 'Soft Credit Pull First', text: 'See your rate without any impact to your credit score.' },
-  { icon: CheckCircle, title: 'No Hidden Fees', text: 'No application fees, no origination fees, no prepayment penalty.' },
-  { icon: CreditCard, title: 'Multiple Lenders', text: 'We work with Service Finance, GreenSky, Synchrony, YGrene, HERO.' },
-  { icon: Phone, title: 'Apply by Phone', text: 'Call (754) 310-5557 — our finance team walks you through.' },
+  { icon: Clock, title: 'Fast responses', text: 'Many credit decisions return in a short window during business hours — your lender can confirm.' },
+  { icon: DollarSign, title: 'No site pricing', text: 'We do not quote financing rates or payment amounts on the website; those come from the lender for your file.' },
+  { icon: Shield, title: 'Disclosure first', text: 'We start with a roof scope and price so you know what you are financing before you sign anything.' },
+  { icon: CheckCircle, title: 'Clear paperwork', text: 'Loan documents come from the lender, not the roofer — read the note before you accept.' },
+  { icon: CreditCard, title: 'Several partners', text: 'We are familiar with common home-improvement programs in our market. Availability changes over time.' },
+  { icon: Phone, title: 'Questions?', text: 'Call (754) 310-5557 to walk through inspection → estimate → lender handoff in order.' },
 ];
 
 export default function FinancingPage() {
@@ -44,10 +44,9 @@ export default function FinancingPage() {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: 'Do you offer $0 down roofing financing?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Dr. Roofing FL offers $0-down financing with 0% APR for up to 18 months for qualified homeowners. Most applications approved within 2 hours.' } },
-      { '@type': 'Question', name: 'What credit score do I need to finance a roof?', acceptedAnswer: { '@type': 'Answer', text: 'We work with all credit tiers. Scores 700+ qualify for the best 0% promotional rates. Scores 550+ qualify for standard financing. PACE/HERO programs require no traditional credit check.' } },
-      { '@type': 'Question', name: 'How long can I finance a new roof?', acceptedAnswer: { '@type': 'Answer', text: 'Financing terms run from 18 months (promotional) up to 15 years (fixed rate). PACE/HERO programs can extend to 25 years on your property tax bill.' } },
-      { '@type': 'Question', name: 'Will financing impact my credit score?', acceptedAnswer: { '@type': 'Answer', text: 'We start with a soft credit pull to show you your rate with zero impact. Hard pull only happens when you accept the offer.' } },
+      { '@type': 'Question', name: 'Do you offer roof financing in South Florida?', acceptedAnswer: { '@type': 'Answer', text: 'We can connect you with third-party lenders. Approval, interest rate, and terms are set by the lender, not on this site. A written roof estimate is the right place to start.' } },
+      { '@type': 'Question', name: 'What will my monthly payment be?', acceptedAnswer: { '@type': 'Answer', text: 'Payments depend on amount financed, interest rate, and term — all from the financing company after you apply. We do not publish or promise payment amounts on the site.' } },
+      { '@type': 'Question', name: 'Will applying affect my credit score?', acceptedAnswer: { '@type': 'Answer', text: 'Some lenders use a soft pull to preview; a hard pull may occur if you accept. Ask the lender to explain before you apply.' } },
     ],
   };
 
@@ -63,22 +62,22 @@ export default function FinancingPage() {
   return (
     <>
       <SEO
-        title="$0 Down Roofing Financing in South Florida | Dr. Roofing FL"
-        description="$0 down roofing financing in Hollywood, Miami, Broward & Miami-Dade. 0% APR up to 18 months. Same-day approval. Soft credit pull. (754) 310-5557."
-        keywords="roofing financing Florida, $0 down roof Hollywood, 0% APR roof financing Miami, PACE HERO roofing, monthly payment roof"
+        title="Roof Financing in South Florida | Dr. Roofing FL"
+        description="Third-party home-improvement financing for roofing projects. No rates or payment amounts on this page — (754) 310-5557."
+        keywords="roof financing Florida, home improvement loan roof, Broward roof payment plan, Miami roof quote"
         canonical="/financing"
         schema={[faqSchema, breadcrumbSchema]}
       />
 
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-orange-600 via-orange-700 to-red-700 text-white">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <div className="inline-block bg-white/20 backdrop-blur text-white px-4 py-2 rounded-full text-xs font-bold mb-6 uppercase tracking-widest">Financing Options</div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">$0 Down · 0% APR · Same-Day Approval</h1>
+          <div className="inline-block bg-white/20 backdrop-blur text-white px-4 py-2 rounded-full text-xs font-bold mb-6 uppercase tracking-widest">Financing</div>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">Finance After You Have a Written Scope</h1>
           <p className="text-xl text-orange-50 max-w-3xl mx-auto mb-8">
-            Get your new roof today and pay over time. Zero money out of pocket, payments as low as $89/month.
+            Lenders set rates, terms, and payments. We do not list dollar amounts, APR, or &quot;payments as low as&quot; here — we provide a roof estimate, then you compare offers on paper.
           </p>
           <a href="tel:+17543105557" className="inline-flex items-center gap-2 bg-white text-orange-700 hover:bg-orange-50 px-8 py-4 rounded-lg font-bold text-lg shadow-xl transition">
-            <Phone size={20} /> Apply by Phone: (754) 310-5557
+            <Phone size={20} /> Call: (754) 310-5557
           </a>
         </div>
       </section>
@@ -86,8 +85,8 @@ export default function FinancingPage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif">Financing Plans</h2>
-            <p className="text-gray-600 mt-2">Four ways to pay for your new Dr. Roofing FL roof.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif">Common paths</h2>
+            <p className="text-gray-600 mt-2">Illustrative categories — your lender will define what you qualify for.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {plans.map((p) => (
@@ -114,7 +113,7 @@ export default function FinancingPage() {
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif">Why Finance with Dr. Roofing FL?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif">Why we handle it this way</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((b) => (
@@ -132,8 +131,8 @@ export default function FinancingPage() {
 
       <section className="py-16 bg-orange-600 text-white text-center">
         <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">Ready to Apply?</h2>
-          <p className="mb-6 text-orange-50">Soft credit pull only — see your rate with zero impact to your credit.</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">Start with an inspection &amp; estimate</h2>
+          <p className="mb-6 text-orange-50">We need a project total before a lender can give you a meaningful payment. Call us to schedule the roof side first.</p>
           <a href="tel:+17543105557" className="inline-flex items-center gap-2 bg-white text-orange-700 hover:bg-orange-50 px-8 py-4 rounded-lg font-bold text-lg shadow-xl transition">
             <Phone size={20} /> (754) 310-5557
           </a>

@@ -34,21 +34,21 @@ function buildCombo(service: Service, location: LocationData): ServiceCityCombo 
   // Service-specific local angles keyed by service slug
   const localAnglesByService: Record<string, string> = {
     'tile-roof':
-      `${city} homeowners choose concrete and clay tile for its 50+ year lifespan and ability to withstand the Atlantic Basin hurricanes that routinely threaten ${city}. Every tile roof we install in ${city} meets the 2023 Florida Building Code HVHZ specifications — Miami-Dade NOA-approved tile, stainless steel fasteners, peel-and-stick underlayment, and engineered hurricane strapping. Eagle, Boral, US Tile and Entegra factory-certified in ${city}.`,
+      `${city} homeowners often choose concrete and clay tile for durability in coastal and inland wind conditions. We install to applicable Florida Building Code and HVHZ rules for your address, with products and underlayment specified per the permit. We work with major tile lines such as Eagle, Boral, US Tile, and Entegra as the job requires.`,
     'shingle-roof':
-      `Architectural shingles remain the most affordable Florida Building Code-compliant roofing option for ${city} homeowners. Our GAF Timberline HDZ and Owens Corning Duration installations are rated for 130+ mph winds, qualify for Class-4 impact-rated insurance discounts, and carry lifetime transferable manufacturer warranties. We are an authorized installer for GAF, Owens Corning, and CertainTeed shingle systems in ${city}.`,
+      `Architectural shingles are a common code-compliant option for ${city} homes. Systems can be specified for wind, impact, and warranty coverage from the manufacturer. We install GAF, Owens Corning, and CertainTeed and other shingle systems per the manufacturer’s instructions and your local requirements — ask for options during the estimate.`,
     'metal-roof':
-      `${city} is an ideal environment for standing-seam metal roofing: extreme salt-air exposure (especially near the Atlantic and Intracoastal), cool-roof energy savings in a hot climate, and 165+ mph wind ratings. We install factory-Kynar 500 aluminum and Galvalume standing-seam systems from Drexel Metals, McElroy Metal, and Englert — all Miami-Dade NOA-approved for ${city} HVHZ requirements.`,
+      `Standing-seam and panel metal can perform well in ${city}, including salt-air environments when materials and coatings are specified correctly. We work with Drexel Metals, McElroy, Englert, and other approved systems, installed per product approvals for your site.`,
     'flat-roof':
-      `${city} has a significant residential flat-roof inventory (Florida rooms, carports, garages) plus commercial buildings, condos, and warehouses. We install GAF EverGuard TPO, Carlisle Sure-Weld PVC, and modified-bitumen systems with engineered tapered insulation for proper drainage — eliminating the ponding water that causes 80% of ${city} flat-roof failures.`,
+      `${city} has residential flat areas and many commercial, condo, and warehouse low-slope roofs. We install TPO, PVC, and modified systems with tapered insulation where design requires it, to improve drainage and reduce long-term leak risk.`,
     'roof-repair':
-      `Fast, surgical roof repairs across ${city} — we diagnose the actual leak source using infrared thermal imaging rather than patching the symptom. ${city} residents call us for pipe-boot replacements, valley rebuilds, skylight re-seals, chronic-leak hunting, and 24/7 post-storm emergency tarp. Most repairs are scheduled same-day or next-day.`,
+      `We focus repair work in ${city} on finding the source of leaks, not just covering symptoms. That can include boot and flashing work, small-area replacement, and temporary storm protection when conditions allow.`,
     'storm-damage':
-      `${city} is in the direct Atlantic hurricane corridor and has been impacted by Irma (2017), Ian (2022), and numerous unnamed wind events. Our dedicated restoration division handles the entire insurance claim process from free post-storm inspection to adjuster meetings to full re-roof replacement — you pay only your deductible.`,
+      `${city} sees serious wind and rain events. We can document visible damage, meet with your adjuster when you request it, and discuss replacement or repair. Insurance outcomes and out-of-pocket cost depend on your specific policy, not a contractor website.`,
   };
 
   const metaTitle = `${service.title} in ${city}, FL | Dr. Roofing FL`;
-  const metaDescription = `${service.shortTitle} roofing contractor in ${city}, Florida. Licensed, insured, HVHZ-certified. ${service.priceRange}. Free quote — (754) 310-5557.`;
+  const metaDescription = `${service.shortTitle} roofing in ${city}, Florida. Licensed, insured. Estimates in writing. Call (754) 310-5557.`;
   const metaKeywords = [
     `${service.shortTitle.toLowerCase()} ${city.toLowerCase()}`,
     `${service.shortTitle.toLowerCase()} roof ${city.toLowerCase()}`,
@@ -60,7 +60,7 @@ function buildCombo(service: Service, location: LocationData): ServiceCityCombo 
 
   const h1 = `${service.title} in ${city}, Florida`;
   const h2 = `${service.shortTitle} Roofing Contractor Near You in ${city}, FL`;
-  const intro = `Dr. Roofing FL is ${city}\u2019s trusted ${service.shortTitle.toLowerCase()} roofing specialist \u2014 licensed, insured, HVHZ-certified, and locally operated. ${service.intro.split('.').slice(0, 2).join('.')}. Every ${service.shortTitle.toLowerCase()} roof we install in ${city} carries a manufacturer warranty plus our own 10-year workmanship warranty.`;
+  const intro = `Dr. Roofing FL is a ${service.shortTitle.toLowerCase()} roofer serving ${city} — licensed and insured, with work installed to applicable code for your project. ${service.intro.split('.').slice(0, 2).join('.')}. Workmanship (up to 10 years on qualifying work) and manufacturer terms are in your written agreement for the specific job.`;
   const localAngle = localAnglesByService[service.slug] || service.intro;
 
   return {

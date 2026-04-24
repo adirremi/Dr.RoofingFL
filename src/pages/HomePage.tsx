@@ -57,10 +57,10 @@ export default function HomePage() {
   };
 
   const homeStats = [
-    { num: '$0', label: 'Down Financing' },
+    { num: 'Financing', label: 'Options (ask us)' },
     { num: '24/7', label: 'Storm Response' },
-    { num: 'HVHZ', label: 'Certified Installs' },
-    { num: 'Free', label: 'Written Quotes' },
+    { num: 'HVHZ', label: 'Code-Focused Work' },
+    { num: 'Free', label: 'Written Estimates' },
   ];
 
   const pillars = [
@@ -107,19 +107,19 @@ export default function HomePage() {
       step: '03',
       icon: Truck,
       title: 'Precision Install',
-      text: 'Factory-authorized crews install to HVHZ code. Your home is protected, your landscaping covered, your neighbors respected.',
+      text: 'Crews install per manufacturer and code. We protect the work area, respect your property, and keep neighbors in mind during production.',
     },
     {
       step: '04',
       icon: BadgeCheck,
-      title: 'Lifetime Warranty',
-      text: 'City inspection, factory warranty registration, and a lifetime workmanship promise. One roof, one call, forever.',
+      title: 'Close-Out & Warranty',
+      text: 'City inspection, manufacturer warranty registration (where applicable), and up to 10 years of written workmanship on qualifying work per your contract. Details vary by job.',
     },
   ];
 
   const whyUs = [
-    { icon: DollarSign, title: 'Flexible Financing', text: '$0 down options with partner lenders — we match the plan to your budget.' },
-    { icon: Hammer, title: 'Premium Materials', text: 'Factory-authorized installer for GAF, Owens Corning, CertainTeed, TAMKO, IKO and Carlisle.' },
+    { icon: DollarSign, title: 'Flexible Financing', text: 'We work with several lenders; available plans depend on approval. Ask during your estimate.' },
+    { icon: Hammer, title: 'Premium Materials', text: 'We install major manufacturer systems used in South Florida, including GAF, Owens Corning, CertainTeed, TAMKO, IKO, and Carlisle, per project and code.' },
     { icon: Shield, title: 'Licensed & Insured', text: 'Florida Certified Roofing Contractor with full general liability and workers\' comp.' },
     { icon: CheckCircle, title: 'Free Inspections', text: 'Honest, no-pressure, written inspection reports — always free in South Florida.' },
     { icon: Wind, title: 'Hurricane Ready', text: 'Every install meets Florida Building Code 2023 HVHZ wind requirements.' },
@@ -129,8 +129,8 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="Dr. Roofing FL | #1 Roofing Contractor in Hollywood, Miami & South Florida"
-        description="South Florida's top-rated roofing contractor. Free inspections, $0-down financing, licensed & insured. Hollywood, Miami, Fort Lauderdale, Pembroke Pines, Miramar, Davie, Hallandale Beach, Dania Beach & Aventura. Call (754) 310-5557."
+        title="Dr. Roofing FL | Roofing Contractor in Hollywood, Miami & South Florida"
+        description="Licensed, insured Florida roofing contractor. Free inspections, financing options, Hollywood, Miami, Fort Lauderdale, Pembroke Pines, Miramar, Davie, Hallandale Beach, Dania Beach & Aventura. Call (754) 310-5557."
         keywords="roofing contractor Hollywood FL, roofer Miami FL, roof repair Broward, roof replacement Miami-Dade, tile roof Florida, metal roof Hollywood, free roof inspection South Florida, hurricane roof Florida"
         canonical="/"
         image={`${SITE}/tile_roofing.webp`}
@@ -205,7 +205,7 @@ export default function HomePage() {
             <span className="hidden md:inline w-px h-4 bg-white/20" />
             <span className="inline-flex items-center gap-2"><Award size={16} className="text-orange-500" /> HVHZ Certified</span>
             <span className="hidden md:inline w-px h-4 bg-white/20" />
-            <span className="inline-flex items-center gap-2"><BadgeCheck size={16} className="text-orange-500" /> GAF Authorized</span>
+            <span className="inline-flex items-center gap-2"><BadgeCheck size={16} className="text-orange-500" /> Major brand systems</span>
             <span className="hidden md:inline w-px h-4 bg-white/20" />
             <span className="inline-flex items-center gap-2"><CheckCircle size={16} className="text-orange-500" /> Free Inspections</span>
             <span className="hidden md:inline w-px h-4 bg-white/20" />
@@ -229,7 +229,7 @@ export default function HomePage() {
               <span className="italic text-orange-600">Hollywood, FL</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Dr. Roofing FL is the top-rated roofing contractor serving Hollywood, Miami, Fort Lauderdale and the rest of South Florida for all roofing needs — repair, replacement, maintenance and new construction. We specialize in every roof type built for Florida's sun, rain and hurricanes: asphalt shingle, standing-seam metal, clay and concrete tile, TPO and PVC flat systems.
+              Dr. Roofing FL serves Hollywood, Miami, Fort Lauderdale, and the rest of South Florida for repair, replacement, maintenance, and new construction. We work with common systems built for Florida’s sun, rain, and storms: asphalt shingle, standing-seam metal, clay and concrete tile, and TPO/PVC flat systems.
             </p>
           </div>
 
@@ -338,7 +338,7 @@ export default function HomePage() {
             </span>
             <h2 className="font-serif text-4xl md:text-6xl leading-[1.1] mb-6">
               From First Call to<br />
-              <span className="italic text-orange-500">Lifetime Warranty</span>
+              <span className="italic text-orange-500">Project Close-Out</span>
             </h2>
             <p className="text-lg text-gray-300">
               A clear, honest process — no pushy salesmen, no hidden fees, no surprises.
@@ -393,7 +393,7 @@ export default function HomePage() {
                 <span className="italic text-orange-600">Homeowners Choose Us</span>
               </h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Honest inspections, published pricing, code-perfect installations, and never leaving a homeowner on hold when a storm rolls in.
+                Honest inspections, written line-item estimates, code-focused installations, and responsive help when a storm rolls in.
               </p>
               <a
                 href="tel:+17543105557"
@@ -658,7 +658,7 @@ export default function HomePage() {
               <span className="italic text-orange-600">24 Hours</span>
             </h2>
             <p className="text-lg text-gray-600">
-              No obligation, no pressure — just honest advice from Hollywood's top-rated roofing experts.
+              No obligation, no pressure — just honest advice from a local licensed roofing team.
             </p>
           </div>
           <QuoteForm />
@@ -712,7 +712,7 @@ export default function HomePage() {
             <span className="w-px h-3 bg-white/30 hidden md:inline" />
             <span className="inline-flex items-center gap-2"><Award size={13} />HVHZ Certified</span>
             <span className="w-px h-3 bg-white/30 hidden md:inline" />
-            <span className="inline-flex items-center gap-2"><BadgeCheck size={13} />GAF Authorized</span>
+            <span className="inline-flex items-center gap-2"><BadgeCheck size={13} />Major brand systems</span>
           </div>
         </div>
       </section>

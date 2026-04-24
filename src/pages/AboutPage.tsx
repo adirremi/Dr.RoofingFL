@@ -8,7 +8,7 @@ const SITE = 'https://drroofingflorida.com';
 
 const values = [
   { icon: Shield, title: 'Licensed & Insured', text: 'Florida Certified Roofing Contractor with full general liability and workers\' compensation coverage.' },
-  { icon: Award, title: 'Factory Certified', text: 'Authorized installer for GAF, Owens Corning, CertainTeed, TAMKO, IKO, and Carlisle SynTec systems.' },
+  { icon: Award, title: 'Major systems', text: 'We install common manufacturer systems (GAF, Owens Corning, CertainTeed, TAMKO, IKO, Carlisle, and more) per project, code, and the written scope of work.' },
   { icon: Users, title: 'Locally Operated', text: 'South Florida based — we know Broward, Miami-Dade and Palm Beach because we live and work here.' },
   { icon: Wrench, title: 'Hurricane Experts', text: 'Every install meets or exceeds 2023 FBC HVHZ — Miami-Dade NOA-approved systems only.' },
   { icon: Star, title: 'Free Inspections', text: 'Honest written inspections and transparent line-item quotes — always free, no obligation.' },
@@ -132,7 +132,7 @@ export default function AboutPage() {
       <section className="py-16 bg-orange-600 text-white text-center">
         <div className="container mx-auto px-4 max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">Work With Dr. Roofing FL</h2>
-          <p className="mb-6 text-orange-50">Free inspection · written quote · no obligation · $0-down financing.</p>
+          <p className="mb-6 text-orange-50">Free inspection · written quote · no obligation · ask about third-party financing.</p>
           <a href="tel:+17543105557" className="inline-flex items-center gap-2 bg-white text-orange-700 hover:bg-orange-50 px-8 py-4 rounded-lg font-bold text-lg shadow-xl transition">
             <Phone size={20} /> (754) 310-5557
           </a>

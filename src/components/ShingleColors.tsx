@@ -5,7 +5,7 @@ const HIGHLIGHTS = [
   'Class-4 impact-rated for hail & falling debris',
   '130 mph HVHZ wind warranty (Florida Code 2023)',
   'Algae-resistant StainGuard technology',
-  'Lifetime limited manufacturer warranty (GAF / Owens Corning)',
+  'Limited manufacturer warranty per product; up to 10-year workmanship in your Dr. Roofing FL contract',
 ];
 
 const PALETTE = [
@@ -95,7 +95,7 @@ export default function ShingleColors() {
                         Architectural Shingles
                       </div>
                       <div className="font-serif text-xl md:text-3xl text-white leading-tight">
-                        10+ Colors · Lifetime Warranty
+                        10+ Colors · 10‑Year Workmanship
                       </div>
                     </div>
                     <div className="hidden md:block bg-orange-600 text-white px-4 py-2 rounded-sm text-[10px] uppercase tracking-[0.2em] font-bold">

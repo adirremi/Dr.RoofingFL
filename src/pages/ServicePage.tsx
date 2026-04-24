@@ -145,9 +145,9 @@ export default function ServicePage({ service }: Props) {
           </div>
 
           <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl text-sm">
-            <div><div className="text-orange-200 text-xs">Price Range</div><div className="font-bold text-lg">{service.priceRange}</div></div>
+            <div><div className="text-orange-200 text-xs">Estimates</div><div className="font-bold text-sm leading-snug max-w-xs">{service.priceRange}</div></div>
             <div><div className="text-orange-200 text-xs">Lifespan</div><div className="font-bold text-lg">{service.lifespan}</div></div>
-            <div><div className="text-orange-200 text-xs">Warranty</div><div className="font-bold text-lg">Lifetime</div></div>
+            <div><div className="text-orange-200 text-xs">Warranty</div><div className="font-bold text-lg text-sm leading-snug">Up to 10 years (workmanship)</div></div>
             <div><div className="text-orange-200 text-xs">Inspection</div><div className="font-bold text-lg">Free</div></div>
           </div>
         </div>
@@ -168,7 +168,7 @@ export default function ServicePage({ service }: Props) {
             <aside className="bg-white rounded-xl shadow-lg p-6 border-t-4 border-orange-500">
               <h3 className="text-lg font-bold mb-4 text-gray-900">Quick Facts</h3>
               <dl className="space-y-3 text-sm">
-                <div className="flex justify-between border-b border-gray-100 pb-2"><dt className="text-gray-500">Price Range</dt><dd className="font-semibold text-gray-900">{service.priceRange}</dd></div>
+                <div className="flex justify-between border-b border-gray-100 pb-2"><dt className="text-gray-500">Estimates</dt><dd className="font-semibold text-gray-900 text-sm text-right max-w-[60%]">{service.priceRange}</dd></div>
                 <div className="flex justify-between border-b border-gray-100 pb-2"><dt className="text-gray-500">Lifespan</dt><dd className="font-semibold text-gray-900">{service.lifespan}</dd></div>
                 <div className="border-b border-gray-100 pb-2">
                   <dt className="text-gray-500 mb-1">Best For</dt>
@@ -382,7 +382,7 @@ export default function ServicePage({ service }: Props) {
             Ready for Your New {service.shortTitle} Roof?
           </h2>
           <p className="text-lg text-gray-100 mb-8">
-            Free inspection · honest written estimate · $0-down financing · no obligation.
+            Free inspection · honest written estimate · ask about third-party financing · no obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+17543105557" className="inline-flex items-center justify-center gap-2 bg-white text-orange-700 hover:bg-orange-50 px-8 py-4 rounded-lg font-bold text-lg shadow-xl transition">

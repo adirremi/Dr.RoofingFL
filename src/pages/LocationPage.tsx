@@ -279,10 +279,10 @@ export default function LocationPage({ location }: Props) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
-              { icon: DollarSign, title: '$0-Down Financing', text: 'No money down, no minimum credit required, up to 16 months with no payments.' },
+              { icon: DollarSign, title: 'Financing options', text: 'Third-party lenders when available; rates and terms are set at approval, not on this page.' },
               { icon: Shield, title: 'Licensed & Insured', text: 'Florida-Certified Roofing Contractor with full liability and workers\' comp.' },
               { icon: Award, title: 'HVHZ Certified', text: 'Every install meets Florida Building Code 2023 High-Velocity Hurricane Zone requirements.' },
-              { icon: Hammer, title: 'Expert Craftsmanship', text: 'Factory-certified installers for GAF, Owens Corning, Eagle, and Boral.' },
+              { icon: Hammer, title: 'Expert Craftsmanship', text: 'Experienced with major systems from GAF, Owens Corning, Eagle, Boral, and more — per your scope and code.' },
               { icon: Clock, title: '24/7 Emergency Service', text: 'Tarp, board-up, and leak-stop service anywhere in ' + location.city + '.' },
               { icon: Star, title: 'Local References', text: 'Ask for addresses of recent installs in ' + location.city + ' — we\'re happy to share.' },
             ].map((b) => (
@@ -383,7 +383,7 @@ export default function LocationPage({ location }: Props) {
       <section className="py-14 bg-slate-900 text-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold font-serif">Certified Installer for Leading Brands</h2>
+            <h2 className="text-2xl md:text-3xl font-bold font-serif">Brands &amp; systems we work with</h2>
             <p className="text-gray-400 mt-2">The materials we trust on every {location.city} roof.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3 text-center">
@@ -576,7 +576,7 @@ export default function LocationPage({ location }: Props) {
             Ready for a New Roof in {location.city}?
           </h2>
           <p className="text-lg text-gray-100 mb-8">
-            Free inspection · honest written estimate · $0-down financing · no obligation.
+            Free inspection · honest written estimate · financing (if qualified) · no obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+17543105557" className="inline-flex items-center justify-center gap-2 bg-white text-orange-700 hover:bg-orange-50 px-8 py-4 rounded-lg font-bold text-lg shadow-xl transition">

@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Phone, MapPin, Calendar, Ruler, Clock, DollarSign, Shield, Award, CheckCircle, ExternalLink, Camera } from 'lucide-react';
+import { Phone, MapPin, Calendar, Ruler, Clock, Shield, Award, CheckCircle, ExternalLink, Camera } from 'lucide-react';
 import SEO from '../components/SEO';
 import NotFoundPage from './NotFoundPage';
 import { projectsBySlug } from '../data/projects';
@@ -156,10 +156,6 @@ export default function ProjectPage({ project: projectProp }: Props = {}) {
             <div className="bg-white p-4 rounded-lg border border-slate-200">
               <div className="flex items-center gap-1 text-gray-500 text-xs mb-1"><Clock size={12} /> Duration</div>
               <div className="font-bold text-gray-900">{project.duration}</div>
-            </div>
-            <div className="bg-white p-4 rounded-lg border border-slate-200">
-              <div className="flex items-center gap-1 text-gray-500 text-xs mb-1"><DollarSign size={12} /> Investment</div>
-              <div className="font-bold text-gray-900">{project.priceRange}</div>
             </div>
             <div className="bg-white p-4 rounded-lg border border-slate-200">
               <div className="flex items-center gap-1 text-gray-500 text-xs mb-1"><Shield size={12} /> Warranty</div>

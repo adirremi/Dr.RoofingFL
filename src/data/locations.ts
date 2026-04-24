@@ -157,19 +157,19 @@ export const locations: Record<string, LocationData> = {
       {
         title: 'Financing & Insurance Claims Made Simple in Hollywood',
         content:
-          "We offer $0 down financing with no minimum credit score, up to 16 months no-payment / no-interest plans, and direct insurance billing for storm-damage claims. If your Hollywood roof was damaged by a named storm, we will meet your adjuster on site, document with Xactimate, and handle the entire scope approval process. You only pay your deductible — we take care of the rest."
+          "We can discuss third-party financing and timing after you have a written scope. For storm-damage claims, we can help with documentation; coverage and payment are set by your policy and your carrier."
       },
     ],
     faqs: [
       {
         question: 'How much does a new roof cost in Hollywood, FL?',
         answer:
-          'Shingle re-roofs in Hollywood start around $9,500 for a 20-square home. Concrete tile runs $18,000–$30,000 and standing-seam metal $22,000–$38,000 depending on pitch, tear-off layers, and code upgrades. We provide free itemized written quotes.',
+          'We do not publish public roof pricing. After an inspection and scope you receive a line-item written estimate. Budget goals can be discussed with your estimator.',
       },
       {
         question: 'Do I need a permit for a roof replacement in Hollywood?',
         answer:
-          'Yes — the City of Hollywood requires a permit for any roof replacement or repair over $500. We pull every permit in your name, schedule the City inspections, and file the Notice of Commencement so everything stays legal.',
+          'Yes — most re-roof and significant repair work in Hollywood requires a permit. We help pull permits in your name and schedule inspections; requirements depend on the scope. Ask us or the building department for your project.',
       },
       {
         question: 'How long does a Hollywood roof replacement take?',
@@ -296,7 +296,7 @@ export const locations: Record<string, LocationData> = {
       {
         question: 'How much does a roof cost in Miami?',
         answer:
-          'Shingle re-roofs in Miami start around $10,500. Concrete tile $19,000–$32,000, clay tile $24,000–$45,000, standing-seam metal $24,000–$42,000. HVHZ premiums add approximately 8–12% vs. non-HVHZ jurisdictions.',
+          'We do not list roof prices online. Miami-Dade (HVHZ) work may include different product and labor details than other regions; you receive a line-item quote after we measure and specify the system.',
       },
       {
         question: 'Can I install asphalt shingles in Miami?',
@@ -402,7 +402,7 @@ export const locations: Record<string, LocationData> = {
       {
         title: 'Financing and Fast Turnaround',
         content:
-          'We offer $0-down financing for Fort Lauderdale homeowners, completing most single-family roofs in 2–5 days. Free inspections include drone imagery and a full photo report.',
+          'We can discuss third-party financing after you have a written scope. Many single-family re-roofs take a few days once scheduled; free inspections can include photos or drone where appropriate.',
       },
     ],
     faqs: [
@@ -419,7 +419,7 @@ export const locations: Record<string, LocationData> = {
       {
         question: 'Cost of a Fort Lauderdale re-roof?',
         answer:
-          'Shingle: $10,000–$16,000. Tile: $19,000–$34,000. Standing-seam metal: $24,000–$42,000.',
+          'We do not publish city-specific price tables. Your written estimate is based on field measurements, products, and code work for your home.',
       },
       {
         question: 'Do you work with historic district homes in Fort Lauderdale?',
@@ -472,7 +472,7 @@ export const locations: Record<string, LocationData> = {
     metaTitle:
       'Dr. Roofing FL | Pembroke Pines Roofing Contractor — HOA Approved',
     metaDescription:
-      'Pembroke Pines roofing contractor serving every HOA community. Tile, shingle, metal & flat roofs. $0-down financing. Call (754) 310-5557.',
+      'Pembroke Pines roofing contractor serving every HOA community. Tile, shingle, metal & flat roofs. Financing may be available through third-party lenders. Call (754) 310-5557.',
     metaKeywords:
       'roofing Pembroke Pines, Pembroke Pines roofer, roof replacement Pembroke Pines, HOA roof Pembroke Pines, tile roof Pembroke Pines',
     description:
@@ -519,9 +519,9 @@ export const locations: Record<string, LocationData> = {
           'Pembroke Pines took heavy damage during Hurricanes Wilma (2005) and Irma (2017). Our storm-response crews handle emergency tarp-ups, insurance claim documentation, and full re-roofs. We\'ll meet your adjuster on site and ensure nothing is left off the scope.',
       },
       {
-        title: 'Financing with $0 Down',
+        title: 'Financing options',
         content:
-          'Most Pembroke Pines homeowners qualify for $0-down financing with no minimum credit score. Monthly payments as low as $99 make a new roof affordable without touching your savings.',
+          'We work with home-improvement lenders; approval, rate, and payment are set by the lender. We provide documentation after you have a project scope in writing.',
       },
     ],
     faqs: [
@@ -538,7 +538,7 @@ export const locations: Record<string, LocationData> = {
       {
         question: 'Cost of a Pembroke Pines shingle re-roof?',
         answer:
-          'Typical Pembroke Pines shingle re-roof: $9,500–$14,000 for a 20–30 square home. We always provide a free written estimate.',
+          'We do not list typical roof prices. After inspection you receive a free written estimate for your specific home and HOA or city requirements.',
       },
       {
         question: 'How long does a Pembroke Pines roof take?',
@@ -637,7 +637,7 @@ export const locations: Record<string, LocationData> = {
       {
         title: 'Financing, Warranty and Service',
         content:
-          'Every Miramar installation includes manufacturer lifetime warranty, our 10-year workmanship guarantee, and $0-down financing options. Post-installation, we provide free annual inspections for 5 years.',
+          'Manufacturer coverage and workmanship (up to 10 years on qualifying work, per your written contract) are set out in your agreement. Financing may be available from third parties; ask during estimating. We can discuss a maintenance plan after install if you like.',
       },
     ],
     faqs: [
@@ -654,7 +654,7 @@ export const locations: Record<string, LocationData> = {
       {
         question: 'Cost to re-roof in Miramar?',
         answer:
-          'Shingle: $10,000–$15,500. Tile: $19,500–$32,000. Metal: $24,000–$40,000.',
+          'We do not publish re-roof price lists. A written, itemized estimate is provided after inspection.',
       },
       {
         question: 'Do you offer 24/7 emergency service in Miramar?',
@@ -664,12 +664,12 @@ export const locations: Record<string, LocationData> = {
       {
         question: 'Warranty length for a Miramar roof?',
         answer:
-          'Lifetime manufacturer warranty + 10-year workmanship warranty on every roof. Transferable to future buyers.',
+          'Manufacturer warranty per the product; workmanship warranty is up to 10 years and may be transferable, per your written Dr. Roofing FL contract.',
       },
       {
         question: 'Financing for Miramar homeowners?',
         answer:
-          '$0 down, no minimum credit required, 16 months no payments on approved credit. Monthly plans from $99.',
+          'Financing is through outside lenders, subject to approval. Terms and availability change; we review options when you have an estimate in hand.',
       },
     ],
     projects: [
@@ -753,7 +753,7 @@ export const locations: Record<string, LocationData> = {
       {
         title: 'Financing and HOA Approvals',
         content:
-          '$0-down financing available. We handle ARB approvals for Long Lake Ranches, Rolling Oaks, Shenandoah, and every other Davie HOA.',
+          'We can review financing through partner lenders when you have a scope. We help with ARB submittals for many Davie communities — ask about yours.',
       },
     ],
     faqs: [
@@ -765,7 +765,7 @@ export const locations: Record<string, LocationData> = {
       {
         question: 'Cost to re-roof in Davie?',
         answer:
-          'Shingle: $9,500–$15,000. Tile: $18,500–$32,000. Metal: $22,000–$40,000.',
+          'We do not publish re-roof price ranges. Your home is estimated individually after a site visit.',
       },
       {
         question: 'Do you handle HOA approvals in Davie?',
@@ -886,7 +886,7 @@ export const locations: Record<string, LocationData> = {
       {
         question: 'Cost of a coastal Hallandale Beach re-roof?',
         answer:
-          'Shingle (inland only): $10,500–$16,000. Tile: $22,000–$38,000. Aluminum standing-seam: $26,000–$46,000.',
+          'We do not publish public price tables. Coastal and inland projects differ; you receive a line-item quote after we inspect and specify materials.',
       },
       {
         question: 'Why avoid galvanized fasteners near the ocean?',
@@ -985,7 +985,7 @@ export const locations: Record<string, LocationData> = {
       {
         title: 'Financing Available',
         content:
-          '$0 down, no minimum credit financing. Monthly payments from $99.',
+          'Financing may be available through third-party programs; ask when you have a written project scope.',
       },
     ],
     faqs: [
@@ -997,7 +997,7 @@ export const locations: Record<string, LocationData> = {
       {
         question: 'Cost to re-roof in Dania Beach?',
         answer:
-          'Shingle: $9,500–$15,000. Tile: $19,000–$32,000. Metal: $22,000–$40,000.',
+          'We do not list neighborhood price charts. A written quote follows inspection.',
       },
       {
         question: 'Do you handle historic district homes?',
@@ -1118,7 +1118,7 @@ export const locations: Record<string, LocationData> = {
       {
         question: 'Cost to re-roof in Aventura?',
         answer:
-          'Shingle: $11,000–$17,000. Tile: $20,000–$38,000. Metal: $26,000–$46,000. Commercial flat roofs quoted per sq ft.',
+          'We do not list city-wide roof prices on the site. Commercial flat work is bid per contract after walk-through. Residential quotes are per job after inspection.',
       },
       {
         question: 'Can you work around high-rise parking limitations?',

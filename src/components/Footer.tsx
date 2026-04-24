@@ -25,7 +25,7 @@ export default function Footer() {
               decoding="async"
             />
             <p className="text-sm leading-relaxed mb-4">
-              South Florida's trusted roofing contractor — serving <strong className="text-white">{totalCities}+ cities</strong> across Broward, Miami-Dade &amp; Palm Beach Counties. HVHZ-certified, factory-authorized, licensed and insured.
+              South Florida roofing contractor — serving <strong className="text-white">{totalCities}+ cities</strong> across Broward, Miami-Dade &amp; Palm Beach Counties. Licensed, insured, and experienced with code-compliant systems for South Florida.
             </p>
             <div className="flex items-center gap-3 mb-4">
               <a href="https://www.facebook.com/Drroofingfl" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 bg-slate-800 hover:bg-orange-600 rounded-lg flex items-center justify-center transition">
@@ -52,7 +52,7 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              <li><Link to="/financing" className="hover:text-orange-400 transition">Financing / $0 Down</Link></li>
+              <li><Link to="/financing" className="hover:text-orange-400 transition">Financing</Link></li>
             </ul>
 
             <h4 className="text-white font-bold text-base mt-6 mb-3">Company</h4>

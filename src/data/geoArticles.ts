@@ -83,7 +83,7 @@ export const geoArticles: GeoArticle[] = [
       {
         h2: 'Hollywood Housing Market (2026)',
         body:
-          'Hollywood\'s median home price as of early 2026 is approximately $540,000, with significant variance by neighborhood. Hollywood Lakes and Hollywood Hills homes average $700,000–$1.4M. Emerald Hills luxury waterfront exceeds $2M. Downtown condos range $300,000–$600,000. Hollywood Beach oceanfront condos range from $400,000 (studios) to $3M+ (penthouses). The market has stabilized in 2026 after the 2021–2022 boom, making it a solid buy window.',
+          'Real estate values move quickly in South Florida and differ by block, product type, and building. This site does not list home prices. For current sales data, talk to a licensed Realtor or use recent public comps. If you are evaluating a home purchase, a roof condition report can help you understand code and insurance expectations.',
       },
       {
         h2: 'Living in Hollywood — What to Know',
@@ -155,7 +155,7 @@ export const geoArticles: GeoArticle[] = [
       {
         h2: 'Miami Housing Market (2026)',
         body:
-          'Miami-Dade median home price is approximately $610,000 early 2026. Brickell condos: $500,000–$2M. Coconut Grove: $900,000–$5M+. Coral Gables: $1M–$15M. Wynwood lofts: $500,000–$1.5M. The market remains competitive but has moderated from the 2021–2022 peak. Property taxes are about 1.02% of assessed value. Wind-mitigation roof upgrades are extremely important for insurance affordability — HVHZ-compliant roofs can cut insurance premiums 20–45%.',
+          'Miami-Dade has a wide range of product types, from high-rise to single-family, and home prices change with the market. We do not publish or verify housing prices here. Insurance and wind-mitigation documentation often depend on your roof; ask your insurance agent about credits after a code-compliant re-roof.',
       },
       {
         h2: 'Living in Miami — What to Know',
@@ -196,7 +196,7 @@ export const geoArticles: GeoArticle[] = [
       {
         h2: 'Fort Lauderdale\'s Best Neighborhoods',
         body:
-          'Las Olas Isles, Rio Vista, and Coral Ridge are the classic waterfront neighborhoods — single-family homes with private docks on the canals, priced $1.5M–$15M+. Victoria Park and Poinsettia Heights are walkable downtown neighborhoods with 1920s architecture. Flagler Village is the up-and-coming arts district with lofts and craft breweries. Sailboat Bend is one of the oldest neighborhoods with Key West-style cottages. The Galt Ocean Mile is an oceanfront condo strip. Beverly Heights, Middle River Terrace, and Tarpon River are mid-priced family neighborhoods. Colee Hammock and Lake Ridge offer classic Florida-modern homes.',
+          'Las Olas Isles, Rio Vista, and Coral Ridge are classic waterfront areas with single-family homes and private docks. Victoria Park and Poinsettia Heights are walkable downtown neighborhoods with 1920s architecture. Flagler Village is the up-and-coming arts district with lofts and craft breweries. Sailboat Bend is one of the oldest neighborhoods with Key West–style cottages. The Galt Ocean Mile is a well-known oceanfront condo strip. Other mainland neighborhoods have a mix of housing stock and price points; use a Realtor for current market detail.',
       },
       {
         h2: 'The Canal System & Boating Culture',
@@ -226,7 +226,7 @@ export const geoArticles: GeoArticle[] = [
       {
         h2: 'Housing Market 2026',
         body:
-          'Fort Lauderdale median home price is approximately $575,000 in early 2026. Las Olas Isles waterfront homes: $2M–$15M. Coral Ridge: $1.5M–$8M. Downtown condos: $350,000–$2M. Galt Ocean Mile oceanfront: $400,000–$3M. Property taxes run about 1.1% of assessed value. Like the rest of South Florida, insurance has become challenging, making HVHZ-compliant roof installation essential for affordability.',
+          'Fort Lauderdale spans luxury waterfront, downtown high-rises, and inland family neighborhoods. We do not list property values. Insurance costs often tie to roof age and code compliance, so a documented roof inspection is useful for buyers and long-term owners alike.',
       },
       {
         h2: 'Living in Fort Lauderdale',
@@ -297,7 +297,7 @@ export const geoArticles: GeoArticle[] = [
       {
         h2: 'Pembroke Pines Housing Market',
         body:
-          'Pembroke Pines median home price is approximately $625,000 as of early 2026. Pembroke Falls, SilverLakes, and Chapel Trail homes average $700,000–$1.3M. Grand Palms and Monarch Lakes: $500,000–$900,000. Older east-side neighborhoods: $425,000–$650,000. Condos in gated communities: $250,000–$450,000. Property taxes average about 1.2% of assessed value. Insurance favors HVHZ-compliant roofing.',
+          'Pembroke Pines is largely planned communities and HOAs, with a mix of home ages. List prices and resale values are not something we track on this site. A roof that matches HOA standards and the Florida code can be important for approval and for insurance conversations.',
       },
       {
         h2: 'Living in Pembroke Pines',
@@ -367,7 +367,7 @@ export const geoArticles: GeoArticle[] = [
       {
         h2: 'Miramar Housing Market 2026',
         body:
-          'Miramar median home price is approximately $615,000 in early 2026. Western master-planned communities like Riviera Isles and SunSet Lakes: $750,000–$1.6M. Silver Lakes: $600,000–$1.1M. Monarch Lakes: $550,000–$900,000. Older east Miramar: $400,000–$600,000. Property taxes run about 1.18%.',
+          'Miramar has fast-growing master-planned areas and older single-family stock. We do not publish or update housing price data. If you are roofing shopping, the important part is a measured scope, permit path, and HOA submittal when required.',
       },
       {
         h2: 'Living in Miramar',
@@ -437,7 +437,7 @@ export const geoArticles: GeoArticle[] = [
       {
         h2: 'Davie Housing Market',
         body:
-          'Davie median home price is approximately $640,000 in early 2026. Forest Ridge, Long Lake Ranches, and equestrian estate properties: $1M–$5M+. Arrowhead, Paddock Club: $750,000–$1.5M. Orange Blossom, Stonebrook: $500,000–$900,000. Older eastern Davie: $450,000–$650,000. Property taxes around 1.15%.',
+          'Davie includes ranches, equestrian estates, and family subdivisions. We are not a source of market pricing. Equestrian and multi-building sites often have unique permitting and access — those details belong in a written job scope.',
       },
       {
         h2: 'Living in Davie',
@@ -503,7 +503,7 @@ export const geoArticles: GeoArticle[] = [
       {
         h2: 'Hallandale Beach Housing Market',
         body:
-          'Hallandale Beach median home price is approximately $500,000 in early 2026, but the market is heavily bifurcated. Oceanfront condos: $500,000 (studio) to $15M+ (penthouses). Three Islands waterfront condos: $400,000–$2M. Golden Isles single-family: $1.5M–$6M. Older Hallandale Oaks single-family: $450,000–$700,000. Property taxes run about 1.08%.',
+          'Hallandale Beach has oceanfront towers and inland single-family areas with very different exposure to salt and wind. We do not list condo or home sale prices. Coastal roofing should be specified for corrosion, attachment, and code, not for blog price estimates.',
       },
       {
         h2: 'Living in Hallandale Beach',
@@ -573,7 +573,7 @@ export const geoArticles: GeoArticle[] = [
       {
         h2: 'Dania Beach Housing Market',
         body:
-          'Dania Beach median home price is approximately $520,000 in early 2026. Oceanfront condos: $400,000–$3M. Harbor Towne waterfront single-family: $900,000–$2.5M. Lauderdale Isles canal homes: $700,000–$1.5M. Mainland single-family: $450,000–$750,000. Older west Dania: $375,000–$550,000. Property taxes around 1.15%.',
+          'Dania Beach includes oceanfront condos, canal homes, and mainland neighborhoods. For purchase decisions, work with a local real estate professional; we only discuss roof condition, scope, and code compliance.',
       },
       {
         h2: 'Living in Dania Beach',
@@ -643,7 +643,7 @@ export const geoArticles: GeoArticle[] = [
       {
         h2: 'Aventura Housing Market 2026',
         body:
-          'Aventura is one of the most expensive markets in Florida. Median home price (including condos) is approximately $560,000. Turnberry Ocean Club and Porto Vita ultra-luxury condos: $2M–$25M+. Williams Island: $600,000–$8M. Hidden Bay, Admiral\'s Port: $500,000–$1.5M. Single-family Turnberry Isles: $2M–$15M. Property taxes around 1.08%.',
+          'Aventura is known for luxury high-rises and well-managed condo associations. We do not list sale prices or fees. High-rise and coastal flat re-roofing is often a board-managed capital project; we are happy to align with your engineer and property manager for scope and access.',
       },
       {
         h2: 'Living in Aventura',
