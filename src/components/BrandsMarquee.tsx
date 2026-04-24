@@ -1,177 +1,220 @@
-import { Sun } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { ArrowRight, Sun } from 'lucide-react';
 
 type Brand = {
   name: string;
   category?: string;
-  /** optional SVG path — when provided, the logo is rendered instead of the wordmark */
+  /** optional logo path — when set, the image is rendered in greyscale by default */
   src?: string;
-  /** tailwind height class for logo images */
+  /** tailwind height class for the logo image */
   height?: string;
 };
 
+/* ─── Primary manufacturer grid (6 × 2 desktop) ─── */
 const MANUFACTURERS: Brand[] = [
-  { name: 'GAF',               category: 'Shingles · TPO',         src: '/brands/gaf.svg',           height: 'h-9 md:h-10' },
-  { name: 'Owens Corning',     category: 'Shingles',               src: '/brands/owens-corning.svg', height: 'h-9 md:h-10' },
-  { name: 'CertainTeed',       category: 'Shingles · Metal',       src: '/brands/certainteed.svg',   height: 'h-7 md:h-8'  },
-  { name: 'TAMKO',             category: 'Shingles',               src: '/brands/tamko.svg',         height: 'h-9 md:h-10' },
-  { name: 'IKO',               category: 'Shingles · Modified',    src: '/brands/iko.svg',           height: 'h-8 md:h-9'  },
-  { name: 'Atlas Roofing',     category: 'Shingles' },
-  { name: 'Malarkey',          category: 'Cool Shingles' },
-  { name: 'Westlake Royal',    category: 'Concrete Tile' },
-  { name: 'Eagle Roofing',     category: 'Concrete Tile' },
-  { name: 'Boral Roofing',     category: 'Clay · Concrete Tile' },
-  { name: 'Drexel Metals',     category: 'Standing-Seam' },
-  { name: 'Englert',           category: 'Standing-Seam' },
-  { name: 'McElroy Metal',     category: 'Metal Panels' },
-  { name: 'Metal Sales',       category: 'Metal Panels' },
-  { name: 'Carlisle SynTec',   category: 'TPO · PVC · EPDM',       src: '/brands/carlisle.svg',      height: 'h-8 md:h-9'  },
-  { name: 'Versico',           category: 'TPO · PVC' },
-  { name: 'Johns Manville',    category: 'Commercial · BUR' },
-  { name: 'Polyglass',         category: 'Modified Bitumen' },
-  { name: 'Soprema',           category: 'Modified · SBS' },
-  { name: 'Sika Sarnafil',     category: 'PVC Membranes' },
-  { name: 'Henry Company',     category: 'Waterproofing' },
-  { name: 'Gaco',              category: 'Silicone Coatings' },
-  { name: 'Mule-Hide',         category: 'TPO · Coatings' },
-  { name: 'Firestone',         category: 'TPO · EPDM' },
+  { name: 'GAF',             category: 'Shingles · TPO',        src: '/brands/gaf.svg',           height: 'h-10 md:h-12' },
+  { name: 'Owens Corning',   category: 'Shingles',              src: '/brands/owens-corning.svg', height: 'h-10 md:h-12' },
+  { name: 'CertainTeed',     category: 'Shingles · Metal',      src: '/brands/certainteed.svg',   height: 'h-7 md:h-9'   },
+  { name: 'TAMKO',           category: 'Shingles',              src: '/brands/tamko.svg',         height: 'h-10 md:h-12' },
+  { name: 'Atlas Roofing',   category: 'Shingles' },
+  { name: 'Eagle Roofing',   category: 'Concrete Tile' },
+  { name: 'Westlake Royal',  category: 'Concrete Tile' },
+  { name: 'Carlisle SynTec', category: 'TPO · PVC · EPDM',      src: '/brands/carlisle.svg',      height: 'h-9 md:h-10'  },
+  { name: 'Polyglass',       category: 'Modified Bitumen' },
+  { name: 'Englert',         category: 'Standing-Seam Metal' },
+  { name: 'Drexel Metals',   category: 'Standing-Seam Metal' },
+  { name: 'Sika',            category: 'PVC · Sarnafil' },
 ];
 
+/* ─── Secondary financing badges ─── */
 const FINANCING: Brand[] = [
-  { name: 'Ygrene',              category: 'PACE Financing' },
-  { name: 'Renew Financial',     category: 'PACE Financing' },
-  { name: 'PACE Program',        category: 'Property Assessed' },
-  { name: 'HERO Program',        category: 'PACE Financing' },
-  { name: 'Home Run Financing',  category: 'Home Improvement' },
-  { name: 'GreenSky',            category: 'Home Improvement' },
-  { name: 'Synchrony',           category: 'Home Improvement' },
-  { name: 'Acorn Finance',       category: 'Home Improvement' },
+  { name: 'Ygrene',          category: 'PACE Financing' },
+  { name: 'Renew Financial', category: 'PACE Financing' },
+  { name: 'PACE Program',    category: 'Property Assessed' },
+  { name: 'GreenSky',        category: 'Home Improvement' },
 ];
 
-const Card = ({ b }: { b: Brand }) => (
+/* ─── Scroll-in hook ─── */
+function useInView<T extends HTMLElement>() {
+  const ref = useRef<T | null>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === 'undefined') {
+      setInView(true);
+      return;
+    }
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -80px 0px' },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return { ref, inView };
+}
+
+/* ─── Brand card ─── */
+const BrandCard = ({
+  b,
+  delay,
+  inView,
+  compact = false,
+}: {
+  b: Brand;
+  delay: number;
+  inView: boolean;
+  compact?: boolean;
+}) => (
   <div
-    className="group/card flex-shrink-0 mx-2 md:mx-3"
+    className={`group/card bg-white border border-slate-200/60 transition-all duration-500 ease-out
+      ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+      ${compact ? 'px-5 py-5 min-h-[100px]' : 'p-7 min-h-[150px]'}
+      flex flex-col items-center justify-center text-center
+      shadow-[0_4px_18px_-8px_rgba(15,23,42,0.10)]
+      hover:shadow-[0_18px_36px_-12px_rgba(15,23,42,0.22)]
+      hover:border-orange-200 hover:-translate-y-1.5`}
+    style={{
+      borderRadius: '18px',
+      transitionDelay: `${delay}ms`,
+    }}
     title={b.category ? `${b.name} — ${b.category}` : b.name}
   >
-    <div className="bg-white rounded-xl border border-slate-200/70 shadow-[0_4px_20px_-8px_rgba(15,23,42,0.12)] hover:shadow-[0_14px_32px_-10px_rgba(234,88,12,0.22)] hover:border-orange-200 transition-all duration-300 hover:-translate-y-1 px-6 py-5 min-w-[180px] md:min-w-[210px] h-[100px] md:h-[110px] flex flex-col items-center justify-center">
-      {b.src ? (
-        <img
-          src={b.src}
-          alt={`${b.name} logo`}
-          loading="lazy"
-          decoding="async"
-          className={`${b.height ?? 'h-8 md:h-9'} w-auto max-w-[160px] object-contain mb-1 group-hover/card:scale-[1.04] transition-transform duration-300`}
-        />
-      ) : (
-        <div className="font-serif font-bold text-slate-900 text-[17px] md:text-[19px] leading-tight text-center mb-1 tracking-tight group-hover/card:text-orange-700 transition">
-          {b.name}
-        </div>
-      )}
-      {b.category && (
-        <div className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400 group-hover/card:text-orange-600 transition">
-          {b.category}
-        </div>
-      )}
-    </div>
-  </div>
-);
-
-const Row = ({
-  items,
-  speed,
-  label,
-}: {
-  items: Brand[];
-  speed: 'animate-marquee' | 'animate-marquee-slow';
-  label: string;
-}) => (
-  <div className="mb-10 md:mb-12">
-    {/* section label */}
-    <div className="flex items-center gap-3 mb-4 px-4 max-w-3xl mx-auto">
-      <span className="h-px flex-grow bg-slate-200" />
-      <span className="text-[10px] md:text-[11px] font-bold text-slate-500 uppercase tracking-[0.25em] whitespace-nowrap">
-        {label}
-      </span>
-      <span className="h-px flex-grow bg-slate-200" />
-    </div>
-
-    {/* marquee */}
-    <div className="relative group overflow-hidden py-3">
-      {/* edge fades */}
-      <div
-        className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10"
-        aria-hidden="true"
+    {b.src ? (
+      <img
+        src={b.src}
+        alt={`${b.name} logo`}
+        loading="lazy"
+        decoding="async"
+        className={`${b.height ?? 'h-10'} w-auto max-w-[170px] object-contain mb-2
+          filter grayscale opacity-70
+          group-hover/card:grayscale-0 group-hover/card:opacity-100 group-hover/card:scale-[1.04]
+          transition-all duration-300`}
       />
+    ) : (
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10"
-        aria-hidden="true"
-      />
-
-      <div
-        className={`flex w-max ${speed} group-hover:[animation-play-state:paused]`}
-        style={{ willChange: 'transform' }}
+        className={`font-serif font-bold text-slate-500
+          ${compact ? 'text-[16px] md:text-[18px]' : 'text-[19px] md:text-[22px]'}
+          leading-tight tracking-tight mb-2
+          group-hover/card:text-slate-900 group-hover/card:scale-[1.04]
+          transition-all duration-300`}
       >
-        {/* render the list twice for a seamless loop */}
-        {[...items, ...items].map((b, i) => (
-          <Card key={`${b.name}-${i}`} b={b} />
-        ))}
+        {b.name}
       </div>
-    </div>
+    )}
+    {b.category && (
+      <div
+        className={`font-bold uppercase tracking-[0.2em] text-slate-400 group-hover/card:text-orange-600 transition
+          ${compact ? 'text-[8.5px] md:text-[9px]' : 'text-[9px] md:text-[10px]'}`}
+      >
+        {b.category}
+      </div>
+    )}
   </div>
 );
 
 export default function BrandsMarquee() {
+  const header = useInView<HTMLDivElement>();
+  const grid = useInView<HTMLDivElement>();
+  const finRow = useInView<HTMLDivElement>();
+
   return (
     <section
-      className="relative bg-white py-20 md:py-28 overflow-hidden"
-      aria-label="Roofing manufacturers and financing programs"
+      className="relative bg-gradient-to-b from-white via-slate-50/60 to-white py-20 md:py-28 overflow-hidden"
+      aria-label="Roofing manufacturers we install"
     >
-      {/* soft radial backdrop */}
+      {/* subtle radial accent */}
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(234,88,12,0.05),transparent_65%)] pointer-events-none"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(234,88,12,0.05),transparent_70%)] pointer-events-none"
         aria-hidden="true"
       />
 
-      <div className="container mx-auto px-4 relative">
-        {/* ─── Header ─── */}
-        <div className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
+      <div className="container mx-auto px-4 max-w-6xl relative">
+        {/* ═════ Header ═════ */}
+        <div
+          ref={header.ref}
+          className={`text-center mb-14 md:mb-16 transition-all duration-700 ease-out
+            ${header.inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+        >
           <span className="inline-flex items-center gap-3 text-[11px] font-bold text-orange-600 uppercase tracking-[0.3em] mb-5">
             <span className="w-8 h-px bg-orange-600" />
-            Trusted Brands
+            Trusted Manufacturers
             <span className="w-8 h-px bg-orange-600" />
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-slate-900 leading-[1.1] mb-6">
-            Florida Roofing Manufacturers
+          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-slate-900 leading-[1.1] mb-6 max-w-4xl mx-auto">
+            We Work With Leading Roofing Systems
             <br />
-            <span className="italic text-orange-600">&amp; Financing Programs</span>
+            <span className="italic text-orange-600">Built For Florida Homes</span>
           </h2>
           <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-            We work with leading roofing material manufacturers and financing programs commonly
-            used across South Florida residential and commercial roofing projects — including
-            shingle, tile, metal, flat roofing, and waterproof systems.
+            Premium roofing materials selected for Florida heat, storms, humidity, coastal exposure,
+            and hurricane conditions.
           </p>
         </div>
 
-        {/* ─── Row 1: Manufacturers ─── */}
-        <Row items={MANUFACTURERS} speed="animate-marquee-slow" label="Roofing Material Manufacturers" />
+        {/* ═════ Manufacturer grid ═════ */}
+        <div
+          ref={grid.ref}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5"
+        >
+          {MANUFACTURERS.map((b, i) => (
+            <BrandCard key={b.name} b={b} delay={i * 60} inView={grid.inView} />
+          ))}
+        </div>
 
-        {/* ─── Row 2: Financing ─── */}
-        <Row items={FINANCING} speed="animate-marquee" label="Financing &amp; PACE Programs" />
+        {/* ═════ Financing row ═════ */}
+        <div
+          ref={finRow.ref}
+          className="mt-20 md:mt-24 pt-12 border-t border-slate-200/70"
+        >
+          <div className="text-center mb-8">
+            <span className="inline-flex items-center gap-3 text-[11px] font-bold text-slate-500 uppercase tracking-[0.3em]">
+              <span className="w-6 h-px bg-slate-300" />
+              Financing Options Available
+              <span className="w-6 h-px bg-slate-300" />
+            </span>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-3xl mx-auto">
+            {FINANCING.map((b, i) => (
+              <BrandCard key={b.name} b={b} delay={i * 60} inView={finRow.inView} compact />
+            ))}
+          </div>
+        </div>
 
-        {/* ─── Florida microtext ─── */}
-        <div className="text-center mt-6 mb-6">
+        {/* ═════ Micro trust strip ═════ */}
+        <div className="text-center mt-12">
           <p className="inline-flex items-center gap-2 text-[13px] md:text-sm text-slate-700 bg-orange-50 border border-orange-100 px-5 py-2.5 rounded-full">
             <Sun size={16} className="text-orange-500 shrink-0" />
             <span className="font-medium">
-              Built for Florida weather — hurricanes, heat, humidity &amp; coastal roofing conditions.
+              Serving Miami, Fort Lauderdale, Broward, Palm Beach &amp; all of South Florida.
             </span>
           </p>
         </div>
 
-        {/* ─── Legal disclaimer ─── */}
-        <p className="text-[11px] md:text-[12px] text-slate-400 text-center max-w-4xl mx-auto leading-relaxed mt-6">
-          All trademarks, logos, and brand names are the property of their respective owners.
-          Use of these names does not imply endorsement, sponsorship, certification, or partnership
-          unless expressly stated.
+        {/* ═════ CTA ═════ */}
+        <div className="text-center mt-8">
+          <a
+            href="#quote"
+            className="inline-flex items-center gap-2 bg-slate-900 hover:bg-orange-600 text-white px-8 md:px-10 py-4 rounded-full font-bold text-[13px] md:text-sm uppercase tracking-[0.18em] transition-all duration-300 shadow-[0_10px_26px_-10px_rgba(15,23,42,0.45)] hover:shadow-[0_14px_30px_-10px_rgba(234,88,12,0.45)] hover:-translate-y-0.5"
+          >
+            Get Free Roof Inspection
+            <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+          </a>
+        </div>
+
+        {/* ═════ Disclaimer ═════ */}
+        <p className="text-[11px] md:text-[12px] text-slate-400 text-center max-w-4xl mx-auto leading-relaxed mt-12">
+          All trademarks, logos, and brand names are the property of their respective owners. Use of
+          these names does not imply endorsement, sponsorship, certification, or partnership unless
+          expressly stated. Dr. Roofing FL installs roofing systems and materials from these
+          manufacturers upon customer request, subject to product availability, local code
+          compliance, and manufacturer specifications.
         </p>
       </div>
     </section>
