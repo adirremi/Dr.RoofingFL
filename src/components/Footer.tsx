@@ -1,26 +1,23 @@
 import { Phone, MapPin, Mail, Facebook, Instagram, Clock, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { locationList } from '../data/locations';
 import { services } from '../data/services';
 import { geoArticles } from '../data/geoArticles';
+import { locationsByCounty } from '../data/locationsByCounty';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-
-  const extraCities = [
-    'Pompano Beach', 'Coral Springs', 'Plantation', 'Sunrise', 'Deerfield Beach',
-    'Boca Raton', 'Delray Beach', 'Weston', 'Coconut Creek', 'Sunny Isles',
-  ];
+  const totalCities = locationsByCounty.reduce((n, g) => n + g.cities.length, 0);
 
   return (
     <footer className="bg-slate-900 text-gray-300">
       <div className="container mx-auto px-4 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        {/* Top block: brand + services + contact */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div>
             <img src="/logo_without_backround.png" alt="Dr. Roofing FL" className="h-20 w-auto mb-4 bg-white p-2 rounded-lg" />
-            <p className="text-sm leading-relaxed mb-4 max-w-md">
-              South Florida's trusted roofing contractor — Hollywood, Miami, Fort Lauderdale, Broward & Miami-Dade. HVHZ-certified, factory-authorized, licensed and insured since 2011.
+            <p className="text-sm leading-relaxed mb-4">
+              South Florida's trusted roofing contractor — serving <strong className="text-white">{totalCities}+ cities</strong> across Broward, Miami-Dade &amp; Palm Beach Counties. HVHZ-certified, factory-authorized, licensed and insured since 2011.
             </p>
             <div className="flex items-center gap-3 mb-4">
               <a href="https://www.facebook.com/Drroofingfl" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 bg-slate-800 hover:bg-orange-600 rounded-lg flex items-center justify-center transition">
@@ -32,7 +29,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-2 text-xs">
               <Shield size={14} className="text-orange-400" />
-              <span>Licensed & Insured Florida Roofing Contractor</span>
+              <span>Licensed &amp; Insured Florida Roofing Contractor</span>
             </div>
           </div>
 
@@ -49,16 +46,25 @@ export default function Footer() {
               ))}
               <li><Link to="/financing" className="hover:text-orange-400 transition">Financing / $0 Down</Link></li>
             </ul>
+
+            <h4 className="text-white font-bold text-base mt-6 mb-3">Company</h4>
+            <ul className="space-y-1 text-sm">
+              <li><Link to="/about" className="hover:text-orange-400 transition">About Us</Link></li>
+              <li><Link to="/projects" className="hover:text-orange-400 transition">Projects</Link></li>
+              <li><Link to="/gallery" className="hover:text-orange-400 transition">Photo Gallery</Link></li>
+              <li><Link to="/blog" className="hover:text-orange-400 transition">Blog &amp; Guides</Link></li>
+              <li><Link to="/faq" className="hover:text-orange-400 transition">FAQ</Link></li>
+            </ul>
           </div>
 
-          {/* Cities */}
+          {/* Featured city guides (geo articles) */}
           <div>
-            <h4 className="text-white font-bold text-base mb-4">Service Areas</h4>
+            <h4 className="text-white font-bold text-base mb-4">Local Guides</h4>
             <ul className="space-y-2 text-sm">
-              {locationList.map((l) => (
-                <li key={l.citySlug}>
-                  <Link to={l.slug} className="hover:text-orange-400 transition">
-                    {l.city} Roofing
+              {geoArticles.map((a) => (
+                <li key={a.slug}>
+                  <Link to={a.path} className="hover:text-orange-400 transition">
+                    {a.city}, FL Guide
                   </Link>
                 </li>
               ))}
@@ -86,39 +92,46 @@ export default function Footer() {
                 <span>Mon–Sat · 7AM–7PM<br />Sun · Emergency only</span>
               </li>
             </ul>
-            <div className="mt-5">
-              <h5 className="text-white font-semibold text-sm mb-2">Company</h5>
-              <ul className="space-y-1 text-sm">
-                <li><Link to="/about" className="hover:text-orange-400 transition">About Us</Link></li>
-                <li><Link to="/projects" className="hover:text-orange-400 transition">Projects</Link></li>
-                <li><Link to="/gallery" className="hover:text-orange-400 transition">Photo Gallery</Link></li>
-                <li><Link to="/blog" className="hover:text-orange-400 transition">Blog & Guides</Link></li>
-                <li><Link to="/faq" className="hover:text-orange-400 transition">FAQ</Link></li>
-                <li><Link to="/financing" className="hover:text-orange-400 transition">Financing</Link></li>
-              </ul>
-            </div>
           </div>
         </div>
 
-        {/* City guides linking strip */}
-        <div className="border-t border-slate-800 pt-6 pb-2">
-          <p className="text-xs text-gray-400 mb-2 uppercase tracking-widest">City Guides:</p>
-          <p className="text-sm text-gray-400 leading-relaxed">
-            {geoArticles.map((a, i) => (
-              <span key={a.slug}>
-                <Link to={a.path} className="hover:text-orange-400">{a.city}, FL Guide</Link>
-                {i < geoArticles.length - 1 ? ' · ' : ''}
-              </span>
+        {/* Service Areas grouped by county — full "everything we cover" block */}
+        <div className="border-t border-slate-800 pt-10 pb-2 mb-6">
+          <div className="flex items-baseline justify-between mb-5">
+            <h3 className="text-white font-bold text-lg uppercase tracking-wider">
+              Service Areas
+            </h3>
+            <span className="text-xs text-gray-400">
+              {totalCities} cities · 3 counties
+            </span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {locationsByCounty.map((group) => (
+              <div key={group.county}>
+                <div className="flex items-center gap-2 mb-3 pb-2 border-b border-slate-800">
+                  <MapPin size={14} className="text-orange-400" />
+                  <h4 className="text-white font-bold text-sm uppercase tracking-wider">
+                    {group.county}
+                  </h4>
+                  <span className="ml-auto text-xs text-gray-500">
+                    {group.cities.length}
+                  </span>
+                </div>
+                <ul className="grid grid-cols-2 gap-x-3 gap-y-1 text-[13px]">
+                  {group.cities.map((l) => (
+                    <li key={l.citySlug}>
+                      <Link
+                        to={l.slug}
+                        className="text-gray-400 hover:text-orange-400 transition"
+                      >
+                        {l.city}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </p>
-        </div>
-
-        {/* Extra cities strip */}
-        <div className="border-t border-slate-800 pt-6 pb-2">
-          <p className="text-xs text-gray-400 mb-2 uppercase tracking-widest">Also serving:</p>
-          <p className="text-sm text-gray-400">
-            {extraCities.join(' · ')} · and all of Broward & Miami-Dade Counties.
-          </p>
+          </div>
         </div>
 
         {/* Bottom bar */}
