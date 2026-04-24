@@ -12,8 +12,8 @@ export default function Header() {
   const [mobileCounties, setMobileCounties] = useState<Record<string, boolean>>({});
 
   const linkCls = ({ isActive }: { isActive: boolean }) =>
-    `px-3 py-2 rounded-md text-sm font-medium transition ${
-      isActive ? 'text-orange-600' : 'text-gray-700 hover:text-orange-600'
+    `px-3 py-2 text-[13px] font-semibold uppercase tracking-[0.12em] transition ${
+      isActive ? 'text-orange-600' : 'text-slate-800 hover:text-orange-600'
     }`;
 
   const closeAll = () => {
@@ -25,22 +25,25 @@ export default function Header() {
   return (
     <>
       {/* Top utility bar */}
-      <div className="hidden md:block bg-slate-900 text-gray-200 text-xs">
-        <div className="container mx-auto px-4 flex items-center justify-between py-2">
-          <div className="flex items-center gap-2">
-            <MapPin size={14} className="text-orange-400" />
-            <span>3951 SW 41st St, Hollywood, FL 33023</span>
+      <div className="hidden md:block bg-slate-900 text-gray-200 text-[11px] uppercase tracking-[0.2em]">
+        <div className="container mx-auto px-4 flex items-center justify-between py-2.5">
+          <div className="flex items-center gap-6">
+            <span className="inline-flex items-center gap-2">
+              <MapPin size={12} className="text-orange-400" />
+              3951 SW 41st St, Hollywood, FL 33023
+            </span>
+            <span className="hidden lg:inline text-gray-500">Licensed &amp; Insured · HVHZ Certified</span>
           </div>
-          <div className="flex items-center gap-4">
-            <span>Mon–Sat · 7:00 AM – 7:00 PM</span>
-            <a href="tel:+17543105557" className="text-orange-400 hover:text-orange-300 font-semibold inline-flex items-center gap-1">
+          <div className="flex items-center gap-6">
+            <span className="text-gray-400">Mon–Sat · 7AM – 7PM</span>
+            <a href="tel:+17543105557" className="text-orange-400 hover:text-orange-300 font-bold inline-flex items-center gap-1.5 tracking-[0.15em]">
               <Phone size={12} /> (754) 310-5557
             </a>
           </div>
         </div>
       </div>
 
-      <header className="bg-white sticky top-0 z-40 shadow-md border-b-4 border-orange-500">
+      <header className="bg-white sticky top-0 z-40 shadow-md border-b-2 border-orange-500">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-3 gap-4">
             <Link to="/" className="flex items-center -my-2" aria-label="Dr. Roofing FL Home">
@@ -63,8 +66,8 @@ export default function Header() {
 
               {/* Services dropdown */}
               <div className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-                <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-orange-600 transition inline-flex items-center gap-1">
-                  Services <ChevronDown size={14} />
+                <button className="px-3 py-2 text-[13px] font-semibold uppercase tracking-[0.12em] text-slate-800 hover:text-orange-600 transition inline-flex items-center gap-1">
+                  Services <ChevronDown size={13} />
                 </button>
                 {servicesOpen && (
                   <div className="absolute top-full left-0 mt-0 pt-1 w-72 z-50">
@@ -87,8 +90,8 @@ export default function Header() {
 
               {/* Service Areas mega-menu */}
               <div className="relative" onMouseEnter={() => setAreasOpen(true)} onMouseLeave={() => setAreasOpen(false)}>
-                <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-orange-600 transition inline-flex items-center gap-1">
-                  Service Areas <ChevronDown size={14} />
+                <button className="px-3 py-2 text-[13px] font-semibold uppercase tracking-[0.12em] text-slate-800 hover:text-orange-600 transition inline-flex items-center gap-1">
+                  Service Areas <ChevronDown size={13} />
                 </button>
                 {areasOpen && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 pt-1 w-[880px] max-w-[95vw] z-50">
@@ -139,9 +142,9 @@ export default function Header() {
 
               <a
                 href="tel:+17543105557"
-                className="ml-2 inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 px-5 py-3 rounded-lg font-bold text-white transition shadow-md"
+                className="ml-3 inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-500 px-6 py-3 rounded-sm font-bold text-white text-[13px] uppercase tracking-[0.12em] transition shadow-lg shadow-orange-200"
               >
-                <Phone size={16} /> (754) 310-5557
+                <Phone size={14} /> (754) 310-5557
               </a>
             </nav>
 
