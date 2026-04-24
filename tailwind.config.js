@@ -21,6 +21,9 @@ export default {
         'fade-in': 'fade-in 500ms ease-out both',
         'marquee': 'marquee 40s linear infinite',
         'marquee-slow': 'marquee 60s linear infinite',
+        'marquee-fast': 'marquee 30s linear infinite',
+        'marquee-reverse': 'marquee-reverse 45s linear infinite',
+        'marquee-reverse-slow': 'marquee-reverse 55s linear infinite',
       },
       keyframes: {
         'fade-up': {
@@ -34,6 +37,10 @@ export default {
         'marquee': {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
+        },
+        'marquee-reverse': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
         },
       },
     },
