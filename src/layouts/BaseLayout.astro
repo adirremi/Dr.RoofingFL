@@ -1,7 +1,7 @@
 ---
 import '../index.css';
-import '@fontsource-variable/inter/wght.css';
-import '@fontsource/dm-serif-display/latin-400.css';
+import interLatinUrl from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import dmSerifLatinUrl from '@fontsource/dm-serif-display/files/dm-serif-display-latin-400-normal.woff2?url';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import StickyMobileCTA from '../components/StickyMobileCTA';
@@ -213,9 +213,12 @@ const sitewideSchemas = [orgSchema, websiteSchema, localBusinessSchema];
     {Astro.url.pathname === '/' && (
       <link rel="preload" as="image" href="/hero_lcp.webp" type="image/webp" fetchpriority="high" />
     )}
-    <link rel="dns-prefetch" href="https://maps.google.com" />
 
-    {/* Fonts are self-hosted via @fontsource — no external CDN, no preconnect needed */}
+    {/* Critical fonts — preload latin subset so FCP/LCP text doesn't wait */}
+    <link rel="preload" as="font" type="font/woff2" href={interLatinUrl} crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href={dmSerifLatinUrl} crossorigin="anonymous" />
+
+    <link rel="dns-prefetch" href="https://maps.google.com" />
 
     {/* Sitewide JSON-LD */}
     {sitewideSchemas.map((s) => (
@@ -227,11 +230,27 @@ const sitewideSchemas = [orgSchema, websiteSchema, localBusinessSchema];
       <script type="application/ld+json" set:html={JSON.stringify(s)} />
     ))}
 
-    <style is:inline>
+    <style is:inline set:html={`
+      @font-face {
+        font-family: 'Inter Variable';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 100 900;
+        src: url('${interLatinUrl}') format('woff2-variations');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: 'DM Serif Display';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src: url('${dmSerifLatinUrl}') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
       html { scroll-behavior: smooth; }
       body { font-family: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif; margin: 0; background: #ffffff; color: #0f172a; }
       img { max-width: 100%; height: auto; }
-    </style>
+    `} />
   </head>
   <body class="min-h-screen bg-white flex flex-col">
     <Header client:idle />
