@@ -10,31 +10,43 @@ type Brand = {
   height?: string;
 };
 
-/* ─── Primary manufacturer grid (6 × 2 desktop) ─── */
+/* ─── Manufacturer grid (18 cards · all real logos) ─── */
 const MANUFACTURERS: Brand[] = [
-  { name: 'GAF',             category: 'Shingles · TPO',        src: '/brands/gaf.svg',           height: 'h-10 md:h-12' },
-  { name: 'Owens Corning',   category: 'Shingles',              src: '/brands/owens-corning.svg', height: 'h-10 md:h-12' },
-  { name: 'CertainTeed',     category: 'Shingles · Metal',      src: '/brands/certainteed.svg',   height: 'h-7 md:h-9'   },
-  { name: 'TAMKO',           category: 'Shingles',              src: '/brands/tamko.svg',         height: 'h-10 md:h-12' },
-  { name: 'Atlas Roofing',   category: 'Shingles' },
-  { name: 'Eagle Roofing',   category: 'Concrete Tile' },
-  { name: 'Westlake Royal',  category: 'Concrete Tile' },
-  { name: 'Carlisle SynTec', category: 'TPO · PVC · EPDM',      src: '/brands/carlisle.svg',      height: 'h-9 md:h-10'  },
-  { name: 'Polyglass',       category: 'Modified Bitumen' },
-  { name: 'Englert',         category: 'Standing-Seam Metal' },
-  { name: 'Drexel Metals',   category: 'Standing-Seam Metal' },
-  { name: 'Sika',            category: 'PVC · Sarnafil' },
+  // Shingle systems
+  { name: 'GAF',             category: 'Shingles · TPO',       src: '/brands/gaf.svg',           height: 'h-10 md:h-12' },
+  { name: 'Owens Corning',   category: 'Shingles',             src: '/brands/owens-corning.svg', height: 'h-10 md:h-12' },
+  { name: 'CertainTeed',     category: 'Shingles · Metal',     src: '/brands/certainteed.svg',   height: 'h-7 md:h-9'   },
+  { name: 'TAMKO',           category: 'Shingles',             src: '/brands/tamko.svg',         height: 'h-10 md:h-12' },
+  { name: 'IKO',             category: 'Shingles · Modified',  src: '/brands/iko.svg',           height: 'h-8 md:h-10'  },
+  { name: 'Atlas',           category: 'Shingles',             src: '/brands/atlas.webp',        height: 'h-10 md:h-12' },
+  { name: 'Malarkey',        category: 'Cool Shingles',        src: '/brands/malarkey.webp',     height: 'h-9 md:h-11'  },
+  // Tile systems (Florida specialty)
+  { name: 'Eagle Roofing',   category: 'Concrete Tile',        src: '/brands/eagle.webp',        height: 'h-10 md:h-12' },
+  { name: 'Boral',           category: 'Clay · Concrete Tile', src: '/brands/boral.webp',        height: 'h-9 md:h-11'  },
+  // Standing-seam & metal
+  { name: 'Englert',         category: 'Standing-Seam Metal',  src: '/brands/englert.webp',      height: 'h-8 md:h-10'  },
+  { name: 'Drexel Metals',   category: 'Standing-Seam Metal',  src: '/brands/drexel-metals.webp',height: 'h-7 md:h-9'   },
+  { name: 'McElroy Metal',   category: 'Metal Panels',         src: '/brands/mcelroy-metal.webp',height: 'h-10 md:h-12' },
+  { name: 'Metal Sales',     category: 'Metal Panels',         src: '/brands/metal-sales.webp',  height: 'h-7 md:h-9'   },
+  // Flat / Commercial / Waterproofing
+  { name: 'Carlisle SynTec', category: 'TPO · PVC · EPDM',     src: '/brands/carlisle.svg',      height: 'h-9 md:h-10'  },
+  { name: 'Polyglass',       category: 'Modified Bitumen',     src: '/brands/polyglass.webp',    height: 'h-8 md:h-10'  },
+  { name: 'Johns Manville',  category: 'Commercial · BUR',     src: '/brands/johns-manville.webp',height: 'h-10 md:h-12'},
+  { name: 'Firestone',       category: 'TPO · EPDM',           src: '/brands/firestone.webp',    height: 'h-9 md:h-11'  },
+  { name: 'Henry',           category: 'Waterproofing',        src: '/brands/henry.webp',        height: 'h-12 md:h-14' },
 ];
 
-/* ─── Secondary financing badges ─── */
+/* ─── Financing badges (real logos + wordmarks for PACE) ─── */
 const FINANCING: Brand[] = [
+  { name: 'GreenSky',        category: 'Home Improvement',     src: '/brands/greensky.webp',     height: 'h-6 md:h-7'  },
+  { name: 'Renew Financial', category: 'PACE Financing',       src: '/brands/renew-financial.webp', height: 'h-10 md:h-12' },
+  { name: 'Home Run',        category: 'Home Improvement',     src: '/brands/home-run.webp',     height: 'h-8 md:h-10' },
   { name: 'Ygrene',          category: 'PACE Financing' },
-  { name: 'Renew Financial', category: 'PACE Financing' },
   { name: 'PACE Program',    category: 'Property Assessed' },
-  { name: 'GreenSky',        category: 'Home Improvement' },
+  { name: 'HERO Program',    category: 'PACE Financing' },
 ];
 
-/* ─── Scroll-in hook ─── */
+/* ─── Scroll-in reveal hook ─── */
 function useInView<T extends HTMLElement>() {
   const ref = useRef<T | null>(null);
   const [inView, setInView] = useState(false);
@@ -52,7 +64,7 @@ function useInView<T extends HTMLElement>() {
           obs.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: '0px 0px -80px 0px' },
+      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' },
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -75,7 +87,7 @@ const BrandCard = ({
   <div
     className={`group/card bg-white border border-slate-200/60 transition-all duration-500 ease-out
       ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
-      ${compact ? 'px-5 py-5 min-h-[100px]' : 'p-7 min-h-[150px]'}
+      ${compact ? 'px-4 py-4 min-h-[92px]' : 'p-6 min-h-[140px]'}
       flex flex-col items-center justify-center text-center
       shadow-[0_4px_18px_-8px_rgba(15,23,42,0.10)]
       hover:shadow-[0_18px_36px_-12px_rgba(15,23,42,0.22)]
@@ -92,7 +104,7 @@ const BrandCard = ({
         alt={`${b.name} logo`}
         loading="lazy"
         decoding="async"
-        className={`${b.height ?? 'h-10'} w-auto max-w-[170px] object-contain mb-2
+        className={`${b.height ?? 'h-10'} w-auto max-w-[160px] object-contain mb-2
           filter grayscale opacity-70
           group-hover/card:grayscale-0 group-hover/card:opacity-100 group-hover/card:scale-[1.04]
           transition-all duration-300`}
@@ -100,7 +112,7 @@ const BrandCard = ({
     ) : (
       <div
         className={`font-serif font-bold text-slate-500
-          ${compact ? 'text-[16px] md:text-[18px]' : 'text-[19px] md:text-[22px]'}
+          ${compact ? 'text-[15px] md:text-[17px]' : 'text-[18px] md:text-[20px]'}
           leading-tight tracking-tight mb-2
           group-hover/card:text-slate-900 group-hover/card:scale-[1.04]
           transition-all duration-300`}
@@ -111,7 +123,7 @@ const BrandCard = ({
     {b.category && (
       <div
         className={`font-bold uppercase tracking-[0.2em] text-slate-400 group-hover/card:text-orange-600 transition
-          ${compact ? 'text-[8.5px] md:text-[9px]' : 'text-[9px] md:text-[10px]'}`}
+          ${compact ? 'text-[8px] md:text-[8.5px]' : 'text-[8.5px] md:text-[10px]'}`}
       >
         {b.category}
       </div>
@@ -135,7 +147,7 @@ export default function BrandsMarquee() {
         aria-hidden="true"
       />
 
-      <div className="container mx-auto px-4 max-w-6xl relative">
+      <div className="container mx-auto px-4 max-w-7xl relative">
         {/* ═════ Header ═════ */}
         <div
           ref={header.ref}
@@ -164,7 +176,7 @@ export default function BrandsMarquee() {
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5"
         >
           {MANUFACTURERS.map((b, i) => (
-            <BrandCard key={b.name} b={b} delay={i * 60} inView={grid.inView} />
+            <BrandCard key={b.name} b={b} delay={i * 50} inView={grid.inView} />
           ))}
         </div>
 
@@ -180,9 +192,9 @@ export default function BrandsMarquee() {
               <span className="w-6 h-px bg-slate-300" />
             </span>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 max-w-5xl mx-auto">
             {FINANCING.map((b, i) => (
-              <BrandCard key={b.name} b={b} delay={i * 60} inView={finRow.inView} compact />
+              <BrandCard key={b.name} b={b} delay={i * 50} inView={finRow.inView} compact />
             ))}
           </div>
         </div>
@@ -201,7 +213,7 @@ export default function BrandsMarquee() {
         <div className="text-center mt-8">
           <a
             href="#quote"
-            className="inline-flex items-center gap-2 bg-slate-900 hover:bg-orange-600 text-white px-8 md:px-10 py-4 rounded-full font-bold text-[13px] md:text-sm uppercase tracking-[0.18em] transition-all duration-300 shadow-[0_10px_26px_-10px_rgba(15,23,42,0.45)] hover:shadow-[0_14px_30px_-10px_rgba(234,88,12,0.45)] hover:-translate-y-0.5"
+            className="group inline-flex items-center gap-2 bg-slate-900 hover:bg-orange-600 text-white px-8 md:px-10 py-4 rounded-full font-bold text-[13px] md:text-sm uppercase tracking-[0.18em] transition-all duration-300 shadow-[0_10px_26px_-10px_rgba(15,23,42,0.45)] hover:shadow-[0_14px_30px_-10px_rgba(234,88,12,0.45)] hover:-translate-y-0.5"
           >
             Get Free Roof Inspection
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
