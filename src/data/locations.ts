@@ -1,3 +1,6 @@
+import { buildCities } from './cityBuilder';
+import { newCitySeeds } from './newCitySeeds';
+
 export interface LocationFAQ {
   question: string;
   answer: string;
@@ -1190,4 +1193,17 @@ export const locations: Record<string, LocationData> = {
   },
 };
 
+// ───── Merge in the ~95 generated cities (Palm Beach, Broward, Miami-Dade) ─────
+// (`buildCities` + `newCitySeeds` are imported at the top of this module.)
+const generatedCities = buildCities(newCitySeeds);
+for (const slug of Object.keys(generatedCities)) {
+  if (!locations[slug]) {
+    locations[slug] = generatedCities[slug];
+  }
+}
+
 export const locationList = Object.values(locations);
+
+/** All city slugs — handy for sitemap / dynamic routes. */
+export const allCitySlugs = locationList.map((l) => l.citySlug);
+

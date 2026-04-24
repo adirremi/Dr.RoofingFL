@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState } from 'react';
+import type { ServiceCityCombo } from '../data/serviceCity';
 import {
   Phone,
   CheckCircle,
@@ -29,11 +30,15 @@ const ICON_MAP: Record<string, typeof Shield> = {
   star: Star,
 };
 
-export default function ServiceCityPage() {
+interface Props {
+  combo?: ServiceCityCombo;
+}
+
+export default function ServiceCityPage({ combo: comboProp }: Props = {}) {
   const { slug } = useParams<{ slug: string }>();
   const [openFaq, setOpenFaq] = useState<number>(0);
 
-  const combo = slug ? serviceCityBySlug[slug] : undefined;
+  const combo = comboProp ?? (slug ? serviceCityBySlug[slug] : undefined);
   if (!combo) return <NotFoundPage />;
 
   const { service, location } = combo;

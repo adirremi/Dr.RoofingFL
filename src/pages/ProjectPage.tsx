@@ -12,9 +12,15 @@ import GalleryLightbox from '../components/GalleryLightbox';
 
 const SITE = 'https://drroofingflorida.com';
 
-export default function ProjectPage() {
+import type { Project } from '../data/projects';
+
+interface Props {
+  project?: Project;
+}
+
+export default function ProjectPage({ project: projectProp }: Props = {}) {
   const { slug } = useParams<{ slug: string }>();
-  const project = slug ? projectsBySlug[slug] : undefined;
+  const project = projectProp ?? (slug ? projectsBySlug[slug] : undefined);
 
   const [lbOpen, setLbOpen] = useState(false);
   const [lbIndex, setLbIndex] = useState(0);

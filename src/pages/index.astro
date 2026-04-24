@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomePage from '../pages/HomePage';
+import { globalFaqs } from '../data/faqs';
+
+const SITE = 'https://drroofingflorida.com';
+
+const homeFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: globalFaqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+  ],
+};
+---
+
+<BaseLayout
+  title="Roofing Contractor in Hollywood, Miami & South Florida | Dr. Roofing FL"
+  description="Licensed, insured roofing contractor serving Hollywood, Miami, Fort Lauderdale, Pembroke Pines, Miramar & all of South Florida. Tile, metal, shingle, flat & TPO roofs. Free quote — (754) 310-5557."
+  canonical="/"
+  keywords="roofing contractor florida, roofer hollywood fl, miami roofer, fort lauderdale roofing, tile roof, metal roof, shingle roof, flat roof, roof repair south florida"
+  schema={[homeFaqSchema, breadcrumbSchema]}
+>
+  <HomePage client:load />
+</BaseLayout>

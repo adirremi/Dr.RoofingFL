@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQPage from './FAQPage';
+import { globalFaqs } from '../data/faqs';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: globalFaqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
+};
+---
+
+<BaseLayout
+  title="Florida Roofing FAQ — Costs, Timing, Permits, Insurance | Dr. Roofing FL"
+  description="The most common Florida roofing questions answered: costs, timelines, HVHZ codes, insurance claims, financing, warranties — straight answers from a licensed contractor."
+  canonical="/faq"
+  keywords="florida roofing faq, roof cost florida, hvhz roofing, roof insurance claim florida, roofing permits florida"
+  schema={faqSchema}
+>
+  <FAQPage client:visible />
+</BaseLayout>

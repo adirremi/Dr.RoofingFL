@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AboutPage from './AboutPage';
+
+const SITE = 'https://drroofingflorida.com';
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  url: `${SITE}/about`,
+  name: 'About Dr. Roofing FL',
+  description:
+    'Family-owned, licensed and insured Florida roofing contractor serving Hollywood, Miami, Fort Lauderdale and all of South Florida.',
+};
+---
+
+<BaseLayout
+  title="About Us — Family-Owned Florida Roofing Contractor | Dr. Roofing FL"
+  description="Dr. Roofing FL — licensed, insured, family-owned roofing contractor serving South Florida since 2010. Meet our team and our story."
+  canonical="/about"
+  keywords="about dr roofing fl, florida roofing contractor history, hollywood fl roofer team, family roofing company"
+  schema={aboutSchema}
+>
+  <AboutPage client:visible />
+</BaseLayout>

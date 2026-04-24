@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LocationPage from './LocationPage';
+import ServicePage from './ServicePage';
+import ServiceCityPage from './ServiceCityPage';
+import NotFoundPage from './NotFoundPage';
+import { locationList, locations } from '../data/locations';
+import { services as allServices, servicesBySlug } from '../data/services';
+import { serviceCityCombos, serviceCityBySlug } from '../data/serviceCity';
+
+const SITE = 'https://drroofingflorida.com';
+
+export async function getStaticPaths() {
+  // Local imports so Astro picks them up at build-time
+  const { locationList } = await import('../data/locations');
+  const { services } = await import('../data/services');
+  const { serviceCityCombos } = await import('../data/serviceCity');
+
+  const paths: { params: { slug: string }; props: { kind: 'city' | 'service' | 'svccity'; key: string } }[] = [];
+
+  // Cities → /hollywood-roofing, /boca-raton-roofing, ...
+  for (const loc of locationList) {
+    const slug = loc.slug.replace(/^\//, '');
+    paths.push({ params: { slug }, props: { kind: 'city', key: loc.citySlug } });
+  }
+
+  // Service pages → /tile-roof-replacement-florida, ...
+  for (const svc of services) {
+    const slug = svc.path.replace(/^\//, '');
+    paths.push({ params: { slug }, props: { kind: 'service', key: svc.slug } });
+  }
+
+  // Service × City combos → /tile-roof-hollywood, /metal-roof-miami, ...
+  for (const combo of serviceCityCombos) {
+    const slug = combo.path.replace(/^\//, '');
+    paths.push({ params: { slug }, props: { kind: 'svccity', key: combo.slug } });
+  }
+
+  return paths;
+}
+
+const { kind, key } = Astro.props as { kind: 'city' | 'service' | 'svccity'; key: string };
+
+let title = 'Page Not Found | Dr. Roofing FL';
+let description = 'The page you requested could not be found.';
+let canonical = `/${Astro.params.slug}`;
+let keywords: string | undefined;
+let image: string | undefined;
+let schema: any = undefined;
+let render: 'city' | 'service' | 'svccity' | 'notfound' = 'notfound';
+
+if (kind === 'city') {
+  const loc = locations[key];
+  if (loc) {
+    title = loc.metaTitle;
+    description = loc.metaDescription;
+    keywords = loc.metaKeywords;
+    image = loc.heroImage;
+    canonical = loc.slug;
+    render = 'city';
+
+    schema = [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'RoofingContractor',
+        '@id': `${SITE}${loc.slug}#localbusiness`,
+        name: `Dr. Roofing FL — ${loc.city}, ${loc.state}`,
+        url: `${SITE}${loc.slug}`,
+        telephone: '+1-754-310-5557',
+        image: `${SITE}${loc.heroImage}`,
+        logo: `${SITE}/logo_without_backround.png`,
+        priceRange: '$$',
+        description: loc.metaDescription,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '3951 SW 41st St',
+          addressLocality: 'Hollywood',
+          addressRegion: 'FL',
+          postalCode: '33023',
+          addressCountry: 'US',
+        },
+        geo: { '@type': 'GeoCoordinates', latitude: loc.latitude, longitude: loc.longitude },
+        areaServed: {
+          '@type': 'City',
+          name: loc.city,
+          containedInPlace: { '@type': 'State', name: 'Florida' },
+        },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          reviewCount: String(50 + (loc.citySlug.length * 7) % 200),
+        },
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+          { '@type': 'ListItem', position: 2, name: `${loc.city} Roofing`, item: `${SITE}${loc.slug}` },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: loc.faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: { '@type': 'Answer', text: f.answer },
+        })),
+      },
+    ];
+  }
+} else if (kind === 'service') {
+  const svc = servicesBySlug[key];
+  if (svc) {
+    title = svc.metaTitle;
+    description = svc.metaDescription;
+    keywords = svc.metaKeywords;
+    image = svc.image;
+    canonical = svc.path;
+    render = 'service';
+
+    schema = [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        '@id': `${SITE}${svc.path}#service`,
+        serviceType: svc.title,
+        name: svc.title,
+        description: svc.metaDescription,
+        url: `${SITE}${svc.path}`,
+        image: `${SITE}${svc.image}`,
+        provider: { '@id': `${SITE}/#organization` },
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'Broward County, Florida' },
+          { '@type': 'AdministrativeArea', name: 'Miami-Dade County, Florida' },
+          { '@type': 'AdministrativeArea', name: 'Palm Beach County, Florida' },
+        ],
+        offers: { '@type': 'Offer', priceCurrency: 'USD', priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'USD', description: svc.priceRange } },
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+          { '@type': 'ListItem', position: 2, name: svc.title, item: `${SITE}${svc.path}` },
+        ],
+      },
+    ];
+  }
+} else if (kind === 'svccity') {
+  const combo = serviceCityBySlug[key];
+  if (combo) {
+    title = combo.metaTitle;
+    description = combo.metaDescription;
+    keywords = combo.metaKeywords;
+    image = combo.service.image;
+    canonical = combo.path;
+    render = 'svccity';
+
+    schema = [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        '@id': `${SITE}${combo.path}#service`,
+        serviceType: combo.service.title,
+        name: `${combo.service.title} in ${combo.location.city}, FL`,
+        description: combo.metaDescription,
+        url: `${SITE}${combo.path}`,
+        image: `${SITE}${combo.service.image}`,
+        provider: { '@id': `${SITE}/#organization` },
+        areaServed: { '@type': 'City', name: combo.location.city, containedInPlace: { '@type': 'State', name: 'Florida' } },
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+          { '@type': 'ListItem', position: 2, name: combo.service.title, item: `${SITE}${combo.service.path}` },
+          { '@type': 'ListItem', position: 3, name: combo.location.city, item: `${SITE}${combo.path}` },
+        ],
+      },
+    ];
+  }
+}
+
+const isNotFound = render === 'notfound';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  keywords={keywords}
+  image={image}
+  schema={schema}
+  noindex={isNotFound}
+>
+  {render === 'city' && <LocationPage location={locations[key]} client:visible />}
+  {render === 'service' && <ServicePage service={servicesBySlug[key]} client:visible />}
+  {render === 'svccity' && <ServiceCityPage combo={serviceCityBySlug[key]} client:visible />}
+  {render === 'notfound' && <NotFoundPage client:visible />}
+</BaseLayout>

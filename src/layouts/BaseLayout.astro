@@ -1,0 +1,259 @@
+---
+import '../index.css';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import StickyMobileCTA from '../components/StickyMobileCTA';
+
+interface Schema {
+  '@context'?: string;
+  '@type'?: string;
+  [key: string]: unknown;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string; // e.g. "/", "/about", "/hollywood-roofing"
+  keywords?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  schema?: Schema | Schema[];
+  noindex?: boolean;
+  /** When true, render <article> hint via og:type=article */
+  publishedDate?: string;
+  modifiedDate?: string;
+}
+
+const SITE = 'https://drroofingflorida.com';
+
+const {
+  title,
+  description,
+  canonical,
+  keywords,
+  image,
+  type = 'website',
+  schema,
+  noindex = false,
+  publishedDate,
+  modifiedDate,
+} = Astro.props;
+
+const fullUrl = canonical.startsWith('http') ? canonical : `${SITE}${canonical}`;
+const ogImage = image
+  ? image.startsWith('http')
+    ? image
+    : `${SITE}${image}`
+  : `${SITE}/og-image.jpg`;
+
+const schemas: Schema[] = schema
+  ? Array.isArray(schema)
+    ? schema
+    : [schema]
+  : [];
+
+// Sitewide JSON-LD: Organization + WebSite + RoofingContractor
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${SITE}/#organization`,
+  name: 'Dr. Roofing FL',
+  legalName: 'Dr. Roofing FL LLC',
+  url: `${SITE}/`,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${SITE}/logo_without_backround.png`,
+    width: 600,
+    height: 600,
+  },
+  image: `${SITE}/logo_without_backround.png`,
+  telephone: '+1-754-310-5557',
+  email: 'info@drroofingflorida.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '3951 SW 41st St',
+    addressLocality: 'Hollywood',
+    addressRegion: 'FL',
+    postalCode: '33023',
+    addressCountry: 'US',
+  },
+  sameAs: [
+    'https://www.facebook.com/Drroofingfl',
+    'https://www.instagram.com/drroofingfl',
+    'https://www.yelp.com/biz/dr-roofing-fl-hollywood',
+    'https://www.bbb.org/us/fl/hollywood/profile/roofing-contractors/dr-roofing-fl',
+    'https://www.houzz.com/pro/drroofingfl',
+    'https://www.angi.com/companylist/us/fl/hollywood/dr-roofing-fl.htm',
+    'https://nextdoor.com/pages/dr-roofing-fl-hollywood-fl',
+  ],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE}/#website`,
+  url: `${SITE}/`,
+  name: 'Dr. Roofing FL',
+  publisher: { '@id': `${SITE}/#organization` },
+  inLanguage: 'en-US',
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'RoofingContractor',
+  '@id': `${SITE}/#localbusiness`,
+  name: 'Dr. Roofing FL',
+  alternateName: 'Dr Roofing FL',
+  url: `${SITE}/`,
+  image: [
+    `${SITE}/logo_without_backround.png`,
+    `${SITE}/tile_roofing.jpeg`,
+    `${SITE}/metal_roofing.jpg`,
+    `${SITE}/shingle_roofing.jpeg`,
+    `${SITE}/flat_roofing.jpeg`,
+  ],
+  logo: `${SITE}/logo_without_backround.png`,
+  telephone: '+1-754-310-5557',
+  email: 'info@drroofingflorida.com',
+  priceRange: '$$',
+  description:
+    'Licensed roofing contractor serving Hollywood, Miami, Fort Lauderdale, Palm Beach, Boca Raton, and all of Broward, Palm Beach & Miami-Dade Counties.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '3951 SW 41st St',
+    addressLocality: 'Hollywood',
+    addressRegion: 'FL',
+    postalCode: '33023',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 26.0112014,
+    longitude: -80.2088724,
+  },
+  hasMap: 'https://maps.google.com/maps?q=Dr.+Roofing+FL+Hollywood+FL+33023',
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '07:00',
+      closes: '19:00',
+    },
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '312',
+    bestRating: '5',
+    worstRating: '1',
+  },
+};
+
+const sitewideSchemas = [orgSchema, websiteSchema, localBusinessSchema];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#ea580c" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="author" content="Dr. Roofing FL" />
+
+    {noindex ? (
+      <meta name="robots" content="noindex, nofollow" />
+    ) : (
+      <meta
+        name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      />
+    )}
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href={fullUrl} />
+
+    {/* Geo */}
+    <meta name="geo.region" content="US-FL" />
+    <meta name="geo.placename" content="Hollywood, Florida" />
+    <meta name="geo.position" content="26.0112014;-80.2088724" />
+    <meta name="ICBM" content="26.0112014, -80.2088724" />
+
+    {/* Open Graph */}
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Dr. Roofing FL" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={fullUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    {publishedDate && <meta property="article:published_time" content={publishedDate} />}
+    {modifiedDate && <meta property="article:modified_time" content={modifiedDate} />}
+
+    {/* Twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@drroofingfl" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    {/* Favicon */}
+    <link rel="icon" type="image/png" href="/logo_without_backround.png" />
+    <link rel="apple-touch-icon" href="/logo_without_backround.png" />
+
+    {/* Preconnects + LCP preload */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://maps.google.com" />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="preload" as="image" href="/tile_roofing.webp" type="image/webp" fetchpriority="high" />
+
+    {/* Fonts (non-blocking, font-display: swap) */}
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    {/* Sitewide JSON-LD */}
+    {sitewideSchemas.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
+
+    {/* Per-page JSON-LD */}
+    {schemas.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
+
+    <style is:inline>
+      html { scroll-behavior: smooth; }
+      body { font-family: 'Inter', system-ui, -apple-system, sans-serif; margin: 0; background: #ffffff; color: #0f172a; }
+    </style>
+  </head>
+  <body class="min-h-screen bg-white flex flex-col">
+    <Header client:load />
+    <main class="flex-grow pb-14 md:pb-0">
+      <slot />
+    </main>
+    <Footer />
+    <StickyMobileCTA />
+  </body>
+</html>

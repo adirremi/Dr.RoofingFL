@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NotFoundPage from './NotFoundPage';
+---
+
+<BaseLayout
+  title="Page Not Found | Dr. Roofing FL"
+  description="The page you requested could not be found. Browse our roofing services or call (754) 310-5557 for help."
+  canonical="/404"
+  noindex={true}
+>
+  <NotFoundPage client:visible />
+</BaseLayout>
