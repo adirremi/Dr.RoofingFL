@@ -206,11 +206,7 @@ export const locations: Record<string, LocationData> = {
       { title: 'Full Tile Replacement', neighborhood: 'West Lake', service: 'Tile Roof', image: '/tile_roofing.webp' },
       { title: 'Storm Tarp-Up Emergency', neighborhood: 'Hollywood Gardens', service: 'Storm Damage', image: '/metal_roofing.webp' },
     ],
-    reviews: [
-      { name: 'Maria G.', text: 'Dr. Roofing FL replaced our tile roof in Emerald Hills. Professional, fast, fair. We had a new roof in 4 days.', rating: 5 },
-      { name: 'Roberto S.', text: 'Best roofing experience in Hollywood. The crew cleaned up every single nail. Highly recommend.', rating: 5 },
-      { name: 'Diane W.', text: 'They handled my HOA approval in Hollywood Lakes and the insurance claim after Ian. Zero stress on my end.', rating: 5 },
-    ],
+    reviews: [],
     authorityLink: {
       label: 'City of Hollywood, FL Official Website',
       url: 'https://www.hollywoodfl.org/',
@@ -239,7 +235,7 @@ export const locations: Record<string, LocationData> = {
       'Miami\'s trusted roofing contractor for residential and commercial re-roofs, repairs, and storm restoration. Every system installed to Miami-Dade HVHZ code with NOA-approved products.',
     nearYouHeading: 'Top-Rated Roofing Contractor Near You in Miami, FL',
     cityIntro:
-      'Miami, Florida is the most intense roofing market in the United States. Miami-Dade County enforces the strictest building code in the country — the High-Velocity Hurricane Zone (HVHZ) — and every single roofing product used here must carry a Miami-Dade Notice of Acceptance (NOA). Dr. Roofing FL is fully licensed in Miami-Dade, fluent in the online permitting portal, and we install only NOA-approved tile, metal, shingle, and flat roof systems. From Coral Gables Mediterranean estates to South Beach condos to a ranch home in Kendall, we have installed hundreds of Miami roofs engineered to survive Category-5 winds.',
+      'Miami, Florida is the most intense roofing market in the United States. Miami-Dade County enforces the strictest building code in the country — the High-Velocity Hurricane Zone (HVHZ) — and every single roofing product used here must carry a Miami-Dade Notice of Acceptance (NOA). Dr. Roofing FL is fully licensed in Miami-Dade, fluent in the online permitting portal, and we install only NOA-approved tile, metal, shingle, and flat roof systems across Coral Gables, South Beach, Kendall, and every Miami neighborhood — every install engineered to Miami-Dade wind requirements.',
     neighborhoods: [
       'Downtown Miami',
       'Brickell',
@@ -332,11 +328,7 @@ export const locations: Record<string, LocationData> = {
       { title: 'Spanish Tile Re-Roof', neighborhood: 'Cutler Bay', service: 'Tile Roof', image: '/tile_roofing.webp' },
       { title: 'Multifamily Shingle Install', neighborhood: 'Downtown Miami', service: 'Shingle Roof', image: '/shingle_roofing.webp' },
     ],
-    reviews: [
-      { name: 'Carlos M.', text: 'Flat roof in Wynwood — leaking in 3 places. They installed new TPO in 2 days. Spotless cleanup.', rating: 5 },
-      { name: 'Isabella R.', text: 'Clay tile in Coral Gables. Beautiful workmanship, HOA approval handled, permit pulled — easy 5 stars.', rating: 5 },
-      { name: 'Henry V.', text: 'Condo board in Brickell hired them for our flat roof. Professional, on-schedule, on-budget.', rating: 5 },
-    ],
+    reviews: [],
     authorityLink: {
       label: 'City of Miami Official Website',
       url: 'https://www.miami.gov/',
@@ -457,11 +449,7 @@ export const locations: Record<string, LocationData> = {
       { title: 'Emergency Tarp-Up', neighborhood: 'Rio Vista', service: 'Storm Damage', image: '/metal_roofing.webp' },
       { title: 'Metal Roof Replacement', neighborhood: 'Lauderdale Harbours', service: 'Metal Roof', image: '/metal_roofing.webp' },
     ],
-    reviews: [
-      { name: 'Samantha L.', text: 'Two cracked tiles and flashing repaired same day in Coral Ridge. True professionals.', rating: 5 },
-      { name: 'Thomas K.', text: 'Standing-seam on our Harbor Beach home. Stunning result and handled permitting flawlessly.', rating: 5 },
-      { name: 'Angela P.', text: 'Historic district tile restoration in Sailboat Bend — they nailed the approvals.', rating: 5 },
-    ],
+    reviews: [],
     authorityLink: {
       label: 'City of Fort Lauderdale Official Website',
       url: 'https://www.fortlauderdale.gov/',
@@ -492,7 +480,7 @@ export const locations: Record<string, LocationData> = {
     nearYouHeading:
       'Licensed Roofing Contractor Near You in Pembroke Pines, FL',
     cityIntro:
-      'Pembroke Pines is Broward County\'s second-largest city and one of the largest planned-community markets in Florida. Nearly every home sits inside an HOA — Pembroke Falls, Silver Lakes, Pembroke Isles, Chapel Trail, Pembroke Shores, Grand Palms — each with its own architectural review board, approved color palettes, and tile or shingle specifications. Dr. Roofing FL has filed hundreds of ARB applications in Pembroke Pines and we know exactly which tile profiles, shingle colors and metal panel systems each community approves.',
+      'Pembroke Pines is Broward County\'s second-largest city and one of the largest planned-community markets in Florida. Nearly every home sits inside an HOA — Pembroke Falls, Silver Lakes, Pembroke Isles, Chapel Trail, Pembroke Shores, Grand Palms — each with its own architectural review board, approved color palettes, and tile or shingle specifications. Dr. Roofing FL handles the full ARB application process in Pembroke Pines and knows which tile profiles, shingle colors, and metal panel systems each community approves.',
     neighborhoods: [
       'Century Village',
       'Silver Lakes',
@@ -580,11 +568,7 @@ export const locations: Record<string, LocationData> = {
       { title: 'Emergency Leak Repair', neighborhood: 'Towngate', service: 'Roof Repair', image: '/shingle_roofing.webp' },
       { title: 'Shingle Install', neighborhood: 'Pembroke Shores', service: 'Shingle Roof', image: '/shingle_roofing.webp' },
     ],
-    reviews: [
-      { name: 'Jennifer T.', text: 'Pembroke Falls HOA approval handled, new tile roof in 4 days. Perfect experience.', rating: 5 },
-      { name: 'Luis M.', text: 'No money down financing saved us. Beautiful shingle roof in Silver Lakes.', rating: 5 },
-      { name: 'Erica S.', text: 'Insurance claim after Irma — zero hassle, full re-roof approved.', rating: 5 },
-    ],
+    reviews: [],
     authorityLink: {
       label: 'City of Pembroke Pines Official Website',
       url: 'https://www.ppines.com/',
@@ -700,11 +684,7 @@ export const locations: Record<string, LocationData> = {
       { title: 'Tile Re-Roof', neighborhood: 'Bella Vita', service: 'Tile Roof', image: '/tile_roofing.webp' },
       { title: 'Metal Roof', neighborhood: 'Parkland Isles', service: 'Metal Roof', image: '/metal_roofing.webp' },
     ],
-    reviews: [
-      { name: 'Jennifer T.', text: 'Amazing job on our Monarch Lakes tile roof. On time, clean, beautiful.', rating: 5 },
-      { name: 'Marcus J.', text: 'Cool-series shingles dropped our electric bill noticeably. Worth every penny.', rating: 5 },
-      { name: 'Sofia B.', text: 'Commercial TPO install on our warehouse — zero disruption to our operations.', rating: 5 },
-    ],
+    reviews: [],
     authorityLink: {
       label: 'City of Miramar Official Website',
       url: 'https://www.miramarfl.gov/',
@@ -820,11 +800,7 @@ export const locations: Record<string, LocationData> = {
       { title: 'Leak Diagnosis & Repair', neighborhood: 'Pine Island Ridge', service: 'Roof Repair', image: '/shingle_roofing.webp' },
       { title: 'Full Re-Roof', neighborhood: 'Nova area', service: 'Shingle Roof', image: '/shingle_roofing.webp' },
     ],
-    reviews: [
-      { name: 'Michael B.', text: 'Tile replacement on our Long Lake Ranches home — HOA approved, permits pulled, done in 4 days.', rating: 5 },
-      { name: 'Rebecca H.', text: 'Standing-seam metal on our equestrian barn. Amazing workmanship.', rating: 5 },
-      { name: 'Anthony D.', text: 'Quick storm tarp after the limb came down on my roof. Saved my ceiling.', rating: 5 },
-    ],
+    reviews: [],
     authorityLink: {
       label: 'Town of Davie Official Website',
       url: 'https://www.davie-fl.gov/',
@@ -940,11 +916,7 @@ export const locations: Record<string, LocationData> = {
       { title: 'Shingle Re-Roof (inland)', neighborhood: 'West Park', service: 'Shingle Roof', image: '/shingle_roofing.webp' },
       { title: 'Emergency Tarp-Up', neighborhood: 'Diplomat Landing', service: 'Storm Damage', image: '/metal_roofing.webp' },
     ],
-    reviews: [
-      { name: 'Linda F.', text: 'Aluminum standing-seam on our Golden Isles home. Gorgeous and built to last.', rating: 5 },
-      { name: 'Brian W.', text: 'Condo board hired them for our TPO replacement. Zero complaints from residents.', rating: 5 },
-      { name: 'Natalie G.', text: 'Storm tarp same day. Saved us from serious water damage.', rating: 5 },
-    ],
+    reviews: [],
     authorityLink: {
       label: 'City of Hallandale Beach Official Website',
       url: 'https://www.hallandalebeachfl.gov/',
@@ -1060,11 +1032,7 @@ export const locations: Record<string, LocationData> = {
       { title: 'Emergency Leak Repair', neighborhood: 'Port 95', service: 'Roof Repair', image: '/shingle_roofing.webp' },
       { title: 'Flat Roof TPO', neighborhood: 'Griffin corridor', service: 'Flat / TPO', image: '/flat_roofing.webp' },
     ],
-    reviews: [
-      { name: 'Ashley K.', text: 'Financing made our new shingle roof in Dania possible. Beautiful work.', rating: 5 },
-      { name: 'Ryan E.', text: 'Standing-seam aluminum roof on our coastal home. Love it.', rating: 5 },
-      { name: 'Natalia O.', text: 'Downtown historic tile restoration — flawless.', rating: 5 },
-    ],
+    reviews: [],
     authorityLink: {
       label: 'City of Dania Beach Official Website',
       url: 'https://www.daniabeachfl.gov/',
@@ -1180,11 +1148,7 @@ export const locations: Record<string, LocationData> = {
       { title: 'Townhome Shingle Re-Roof', neighborhood: 'NE 29th Ave', service: 'Shingle Roof', image: '/shingle_roofing.webp' },
       { title: 'Metal Mansard', neighborhood: 'Aventura Marina', service: 'Metal Roof', image: '/metal_roofing.webp' },
     ],
-    reviews: [
-      { name: 'Jorge P.', text: 'Commercial TPO in Aventura — permits, coordination, install all flawless.', rating: 5 },
-      { name: 'Elena T.', text: 'Luxury tile roof in Turnberry Isle. Stunning job.', rating: 5 },
-      { name: 'Dean C.', text: 'Condo board hired them for our flat roof — board voted 9-0 to hire them again.', rating: 5 },
-    ],
+    reviews: [],
     authorityLink: {
       label: 'City of Aventura Official Website',
       url: 'https://www.cityofaventura.com/',

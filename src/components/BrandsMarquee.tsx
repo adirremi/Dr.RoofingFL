@@ -7,16 +7,16 @@ type Brand = {
 };
 
 const BRANDS: Brand[] = [
-  { name: 'GAF',            tagline: 'Master Elite Contractor',     src: '/brands/gaf.svg',            height: 'h-10 md:h-12' },
-  { name: 'Owens Corning',  tagline: 'Preferred Contractor',        src: '/brands/owens-corning.svg',  height: 'h-10 md:h-12' },
-  { name: 'CertainTeed',    tagline: 'SELECT ShingleMaster',        src: '/brands/certainteed.svg',    height: 'h-8 md:h-10' },
-  { name: 'TAMKO',          tagline: 'Pro Certified Installer',     src: '/brands/tamko.svg',          height: 'h-10 md:h-12' },
-  { name: 'IKO',            tagline: 'Shield Pro Plus',             src: '/brands/iko.svg',            height: 'h-8 md:h-10' },
-  { name: 'Carlisle SynTec',tagline: 'TPO · PVC · EPDM Certified',  src: '/brands/carlisle.svg',       height: 'h-8 md:h-10' },
-  { name: 'BBB Accredited', tagline: 'A+ Rating',                   src: '/brands/bbb.svg',            height: 'h-10 md:h-12' },
-  { name: 'Google Reviews', tagline: '4.9 · 312+ Reviews',          src: '/brands/google-rating.svg',  height: 'h-14 md:h-16' },
-  { name: 'Florida Licensed', tagline: 'CCC#1331964 · Insured',     src: '/brands/florida-licensed.svg', height: 'h-14 md:h-16' },
-  { name: 'HVHZ Certified', tagline: 'Miami-Dade NOA · FBC 2023',   src: '/brands/hvhz-approved.svg',  height: 'h-14 md:h-16' },
+  { name: 'GAF',            tagline: 'Authorized Installer',        src: '/brands/gaf.svg',            height: 'h-10 md:h-12' },
+  { name: 'Owens Corning',  tagline: 'Authorized Installer',        src: '/brands/owens-corning.svg',  height: 'h-10 md:h-12' },
+  { name: 'CertainTeed',    tagline: 'Authorized Installer',        src: '/brands/certainteed.svg',    height: 'h-8 md:h-10' },
+  { name: 'TAMKO',          tagline: 'Authorized Installer',        src: '/brands/tamko.svg',          height: 'h-10 md:h-12' },
+  { name: 'IKO',            tagline: 'Authorized Installer',        src: '/brands/iko.svg',            height: 'h-8 md:h-10' },
+  { name: 'Carlisle SynTec',tagline: 'TPO · PVC · EPDM Systems',    src: '/brands/carlisle.svg',       height: 'h-8 md:h-10' },
+  { name: 'BBB',             tagline: 'Better Business Bureau',      src: '/brands/bbb.svg',              height: 'h-10 md:h-12' },
+  { name: 'Google Verified', tagline: 'Verified Business Profile',   src: '/brands/google-rating.svg',    height: 'h-14 md:h-16' },
+  { name: 'Florida Licensed',tagline: 'Licensed & Insured',          src: '/brands/florida-licensed.svg', height: 'h-14 md:h-16' },
+  { name: 'HVHZ Certified',  tagline: 'Miami-Dade NOA · FBC 2023',   src: '/brands/hvhz-approved.svg',    height: 'h-14 md:h-16' },
 ];
 
 const Tile = ({ b }: { b: Brand }) => (

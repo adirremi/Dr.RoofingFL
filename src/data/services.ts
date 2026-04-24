@@ -148,7 +148,7 @@ export const services: Service[] = [
       "We install premium architectural shingles (GAF Timberline HDZ, Owens Corning Duration, CertainTeed Landmark) rated for 130+ mph winds. Algae-resistant granules fight Florida's humidity, and lifetime transferable warranties protect your investment.",
     image: '/shingle_roofing.webp',
     bullets: [
-      'GAF Master Elite & Owens Corning Platinum certified',
+      'Authorized installer for GAF, Owens Corning & CertainTeed',
       '130 mph wind warranty available',
       'StainGuard algae-resistant granules',
       'Ice & water shield, starter strip, ridge vent',
@@ -163,7 +163,7 @@ export const services: Service[] = [
     heroH2:
       'GAF & Owens Corning Certified Shingle Roofing Contractor Near You',
     intro:
-      "Architectural shingles are the most popular roofing choice in Florida — and for good reason. Modern Class-4 impact-rated shingles are engineered for 130+ mph winds, shed Florida's heavy rain effortlessly, and carry lifetime transferable warranties. Dr. Roofing FL is a GAF Master Elite and Owens Corning Platinum Preferred Contractor — a distinction held by fewer than 3% of Florida roofers.",
+      "Architectural shingles are the most popular roofing choice in Florida — and for good reason. Modern Class-4 impact-rated shingles are engineered for 130+ mph winds, shed Florida's heavy rain effortlessly, and carry lifetime transferable warranties. Dr. Roofing FL is an authorized installer for GAF, Owens Corning, and CertainTeed shingle systems.",
     longContent: [
       {
         h3: 'Why Architectural Shingles Work So Well in Florida',
@@ -192,7 +192,7 @@ export const services: Service[] = [
       { icon: 'wind', title: '130 mph Wind', text: 'Rated for 130 mph base-wind; upgradeable to 150 mph.' },
       { icon: 'star', title: 'Algae Resistant', text: 'StainGuard granules keep your roof clean for decades.' },
       { icon: 'clock', title: '25–30 Year Life', text: 'Lifetime transferable manufacturer warranty.' },
-      { icon: 'hammer', title: 'Master Elite', text: 'Top 3% of Florida shingle installers (GAF Master Elite).' },
+      { icon: 'hammer', title: 'Authorized Installer', text: 'Factory-authorized for GAF, Owens Corning, and CertainTeed shingle systems.' },
     ],
     process: [
       { title: '1. Free Inspection', text: 'Complete roof inspection with photo documentation.' },
@@ -224,9 +224,9 @@ export const services: Service[] = [
           'Most shingle roofs are torn off, underlaid, installed, and cleaned up in 1–2 days. Larger homes 2–3 days. We work straight through, weather permitting.',
       },
       {
-        question: 'What is GAF Master Elite?',
+        question: 'Which shingle manufacturers do you install?',
         answer:
-          'GAF Master Elite is GAF\'s highest contractor certification — held by fewer than 3% of roofing contractors nationwide. It unlocks the Golden Pledge warranty, GAF\'s most comprehensive coverage.',
+          'We install GAF Timberline HDZ, GAF UHDZ, Owens Corning Duration, CertainTeed Landmark, and Atlas Pinnacle Pristine. Each manufacturer\'s warranty is registered in the homeowner\'s name after install.',
       },
       {
         question: 'Do you offer financing on shingle roofs?',
@@ -473,7 +473,7 @@ export const services: Service[] = [
       {
         h3: 'Why Most Roofers Fail at Leak Repair',
         body:
-          "Leak repair is a diagnostic art. Water enters your roof in one place and shows up 15 feet away on your ceiling — so surface-level patches rarely work. Our repair specialists use infrared thermal imaging (to find wet insulation under the membrane), moisture meters (to map the actual water path), and 15+ years of pattern-recognition experience to find the real source. We fix it once. No callbacks.",
+          "Leak repair is a diagnostic art. Water enters your roof in one place and shows up 15 feet away on your ceiling — so surface-level patches rarely work. Our repair specialists use infrared thermal imaging (to find wet insulation under the membrane) and moisture meters (to map the actual water path) to find the real source. We fix it once. No callbacks.",
       },
       {
         h3: 'Common Leak Sources We Fix',
@@ -598,8 +598,8 @@ export const services: Service[] = [
       { icon: 'clock', title: '24/7 Emergency Tarp', text: 'On-site within hours of dispatch.' },
       { icon: 'dollar', title: 'You Only Pay Deductible', text: 'Insurance pays us direct — no out-of-pocket surprises.' },
       { icon: 'hammer', title: 'Xactimate Expertise', text: 'We speak the same language as your adjuster.' },
-      { icon: 'star', title: 'Licensed & Bonded', text: 'Florida Certified Roofing Contractor, fully insured.' },
-      { icon: 'wind', title: 'Hurricane Specialists', text: 'Irma, Ian, Nicole — hundreds of restored roofs.' },
+      { icon: 'star', title: 'Licensed & Insured', text: 'Florida Certified Roofing Contractor with full general liability and workers\' comp.' },
+      { icon: 'wind', title: 'Hurricane Specialists', text: 'Storm-season tarping, insurance-grade documentation, and full re-roof restoration.' },
     ],
     process: [
       { title: '1. Free Inspection', text: 'Drone + moisture reading within 24–48 hours.' },

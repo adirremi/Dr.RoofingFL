@@ -57,10 +57,10 @@ export default function HomePage() {
   };
 
   const homeStats = [
-    { num: '500+', label: 'Roofs Completed' },
-    { num: '4.9★', label: '312+ 5-Star Reviews' },
-    { num: '15+', label: 'Years in Florida' },
     { num: '$0', label: 'Down Financing' },
+    { num: '24/7', label: 'Storm Response' },
+    { num: 'HVHZ', label: 'Certified Installs' },
+    { num: 'Free', label: 'Written Quotes' },
   ];
 
   const pillars = [
@@ -118,12 +118,12 @@ export default function HomePage() {
   ];
 
   const whyUs = [
-    { icon: DollarSign, title: 'No Money Down', text: '$0 down, no minimum credit score, up to 16 months no-interest financing.' },
-    { icon: Hammer, title: 'Best Metal Prices in FL', text: 'Premium standing-seam and exposed-fastener at honest, published rates.' },
-    { icon: Shield, title: 'Licensed & Insured', text: 'Florida Certified Roofing Contractor, full GL and workers\' comp.' },
-    { icon: CheckCircle, title: 'Free Inspections', text: 'Honest, no-pressure, written reports — always free in South Florida.' },
+    { icon: DollarSign, title: 'Flexible Financing', text: '$0 down options with partner lenders — we match the plan to your budget.' },
+    { icon: Hammer, title: 'Premium Materials', text: 'Factory-authorized installer for GAF, Owens Corning, CertainTeed, TAMKO, IKO and Carlisle.' },
+    { icon: Shield, title: 'Licensed & Insured', text: 'Florida Certified Roofing Contractor with full general liability and workers\' comp.' },
+    { icon: CheckCircle, title: 'Free Inspections', text: 'Honest, no-pressure, written inspection reports — always free in South Florida.' },
     { icon: Wind, title: 'Hurricane Ready', text: 'Every install meets Florida Building Code 2023 HVHZ wind requirements.' },
-    { icon: Star, title: '4.9★ Rated', text: '312+ five-star reviews across Google, Yelp, BBB and Angi.' },
+    { icon: Star, title: 'Storm Response', text: 'Emergency tarping, leak-stop service and insurance documentation — available 24/7.' },
   ];
 
   return (
@@ -154,7 +154,7 @@ export default function HomePage() {
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 bg-orange-600/90 backdrop-blur text-white px-4 py-2 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] mb-8 shadow-lg">
               <Sparkles size={14} />
-              South Florida's Roofing Specialists · Since 2011
+              South Florida's Roofing Specialists
             </div>
 
             <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.02] mb-6 tracking-tight">
@@ -207,7 +207,7 @@ export default function HomePage() {
             <span className="hidden md:inline w-px h-4 bg-white/20" />
             <span className="inline-flex items-center gap-2"><BadgeCheck size={16} className="text-orange-500" /> GAF Authorized</span>
             <span className="hidden md:inline w-px h-4 bg-white/20" />
-            <span className="inline-flex items-center gap-2"><Star size={16} className="text-orange-500" /> 4.9★ · 312+ Reviews</span>
+            <span className="inline-flex items-center gap-2"><CheckCircle size={16} className="text-orange-500" /> Free Inspections</span>
             <span className="hidden md:inline w-px h-4 bg-white/20" />
             <span className="inline-flex items-center gap-2"><Clock size={16} className="text-orange-500" /> 24/7 Storm Response</span>
           </div>
@@ -390,10 +390,10 @@ export default function HomePage() {
               </span>
               <h2 className="font-serif text-4xl md:text-5xl text-slate-900 leading-[1.1] mb-6">
                 Six Reasons Florida<br />
-                <span className="italic text-orange-600">Homeowners Trust Us</span>
+                <span className="italic text-orange-600">Homeowners Choose Us</span>
               </h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                We've built a 4.9★ reputation the hard way — honest inspections, published pricing, code-perfect installations, and never leaving a homeowner on hold when a storm rolls in.
+                Honest inspections, published pricing, code-perfect installations, and never leaving a homeowner on hold when a storm rolls in.
               </p>
               <a
                 href="tel:+17543105557"
@@ -424,58 +424,54 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════ TESTIMONIALS ═══════════════════ */}
-      <section id="reviews" className="py-24 md:py-32 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <span className="block text-xs font-bold text-orange-600 uppercase tracking-[0.3em] mb-4">
-              Our Testimonials
-            </span>
-            <h2 className="font-serif text-4xl md:text-6xl text-slate-900 leading-[1.1] mb-6">
-              What South Florida<br />
-              <span className="italic text-orange-600">Homeowners Say</span>
-            </h2>
-            <div className="flex items-center justify-center gap-1 mt-4 text-orange-500">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} size={22} fill="currentColor" />
+      {/* ═══════════════════ TESTIMONIALS (only when reviews exist) ═══════════════════ */}
+      {reviews.length > 0 && (
+        <section id="reviews" className="py-24 md:py-32 bg-slate-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <span className="block text-xs font-bold text-orange-600 uppercase tracking-[0.3em] mb-4">
+                Our Testimonials
+              </span>
+              <h2 className="font-serif text-4xl md:text-6xl text-slate-900 leading-[1.1] mb-6">
+                What South Florida<br />
+                <span className="italic text-orange-600">Homeowners Say</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+              {reviews.slice(0, 6).map((r, i) => (
+                <figure
+                  key={i}
+                  className="relative bg-white rounded-sm p-8 shadow-sm border border-slate-200 hover:shadow-xl hover:border-orange-400 transition-all"
+                >
+                  <Quote
+                    size={40}
+                    className="absolute -top-4 left-6 text-orange-600 fill-orange-600"
+                    aria-hidden="true"
+                  />
+                  <div className="flex text-orange-500 mb-4 mt-2">
+                    {Array.from({ length: 5 }).map((_, j) => (
+                      <Star key={j} size={16} fill="currentColor" />
+                    ))}
+                  </div>
+                  <blockquote className="text-gray-700 mb-6 leading-relaxed font-light italic">
+                    &ldquo;{r.text}&rdquo;
+                  </blockquote>
+                  <figcaption className="flex items-center gap-3 pt-4 border-t border-slate-100">
+                    <div className="w-11 h-11 rounded-full bg-gradient-to-br from-orange-600 to-orange-700 text-white font-bold flex items-center justify-center text-sm font-serif">
+                      {r.name.charAt(0)}
+                    </div>
+                    <div>
+                      <div className="font-bold text-slate-900 text-sm">{r.name}</div>
+                      <div className="text-xs text-gray-500">{r.city} · {r.service}</div>
+                    </div>
+                  </figcaption>
+                </figure>
               ))}
-              <span className="ml-3 text-slate-900 font-bold">4.9 · 312+ Reviews</span>
             </div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {reviews.slice(0, 6).map((r, i) => (
-              <figure
-                key={i}
-                className="relative bg-white rounded-sm p-8 shadow-sm border border-slate-200 hover:shadow-xl hover:border-orange-400 transition-all"
-              >
-                <Quote
-                  size={40}
-                  className="absolute -top-4 left-6 text-orange-600 fill-orange-600"
-                  aria-hidden="true"
-                />
-                <div className="flex text-orange-500 mb-4 mt-2">
-                  {Array.from({ length: 5 }).map((_, j) => (
-                    <Star key={j} size={16} fill="currentColor" />
-                  ))}
-                </div>
-                <blockquote className="text-gray-700 mb-6 leading-relaxed font-light italic">
-                  &ldquo;{r.text}&rdquo;
-                </blockquote>
-                <figcaption className="flex items-center gap-3 pt-4 border-t border-slate-100">
-                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-orange-600 to-orange-700 text-white font-bold flex items-center justify-center text-sm font-serif">
-                    {r.name.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="font-bold text-slate-900 text-sm">{r.name}</div>
-                    <div className="text-xs text-gray-500">{r.city} · {r.service}</div>
-                  </div>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ═══════════════════ MAP + NAP ═══════════════════ */}
       <section className="py-24 md:py-32 bg-white">
@@ -587,7 +583,7 @@ export default function HomePage() {
 
           <div className="prose prose-lg max-w-none text-gray-700 prose-headings:font-serif prose-headings:text-slate-900 prose-strong:text-slate-900">
             <p>
-              South Florida's climate presents specific challenges for roofing systems. Intense UV, 62 inches of annual rainfall, 90%+ humidity, afternoon thunderstorms from May through October, and High-Velocity Hurricane Zone (HVHZ) wind ratings require specialized knowledge and materials built for these extremes. Dr. Roofing FL has installed 500+ roofs throughout Hollywood, Miami, Fort Lauderdale, and surrounding cities — every single one engineered for Florida.
+              South Florida's climate presents specific challenges for roofing systems. Intense UV, 62 inches of annual rainfall, 90%+ humidity, afternoon thunderstorms from May through October, and High-Velocity Hurricane Zone (HVHZ) wind ratings require specialized knowledge and materials built for these extremes. Every Dr. Roofing FL installation throughout Hollywood, Miami, Fort Lauderdale, and surrounding cities is engineered specifically for Florida conditions.
             </p>
             <h3 className="!mt-10 !text-2xl">Hurricane Preparedness &amp; Roof Maintenance</h3>
             <p>

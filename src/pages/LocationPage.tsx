@@ -78,13 +78,6 @@ export default function LocationPage({ location }: Props) {
       'https://www.houzz.com/pro/drroofingfl',
       location.wikipediaUrl,
     ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '312',
-      bestRating: '5',
-      worstRating: '1',
-    },
   };
 
   const breadcrumbSchema = {
@@ -173,7 +166,7 @@ export default function LocationPage({ location }: Props) {
           <div className="mt-10 flex flex-wrap gap-6 text-sm">
             <div className="flex items-center gap-2"><Shield size={20} className="text-orange-300" /><span>Licensed & Insured</span></div>
             <div className="flex items-center gap-2"><Award size={20} className="text-orange-300" /><span>HVHZ Certified</span></div>
-            <div className="flex items-center gap-2"><Star size={20} className="text-orange-300" /><span>4.9★ · 312+ Reviews</span></div>
+            <div className="flex items-center gap-2"><Star size={20} className="text-orange-300" /><span>Free Inspections</span></div>
             <div className="flex items-center gap-2"><Clock size={20} className="text-orange-300" /><span>24/7 Emergency Service</span></div>
           </div>
         </div>
@@ -291,7 +284,7 @@ export default function LocationPage({ location }: Props) {
               { icon: Award, title: 'HVHZ Certified', text: 'Every install meets Florida Building Code 2023 High-Velocity Hurricane Zone requirements.' },
               { icon: Hammer, title: 'Expert Craftsmanship', text: 'Factory-certified installers for GAF, Owens Corning, Eagle, and Boral.' },
               { icon: Clock, title: '24/7 Emergency Service', text: 'Tarp, board-up, and leak-stop service anywhere in ' + location.city + '.' },
-              { icon: Star, title: '4.9★ · 312+ Reviews', text: 'Real reviews from real ' + location.city + ' homeowners. Ask for local references.' },
+              { icon: Star, title: 'Local References', text: 'Ask for addresses of recent installs in ' + location.city + ' — we\'re happy to share.' },
             ].map((b) => (
               <div key={b.title} className="bg-slate-50 rounded-xl p-6 border-l-4 border-orange-500 hover:shadow-lg transition">
                 <div className="bg-orange-600 text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
@@ -473,33 +466,31 @@ export default function LocationPage({ location }: Props) {
         </div>
       </section>
 
-      {/* ───────── REVIEWS ───────── */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-12">
-            <span className="uppercase tracking-widest text-xs font-bold text-orange-600">Testimonials</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 font-serif">
-              What {location.city} Homeowners Say About Us
-            </h2>
-            <div className="flex items-center justify-center gap-1 mt-3 text-orange-500">
-              {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={18} fill="currentColor" />)}
-              <span className="ml-2 text-gray-700 font-semibold text-sm">4.9 out of 5 · based on 312+ reviews</span>
+      {/* ───────── REVIEWS (only when verified reviews exist) ───────── */}
+      {location.reviews.length > 0 && (
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="text-center mb-12">
+              <span className="uppercase tracking-widest text-xs font-bold text-orange-600">Testimonials</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 font-serif">
+                What {location.city} Homeowners Say About Us
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {location.reviews.map((r, i) => (
+                <div key={i} className="bg-slate-50 rounded-xl p-6 shadow-sm border border-slate-200">
+                  <div className="flex text-orange-500 mb-3">
+                    {Array.from({ length: 5 }).map((_, j) => <Star key={j} size={16} fill="currentColor" />)}
+                  </div>
+                  <p className="text-gray-700 italic mb-4 leading-relaxed text-sm">"{r.text}"</p>
+                  <p className="font-bold text-gray-900 text-sm">{r.name}</p>
+                  <p className="text-xs text-gray-500">Verified customer · {location.city}, FL</p>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {location.reviews.map((r, i) => (
-              <div key={i} className="bg-slate-50 rounded-xl p-6 shadow-sm border border-slate-200">
-                <div className="flex text-orange-500 mb-3">
-                  {Array.from({ length: 5 }).map((_, j) => <Star key={j} size={16} fill="currentColor" />)}
-                </div>
-                <p className="text-gray-700 italic mb-4 leading-relaxed text-sm">"{r.text}"</p>
-                <p className="font-bold text-gray-900 text-sm">{r.name}</p>
-                <p className="text-xs text-gray-500">Verified customer · {location.city}, FL</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ───────── FAQ ───────── */}
       <section className="py-20 bg-slate-50">

@@ -146,7 +146,7 @@ export default function GeoArticlePage({ article }: Props) {
                 <div className="text-xs uppercase tracking-widest text-orange-600 font-bold mb-1">Published by</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. Roofing FL — Local {article.city} Roofing Experts</h3>
                 <p className="text-gray-700 text-sm mb-4">
-                  We have been installing and repairing roofs in {article.city} and across South Florida since 2011. Licensed Florida Certified Roofing Contractor (CCC#####). HVHZ-certified, fully insured, factory-authorized installer for GAF, Owens Corning, Eagle, and Boral.
+                  We install and repair roofs in {article.city} and across South Florida as a licensed Florida Certified Roofing Contractor — HVHZ-certified, fully insured, and a factory-authorized installer for GAF, Owens Corning, CertainTeed, TAMKO, IKO, and Carlisle SynTec.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   {cityData && (

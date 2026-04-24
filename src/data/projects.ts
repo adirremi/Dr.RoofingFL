@@ -82,9 +82,6 @@ export const projects: Project[] = [
     ],
     outcome:
       '7-day turnaround, passed Broward County inspection first try, homeowner received 35% wind-mitigation insurance discount immediately.',
-    clientQuote:
-      'Dr. Roofing FL preserved the historic look of our home while giving us a hurricane-rated roof. Worth every penny.',
-    clientName: 'The Martinez Family, Hollywood Lakes',
     latitude: 26.0128,
     longitude: -80.1518,
   },
@@ -132,9 +129,6 @@ export const projects: Project[] = [
     ],
     outcome:
       '18% cooling-load reduction, zero tenant complaints, passed inspection first try, 25-year NDL warranty issued.',
-    clientQuote:
-      'Dr. Roofing FL delivered a complex commercial project on time with zero impact to our tenants. The new roof is flawless.',
-    clientName: 'Property Manager, Brickell Office Tower',
     latitude: 25.7663,
     longitude: -80.194,
   },
@@ -182,9 +176,6 @@ export const projects: Project[] = [
     ],
     outcome:
       '28% A/C cost reduction, 35-year finish warranty, architectural statement achieved, zero post-install issues.',
-    clientQuote:
-      'The matte black metal roof is exactly what we envisioned. A real architectural upgrade that also cut our electric bill by nearly 30%.',
-    clientName: 'Las Olas Isles Homeowner',
     latitude: 26.1185,
     longitude: -80.1236,
   },
@@ -232,9 +223,6 @@ export const projects: Project[] = [
     ],
     outcome:
       '$16,400 scope approved, $2,420 total out-of-pocket, 12% ongoing insurance discount, 50-year warranty.',
-    clientQuote:
-      "Our claim was denied. Dr. Roofing FL got it reversed and we ended up with a brand new impact-rated roof for just our deductible plus $420. They handled everything.",
-    clientName: 'The Johnson Family, Pembroke Falls',
     latitude: 26.0082,
     longitude: -80.3373,
   },
@@ -329,9 +317,6 @@ export const projects: Project[] = [
     ],
     outcome:
       '8°F barn temperature reduction, unified estate aesthetic, 35-year color warranty.',
-    clientQuote:
-      'The coordinated install across all three buildings was seamless. Our horses barely noticed, and the new metal roofs look stunning.',
-    clientName: 'Forest Ridge Equestrian Estate Owner',
     latitude: 26.0756,
     longitude: -80.2755,
   },
@@ -426,9 +411,6 @@ export const projects: Project[] = [
     ],
     outcome:
       '3-year leak solved in one 4-hour visit, confirmed dry after 60-day follow-up, 2-year warranty.',
-    clientQuote:
-      'Three different roofers, three years, and Dr. Roofing FL fixed it in 4 hours. Infrared imaging was the difference.',
-    clientName: 'Lauderdale Isles Homeowner, Dania Beach',
     latitude: 26.0464,
     longitude: -80.1683,
   },

@@ -7,11 +7,11 @@ import { services } from '../data/services';
 const SITE = 'https://drroofingflorida.com';
 
 const values = [
-  { icon: Shield, title: 'Licensed & Insured', text: 'Florida Certified Roofing Contractor, fully bonded, $2M general liability, workers\' comp.' },
-  { icon: Award, title: 'Factory Certified', text: 'GAF Master Elite, Owens Corning Platinum, Eagle, Boral, US Tile — top 3% of Florida roofers.' },
-  { icon: Users, title: 'Locally Owned', text: 'South Florida born-and-bred. Our crews live here, our families went to school here.' },
-  { icon: Wrench, title: 'Hurricane Experts', text: 'Every install meets or exceeds 2023 FBC HVHZ — Miami-Dade NOA-approved systems.' },
-  { icon: Star, title: '4.9★ · 312+ Reviews', text: 'Google, Yelp, Facebook, BBB, Home Advisor, Angi — the reviews speak for themselves.' },
+  { icon: Shield, title: 'Licensed & Insured', text: 'Florida Certified Roofing Contractor with full general liability and workers\' compensation coverage.' },
+  { icon: Award, title: 'Factory Certified', text: 'Authorized installer for GAF, Owens Corning, CertainTeed, TAMKO, IKO, and Carlisle SynTec systems.' },
+  { icon: Users, title: 'Locally Operated', text: 'South Florida based — we know Broward, Miami-Dade and Palm Beach because we live and work here.' },
+  { icon: Wrench, title: 'Hurricane Experts', text: 'Every install meets or exceeds 2023 FBC HVHZ — Miami-Dade NOA-approved systems only.' },
+  { icon: Star, title: 'Free Inspections', text: 'Honest written inspections and transparent line-item quotes — always free, no obligation.' },
   { icon: Heart, title: 'Customer First', text: 'No pressure quotes, no surprise charges, no junk contracts. Ever.' },
 ];
 
@@ -37,7 +37,7 @@ export default function AboutPage() {
     <>
       <SEO
         title="About Dr. Roofing FL | Licensed Hollywood & Miami Roofing Contractor"
-        description="About Dr. Roofing FL — family-owned, licensed Florida roofing contractor serving Hollywood, Miami, Fort Lauderdale & all of South Florida since 2011."
+        description="About Dr. Roofing FL — licensed Florida roofing contractor serving Hollywood, Miami, Fort Lauderdale and all of South Florida."
         keywords="about Dr Roofing FL, Hollywood roofing company, licensed Florida roofer, South Florida roofing contractor"
         canonical="/about"
         schema={[aboutSchema, breadcrumbSchema]}
@@ -49,8 +49,8 @@ export default function AboutPage() {
           <div className="inline-block bg-orange-600 text-white px-4 py-2 rounded-full text-xs font-bold mb-6 uppercase tracking-widest">About Us</div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">South Florida's Most Trusted Roofing Contractor</h1>
           <p className="text-xl text-slate-200 max-w-3xl leading-relaxed">
-            Dr. Roofing FL is a family-owned, Florida-licensed roofing contractor serving Hollywood, Miami,
-            Fort Lauderdale and all of South Florida since 2011. Licensed · Bonded · Insured · HVHZ-certified.
+            Dr. Roofing FL is a Florida-licensed roofing contractor serving Hollywood, Miami,
+            Fort Lauderdale and all of South Florida. Licensed · Insured · HVHZ-certified.
           </p>
         </div>
       </section>
@@ -61,20 +61,19 @@ export default function AboutPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6 font-serif">Built by Roofers, For Florida Homeowners</h2>
           <div className="prose prose-lg text-gray-700">
             <p>
-              Dr. Roofing FL was founded in 2011 by roofers who grew up on South Florida rooftops. We started because
-              we saw too many local homeowners getting ripped off by out-of-state storm chasers who would show up
-              after a hurricane, collect the insurance check, and leave town. We believed South Florida deserved better.
+              Dr. Roofing FL was built by roofers who grew up on South Florida rooftops. We started because we saw too
+              many local homeowners getting taken advantage of by out-of-state storm chasers who would show up after
+              a hurricane, collect the insurance check, and leave town. We believe South Florida deserves better.
             </p>
             <p>
-              Fifteen years and thousands of roofs later, we still operate with the same core principles: be honest with
-              every quote, use the best materials we can source, stand behind our work, and treat every home like our own.
-              Today we are one of South Florida's few GAF Master Elite AND Owens Corning Platinum Preferred contractors — a
-              distinction held by fewer than 3% of Florida roofers.
+              We operate with a simple set of principles: be honest on every quote, use the best materials we can source,
+              stand behind our work, and treat every home like our own. We work as authorized installers for the major
+              manufacturers used in South Florida — GAF, Owens Corning, CertainTeed, TAMKO, IKO, and Carlisle SynTec.
             </p>
             <p>
               We specialize in HVHZ-compliant tile, metal, shingle, and flat-roof installations across Broward and Miami-Dade
-              counties. Every job is permitted, every product is Miami-Dade NOA-approved, and every install is backed by
-              a manufacturer warranty plus our own 10-year workmanship warranty.
+              counties. Every job is permitted and every product is specified to meet Florida Building Code and
+              Miami-Dade HVHZ requirements, backed by the manufacturer's written warranty.
             </p>
           </div>
         </div>

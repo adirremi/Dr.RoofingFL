@@ -99,7 +99,7 @@ export default function ShingleColors() {
                       </div>
                     </div>
                     <div className="hidden md:block bg-orange-600 text-white px-4 py-2 rounded-sm text-[10px] uppercase tracking-[0.2em] font-bold">
-                      GAF Master Elite
+                      Authorized Installer
                     </div>
                   </div>
                 </div>

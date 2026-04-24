@@ -148,7 +148,7 @@ export default function ServicePage({ service }: Props) {
             <div><div className="text-orange-200 text-xs">Price Range</div><div className="font-bold text-lg">{service.priceRange}</div></div>
             <div><div className="text-orange-200 text-xs">Lifespan</div><div className="font-bold text-lg">{service.lifespan}</div></div>
             <div><div className="text-orange-200 text-xs">Warranty</div><div className="font-bold text-lg">Lifetime</div></div>
-            <div><div className="text-orange-200 text-xs">Rating</div><div className="font-bold text-lg">4.9★ · 312+</div></div>
+            <div><div className="text-orange-200 text-xs">Inspection</div><div className="font-bold text-lg">Free</div></div>
           </div>
         </div>
       </section>

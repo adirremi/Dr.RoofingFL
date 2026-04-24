@@ -98,19 +98,6 @@ const SERVICES_FOR_PROJECTS = [
   { name: 'Storm Damage', image: '/shingle_roofing.webp' },
 ];
 
-const SAMPLE_NAMES = [
-  'Carlos R.',
-  'Maria G.',
-  'David L.',
-  'Jennifer S.',
-  'Michael T.',
-  'Sofia P.',
-  'Robert M.',
-  'Linda K.',
-  'Daniel B.',
-  'Rachel A.',
-];
-
 function defaultHeroForCounty(county: CountyName): string {
   switch (county) {
     case 'Miami-Dade County':
@@ -227,26 +214,9 @@ export function buildCity(seed: CitySeed): LocationData {
     })
   );
 
-  const reviewIndex = Math.abs(
-    citySlug.split('').reduce((a, c) => a + c.charCodeAt(0), 0)
-  );
-  const reviews: LocationData['reviews'] = [
-    {
-      name: SAMPLE_NAMES[reviewIndex % SAMPLE_NAMES.length],
-      text: `Dr. Roofing FL replaced our roof in ${city}. They handled the permit, the HOA, and finished in 4 days — clean and on budget.`,
-      rating: 5,
-    },
-    {
-      name: SAMPLE_NAMES[(reviewIndex + 3) % SAMPLE_NAMES.length],
-      text: `Best roofer in ${city} hands down. Honest quote, no surprises. Highly recommend.`,
-      rating: 5,
-    },
-    {
-      name: SAMPLE_NAMES[(reviewIndex + 7) % SAMPLE_NAMES.length],
-      text: `Storm took the front slope of our roof in ${city}. They tarped same day, handled the insurance, and installed a new roof three weeks later.`,
-      rating: 5,
-    },
-  ];
+  // Reviews per city are intentionally empty — never fabricate testimonials.
+  // Real reviews should be sourced from Google Business Profile / BBB once available.
+  const reviews: LocationData['reviews'] = [];
 
   return {
     slug,
