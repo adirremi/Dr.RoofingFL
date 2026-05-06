@@ -167,6 +167,7 @@ export default function ServiceCityPage({ combo: comboProp }: Props = {}) {
 
           <div className="mt-8 flex flex-wrap gap-6 text-sm text-orange-100">
             <span className="inline-flex items-center gap-1"><Star size={14} fill="currentColor" /> Free inspections</span>
+            <span className="inline-flex items-center gap-1"><Shield size={14} /> Licensed &amp; Insured · <span className="font-bold text-white">CCC1337611</span></span>
             <span className="inline-flex items-center gap-1"><Shield size={14} /> HVHZ certified</span>
             <span className="inline-flex items-center gap-1"><Clock size={14} /> Mon–Sat · 7am–7pm</span>
           </div>

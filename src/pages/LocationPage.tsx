@@ -43,6 +43,22 @@ export default function LocationPage({ location }: Props) {
     logo: `${SITE}/logo_512.png`,
     priceRange: '$$',
     description: location.metaDescription,
+    identifier: {
+      '@type': 'PropertyValue',
+      propertyID: 'Florida State Contractor License',
+      value: 'CCC1337611',
+    },
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'license',
+      name: 'Florida Certified Roofing Contractor',
+      identifier: 'CCC1337611',
+      recognizedBy: {
+        '@type': 'GovernmentOrganization',
+        name: 'Florida Department of Business and Professional Regulation (DBPR)',
+        url: 'https://www.myfloridalicense.com/',
+      },
+    },
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Dr. Roofing FL',
@@ -164,7 +180,7 @@ export default function LocationPage({ location }: Props) {
 
           {/* Trust badges */}
           <div className="mt-10 flex flex-wrap gap-6 text-sm">
-            <div className="flex items-center gap-2"><Shield size={20} className="text-orange-300" /><span>Licensed & Insured</span></div>
+            <div className="flex items-center gap-2"><Shield size={20} className="text-orange-300" /><span>Licensed &amp; Insured · <span className="font-bold text-white">CCC1337611</span></span></div>
             <div className="flex items-center gap-2"><Award size={20} className="text-orange-300" /><span>HVHZ Certified</span></div>
             <div className="flex items-center gap-2"><Star size={20} className="text-orange-300" /><span>Free Inspections</span></div>
             <div className="flex items-center gap-2"><Clock size={20} className="text-orange-300" /><span>24/7 Emergency Service</span></div>
@@ -280,7 +296,7 @@ export default function LocationPage({ location }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
               { icon: DollarSign, title: 'Financing options', text: 'Third-party lenders when available; rates and terms are set at approval, not on this page.' },
-              { icon: Shield, title: 'Licensed & Insured', text: 'Florida-Certified Roofing Contractor with full liability and workers\' comp.' },
+              { icon: Shield, title: 'Licensed & Insured', text: 'Florida State-Certified Roofing Contractor — License #CCC1337611 — with full liability and workers\' comp.' },
               { icon: Award, title: 'HVHZ Certified', text: 'Every install meets Florida Building Code 2023 High-Velocity Hurricane Zone requirements.' },
               { icon: Hammer, title: 'Expert Craftsmanship', text: 'Experienced with major systems from GAF, Owens Corning, Eagle, Boral, and more — per your scope and code.' },
               { icon: Clock, title: '24/7 Emergency Service', text: 'Tarp, board-up, and leak-stop service anywhere in ' + location.city + '.' },

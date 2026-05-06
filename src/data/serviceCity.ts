@@ -60,7 +60,7 @@ function buildCombo(service: Service, location: LocationData): ServiceCityCombo 
 
   const h1 = `${service.title} in ${city}, Florida`;
   const h2 = `${service.shortTitle} Roofing Contractor Near You in ${city}, FL`;
-  const intro = `Dr. Roofing FL is a ${service.shortTitle.toLowerCase()} roofer serving ${city} — licensed and insured, with work installed to applicable code for your project. ${service.intro.split('.').slice(0, 2).join('.')}. Workmanship (up to 10 years on qualifying work) and manufacturer terms are in your written agreement for the specific job.`;
+  const intro = `Dr. Roofing FL is a ${service.shortTitle.toLowerCase()} roofer serving ${city} — Florida State-Certified (License #CCC1337611), fully licensed and insured, with work installed to applicable code for your project. ${service.intro.split('.').slice(0, 2).join('.')}. Workmanship (up to 10 years on qualifying work) and manufacturer terms are in your written agreement for the specific job.`;
   const localAngle = localAnglesByService[service.slug] || service.intro;
 
   return {

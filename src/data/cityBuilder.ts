@@ -146,7 +146,7 @@ export function buildCity(seed: CitySeed): LocationData {
     `flat roof ${city.toLowerCase()}`,
   ].join(', ');
 
-  const description = `Dr. Roofing FL is a licensed, insured South Florida roofing contractor serving ${cityComma}. Tile, metal, shingle and flat/TPO systems engineered for ${region}.`;
+  const description = `Dr. Roofing FL is a Florida State-Certified roofing contractor (License #CCC1337611) — fully licensed and insured — serving ${cityComma}. Tile, metal, shingle and flat/TPO systems engineered for ${region}.`;
 
   const nearYouHeading = `Licensed Roofing Contractor Near You in ${cityComma}`;
 
@@ -181,7 +181,7 @@ export function buildCity(seed: CitySeed): LocationData {
   const faqs: LocationData['faqs'] = [
     {
       question: `Are you a licensed roofer in ${cityComma}?`,
-      answer: `Yes. Dr. Roofing FL is a Florida State-Certified Roofing Contractor and fully insured (general liability + workers' compensation). We pull permits in ${city} through the local building department in your name.`,
+      answer: `Yes. Dr. Roofing FL is a Florida State-Certified Roofing Contractor (License #CCC1337611) and fully insured (general liability + workers' compensation). We pull permits in ${city} through the local building department in your name. Our license can be verified at myfloridalicense.com.`,
     },
     {
       question: `How much does a new roof cost in ${city}?`,

@@ -120,7 +120,7 @@ export default function HomePage() {
   const whyUs = [
     { icon: DollarSign, title: 'Flexible Financing', text: 'We work with several lenders; available plans depend on approval. Ask during your estimate.' },
     { icon: Hammer, title: 'Premium Materials', text: 'We install major manufacturer systems used in South Florida, including GAF, Owens Corning, CertainTeed, TAMKO, IKO, and Carlisle, per project and code.' },
-    { icon: Shield, title: 'Licensed & Insured', text: 'Florida Certified Roofing Contractor with full general liability and workers\' comp.' },
+    { icon: Shield, title: 'Licensed & Insured', text: 'Florida State-Certified Roofing Contractor (License #CCC1337611) with full general liability and workers\' comp.' },
     { icon: CheckCircle, title: 'Free Inspections', text: 'Honest, no-pressure, written inspection reports — always free in South Florida.' },
     { icon: Wind, title: 'Hurricane Ready', text: 'Every install meets Florida Building Code 2023 HVHZ wind requirements.' },
     { icon: Star, title: 'Storm Response', text: 'Emergency tarping, leak-stop service and insurance documentation — available 24/7.' },
@@ -161,9 +161,15 @@ export default function HomePage() {
               Do It <span className="text-orange-500 italic">Right</span><br className="hidden md:block" /> The First Time.
             </h1>
 
-            <p className="text-lg md:text-2xl text-gray-200 mb-10 max-w-2xl leading-relaxed font-light">
-              Dr. Roofing FL is Hollywood's licensed, insured, HVHZ-certified roofing contractor — serving every neighborhood across Broward, Miami-Dade and Palm Beach Counties.
+            <p className="text-lg md:text-2xl text-gray-200 mb-6 max-w-2xl leading-relaxed font-light">
+              Dr. Roofing FL is Hollywood's fully licensed, insured, HVHZ-certified roofing contractor — serving every neighborhood across Broward, Miami-Dade and Palm Beach Counties.
             </p>
+
+            <div className="inline-flex items-center gap-3 bg-white/10 border border-orange-500/40 backdrop-blur px-4 py-2 rounded-full text-[11px] md:text-xs text-orange-100 uppercase tracking-[0.2em] mb-10">
+              <Shield size={14} className="text-orange-400" />
+              <span>Licensed &amp; Insured · FL State Lic.</span>
+              <span className="text-white font-bold tracking-wider">CCC1337611</span>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-16">
               <a
@@ -201,7 +207,7 @@ export default function HomePage() {
       <section className="bg-slate-900 text-white py-6 border-y border-white/10">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-xs md:text-sm uppercase tracking-[0.2em] text-gray-300 font-semibold">
-            <span className="inline-flex items-center gap-2"><Shield size={16} className="text-orange-500" /> Licensed Florida Roofer</span>
+            <span className="inline-flex items-center gap-2"><Shield size={16} className="text-orange-500" /> Licensed &amp; Insured · FL Lic. <span className="text-orange-400">CCC1337611</span></span>
             <span className="hidden md:inline w-px h-4 bg-white/20" />
             <span className="inline-flex items-center gap-2"><Award size={16} className="text-orange-500" /> HVHZ Certified</span>
             <span className="hidden md:inline w-px h-4 bg-white/20" />
@@ -713,6 +719,9 @@ export default function HomePage() {
             <span className="inline-flex items-center gap-2"><Award size={13} />HVHZ Certified</span>
             <span className="w-px h-3 bg-white/30 hidden md:inline" />
             <span className="inline-flex items-center gap-2"><BadgeCheck size={13} />Major brand systems</span>
+          </div>
+          <div className="mt-3 text-[11px] text-orange-200 uppercase tracking-[0.25em]">
+            FL State Roofing License <span className="text-white font-bold">CCC1337611</span>
           </div>
         </div>
       </section>

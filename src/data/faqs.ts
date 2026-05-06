@@ -32,7 +32,7 @@ export const globalFaqs: FAQ[] = [
   {
     question: 'Are you licensed and insured in Florida?',
     answer:
-      'Yes. Dr. Roofing FL is a Florida Certified Roofing Contractor and carries general liability and workers’ compensation. Installations are designed to meet applicable Florida Building Code and HVHZ requirements for your jurisdiction.',
+      'Yes. Dr. Roofing FL is a Florida State-Certified Roofing Contractor — License #CCC1337611 — and carries general liability and workers’ compensation. You can verify our license at any time on myfloridalicense.com. Every installation is designed to meet applicable Florida Building Code and HVHZ requirements for your jurisdiction.',
   },
   {
     question: 'How long does a roof replacement take?',

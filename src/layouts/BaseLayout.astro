@@ -71,6 +71,22 @@ const orgSchema = {
   image: `${SITE}/logo_512.png`,
   telephone: '+1-754-310-5557',
   email: 'info@drroofingflorida.com',
+  identifier: {
+    '@type': 'PropertyValue',
+    propertyID: 'Florida State Contractor License',
+    value: 'CCC1337611',
+  },
+  hasCredential: {
+    '@type': 'EducationalOccupationalCredential',
+    credentialCategory: 'license',
+    name: 'Florida Certified Roofing Contractor',
+    identifier: 'CCC1337611',
+    recognizedBy: {
+      '@type': 'GovernmentOrganization',
+      name: 'Florida Department of Business and Professional Regulation (DBPR)',
+      url: 'https://www.myfloridalicense.com/',
+    },
+  },
   address: {
     '@type': 'PostalAddress',
     streetAddress: '3951 SW 41st St',
@@ -119,7 +135,23 @@ const localBusinessSchema = {
   email: 'info@drroofingflorida.com',
   priceRange: '$$',
   description:
-    'Licensed roofing contractor serving Hollywood, Miami, Fort Lauderdale, Palm Beach, Boca Raton, and all of Broward, Palm Beach & Miami-Dade Counties.',
+    'Florida State-Certified roofing contractor (License #CCC1337611) — fully licensed and insured — serving Hollywood, Miami, Fort Lauderdale, Palm Beach, Boca Raton, and all of Broward, Palm Beach & Miami-Dade Counties.',
+  identifier: {
+    '@type': 'PropertyValue',
+    propertyID: 'Florida State Contractor License',
+    value: 'CCC1337611',
+  },
+  hasCredential: {
+    '@type': 'EducationalOccupationalCredential',
+    credentialCategory: 'license',
+    name: 'Florida Certified Roofing Contractor',
+    identifier: 'CCC1337611',
+    recognizedBy: {
+      '@type': 'GovernmentOrganization',
+      name: 'Florida Department of Business and Professional Regulation (DBPR)',
+      url: 'https://www.myfloridalicense.com/',
+    },
+  },
   address: {
     '@type': 'PostalAddress',
     streetAddress: '3951 SW 41st St',

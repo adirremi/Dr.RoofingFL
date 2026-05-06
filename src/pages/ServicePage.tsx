@@ -150,6 +150,12 @@ export default function ServicePage({ service }: Props) {
             <div><div className="text-orange-200 text-xs">Warranty</div><div className="font-bold text-lg text-sm leading-snug">Up to 10 years (workmanship)</div></div>
             <div><div className="text-orange-200 text-xs">Inspection</div><div className="font-bold text-lg">Free</div></div>
           </div>
+
+          <div className="mt-8 inline-flex flex-wrap items-center gap-3 bg-white/10 border border-orange-400/40 backdrop-blur px-4 py-2 rounded-full text-xs text-orange-100 uppercase tracking-[0.2em]">
+            <Shield size={14} className="text-orange-300" />
+            <span>Licensed &amp; Insured · FL State Lic.</span>
+            <span className="text-white font-bold tracking-wider">CCC1337611</span>
+          </div>
         </div>
       </section>
 

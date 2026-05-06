@@ -7,7 +7,7 @@ import { services } from '../data/services';
 const SITE = 'https://drroofingflorida.com';
 
 const values = [
-  { icon: Shield, title: 'Licensed & Insured', text: 'Florida Certified Roofing Contractor with full general liability and workers\' compensation coverage.' },
+  { icon: Shield, title: 'Licensed & Insured', text: 'Florida State-Certified Roofing Contractor — License #CCC1337611 — with full general liability and workers\' compensation coverage.' },
   { icon: Award, title: 'Major systems', text: 'We install common manufacturer systems (GAF, Owens Corning, CertainTeed, TAMKO, IKO, Carlisle, and more) per project, code, and the written scope of work.' },
   { icon: Users, title: 'Locally Operated', text: 'South Florida based — we know Broward, Miami-Dade and Palm Beach because we live and work here.' },
   { icon: Wrench, title: 'Hurricane Experts', text: 'Every install meets or exceeds 2023 FBC HVHZ — Miami-Dade NOA-approved systems only.' },
@@ -48,10 +48,15 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 relative max-w-5xl">
           <div className="inline-block bg-orange-600 text-white px-4 py-2 rounded-full text-xs font-bold mb-6 uppercase tracking-widest">About Us</div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">South Florida's Most Trusted Roofing Contractor</h1>
-          <p className="text-xl text-slate-200 max-w-3xl leading-relaxed">
-            Dr. Roofing FL is a Florida-licensed roofing contractor serving Hollywood, Miami,
+          <p className="text-xl text-slate-200 max-w-3xl leading-relaxed mb-6">
+            Dr. Roofing FL is a Florida State-Certified Roofing Contractor serving Hollywood, Miami,
             Fort Lauderdale and all of South Florida. Licensed · Insured · HVHZ-certified.
           </p>
+          <div className="inline-flex flex-wrap items-center gap-3 bg-white/10 border border-orange-500/40 backdrop-blur px-5 py-3 rounded-lg text-sm">
+            <Shield size={18} className="text-orange-400" />
+            <span className="text-orange-100 uppercase tracking-[0.2em] text-xs font-semibold">FL State Roofing License</span>
+            <span className="text-white font-bold tracking-widest text-base">CCC1337611</span>
+          </div>
         </div>
       </section>
 
@@ -75,6 +80,42 @@ export default function AboutPage() {
               counties. Every job is permitted and every product is specified to meet Florida Building Code and
               Miami-Dade HVHZ requirements, backed by the manufacturer's written warranty.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-8 md:p-10 shadow-xl border-t-4 border-orange-500">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+              <div className="md:col-span-2">
+                <div className="inline-flex items-center gap-2 text-orange-400 uppercase tracking-[0.25em] text-[11px] font-bold mb-3">
+                  <Shield size={14} /> Verified &amp; Compliant
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold font-serif mb-3">
+                  Florida State-Certified Roofing Contractor
+                </h3>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  Dr. Roofing FL is fully licensed and insured to perform residential and commercial
+                  roofing work across the State of Florida. We carry general liability, workers&apos;
+                  compensation, and pull permits in your name through your local building department.
+                </p>
+              </div>
+              <div className="text-center md:text-right">
+                <div className="text-[10px] uppercase tracking-[0.25em] text-slate-400 mb-2">FL State License</div>
+                <div className="text-3xl md:text-4xl font-black tracking-widest text-orange-400 font-serif">
+                  CCC1337611
+                </div>
+                <a
+                  href="https://www.myfloridalicense.com/wl11.asp?mode=2&search=Name&SID=&brd=&typ="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-3 text-[11px] uppercase tracking-widest text-orange-300 hover:text-orange-200 underline"
+                >
+                  Verify on myfloridalicense.com →
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

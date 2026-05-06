@@ -50,7 +50,10 @@ export default function Header() {
               <MapPin size={12} className="text-orange-400" />
               3951 SW 41st St, Hollywood, FL 33023
             </span>
-            <span className="hidden lg:inline text-gray-500">Licensed &amp; Insured · HVHZ Certified</span>
+            <span className="hidden lg:inline text-gray-400">
+              Licensed &amp; Insured · HVHZ Certified ·{' '}
+              <span className="text-orange-400 font-bold">FL Lic. CCC1337611</span>
+            </span>
           </div>
           <div className="flex items-center gap-5">
             <span className="text-gray-400 hidden xl:inline">Mon–Sat · 7AM – 7PM</span>

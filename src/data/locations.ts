@@ -235,7 +235,7 @@ export const locations: Record<string, LocationData> = {
       'Miami\'s trusted roofing contractor for residential and commercial re-roofs, repairs, and storm restoration. Every system installed to Miami-Dade HVHZ code with NOA-approved products.',
     nearYouHeading: 'Top-Rated Roofing Contractor Near You in Miami, FL',
     cityIntro:
-      'Miami, Florida is the most intense roofing market in the United States. Miami-Dade County enforces the strictest building code in the country — the High-Velocity Hurricane Zone (HVHZ) — and every single roofing product used here must carry a Miami-Dade Notice of Acceptance (NOA). Dr. Roofing FL is fully licensed in Miami-Dade, fluent in the online permitting portal, and we install only NOA-approved tile, metal, shingle, and flat roof systems across Coral Gables, South Beach, Kendall, and every Miami neighborhood — every install engineered to Miami-Dade wind requirements.',
+      'Miami, Florida is the most intense roofing market in the United States. Miami-Dade County enforces the strictest building code in the country — the High-Velocity Hurricane Zone (HVHZ) — and every single roofing product used here must carry a Miami-Dade Notice of Acceptance (NOA). Dr. Roofing FL is a fully licensed and insured Florida State-Certified Roofing Contractor (License #CCC1337611), pulls permits in Miami-Dade through the online portal, and installs only NOA-approved tile, metal, shingle, and flat roof systems across Coral Gables, South Beach, Kendall, and every Miami neighborhood — every install engineered to Miami-Dade wind requirements.',
     neighborhoods: [
       'Downtown Miami',
       'Brickell',
@@ -409,7 +409,7 @@ export const locations: Record<string, LocationData> = {
       {
         question: 'Are you licensed in Broward County / Fort Lauderdale?',
         answer:
-          'Yes. Dr. Roofing FL is a Florida Certified Roofing Contractor in good standing with the City of Fort Lauderdale and Broward County Building Departments.',
+          'Yes. Dr. Roofing FL is a Florida State-Certified Roofing Contractor (License #CCC1337611) in good standing with the City of Fort Lauderdale and Broward County Building Departments. Our license can be verified anytime at myfloridalicense.com.',
       },
       {
         question: 'Best roof for a Fort Lauderdale waterfront home?',
@@ -1012,7 +1012,7 @@ export const locations: Record<string, LocationData> = {
       {
         question: 'Licensed and insured?',
         answer:
-          'Yes — Florida Certified Roofing Contractor, fully insured.',
+          'Yes — Florida State-Certified Roofing Contractor (License #CCC1337611), fully insured (general liability + workers\' compensation). Verify on myfloridalicense.com.',
       },
       {
         question: 'Emergency service after a storm?',

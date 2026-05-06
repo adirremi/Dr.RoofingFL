@@ -25,7 +25,7 @@ export default function Footer() {
               decoding="async"
             />
             <p className="text-sm leading-relaxed mb-4">
-              South Florida roofing contractor — serving <strong className="text-white">{totalCities}+ cities</strong> across Broward, Miami-Dade &amp; Palm Beach Counties. Licensed, insured, and experienced with code-compliant systems for South Florida.
+              South Florida roofing contractor — serving <strong className="text-white">{totalCities}+ cities</strong> across Broward, Miami-Dade &amp; Palm Beach Counties. Fully licensed, insured, and experienced with code-compliant systems for South Florida.
             </p>
             <div className="flex items-center gap-3 mb-4">
               <a href="https://www.facebook.com/Drroofingfl" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 bg-slate-800 hover:bg-orange-600 rounded-lg flex items-center justify-center transition">
@@ -35,9 +35,17 @@ export default function Footer() {
                 <Instagram size={18} />
               </a>
             </div>
-            <div className="flex items-center gap-2 text-xs">
-              <Shield size={14} className="text-orange-400" />
-              <span>Licensed &amp; Insured Florida Roofing Contractor</span>
+            <div className="bg-slate-800/70 border border-slate-700 rounded-lg p-3 space-y-2">
+              <div className="flex items-center gap-2 text-xs">
+                <Shield size={14} className="text-orange-400 flex-shrink-0" />
+                <span className="font-semibold text-white">Licensed &amp; Insured Florida Roofing Contractor</span>
+              </div>
+              <div className="text-[11px] uppercase tracking-[0.18em] text-gray-400">
+                FL State License <span className="text-orange-400 font-bold tracking-wider">CCC1337611</span>
+              </div>
+              <div className="text-[11px] text-gray-400">
+                General Liability + Workers&apos; Comp on file
+              </div>
             </div>
           </div>
 
@@ -144,7 +152,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-slate-800 mt-6 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-gray-400">
-          <span>© {currentYear} Dr. Roofing FL. All Rights Reserved. · Florida Certified Roofing Contractor.</span>
+          <span>
+            © {currentYear} Dr. Roofing FL. All Rights Reserved. · Florida Certified Roofing Contractor · Licensed &amp; Insured ·{' '}
+            <span className="text-orange-400 font-semibold">FL Lic. CCC1337611</span>
+          </span>
           <span>
             <Link to="/about" className="hover:text-orange-400">About</Link>
             {' · '}

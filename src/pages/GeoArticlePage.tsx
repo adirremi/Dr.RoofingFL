@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, Calendar, Clock, ExternalLink, ArrowRight, MapPin } from 'lucide-react';
+import { Phone, Calendar, Clock, ExternalLink, ArrowRight, MapPin, Shield } from 'lucide-react';
 import SEO from '../components/SEO';
 import type { GeoArticle } from '../data/geoArticles';
 import { geoArticles } from '../data/geoArticles';
@@ -145,9 +145,12 @@ export default function GeoArticlePage({ article }: Props) {
               <div>
                 <div className="text-xs uppercase tracking-widest text-orange-600 font-bold mb-1">Published by</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. Roofing FL — Local {article.city} Roofing Experts</h3>
-                <p className="text-gray-700 text-sm mb-4">
-                  We install and repair roofs in {article.city} and across South Florida as a licensed Florida Certified Roofing Contractor, fully insured, and experienced with GAF, Owens Corning, CertainTeed, TAMKO, IKO, and Carlisle systems where the job calls for them.
+                <p className="text-gray-700 text-sm mb-3">
+                  We install and repair roofs in {article.city} and across South Florida as a Florida State-Certified Roofing Contractor (License #CCC1337611), fully insured, and experienced with GAF, Owens Corning, CertainTeed, TAMKO, IKO, and Carlisle systems where the job calls for them.
                 </p>
+                <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-orange-700 font-bold mb-4">
+                  <Shield size={12} /> FL Lic. CCC1337611 · Licensed &amp; Insured
+                </div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   {cityData && (
                     <Link
@@ -215,7 +218,10 @@ export default function GeoArticlePage({ article }: Props) {
       <section className="py-16 bg-orange-600 text-white text-center">
         <div className="container mx-auto px-4 max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">Need Roofing in {article.city}?</h2>
-          <p className="mb-6 text-orange-50">Licensed · insured · FBC-appropriate for your site · free inspection when we schedule a visit.</p>
+          <p className="mb-2 text-orange-50">Licensed &amp; insured · FBC-appropriate for your site · free inspection when we schedule a visit.</p>
+          <p className="mb-6 text-orange-100 text-xs uppercase tracking-[0.25em]">
+            FL State Roofing License <span className="font-bold text-white">CCC1337611</span>
+          </p>
           <a
             href="tel:+17543105557"
             className="inline-flex items-center gap-2 bg-white text-orange-700 hover:bg-orange-50 px-8 py-4 rounded-lg font-bold text-lg shadow-xl transition"
